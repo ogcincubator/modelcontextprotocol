@@ -1,0 +1,262 @@
+@prefix : <http://json-rpc.org/ontology#> .
+@prefix jsonrpc: <http://json-rpc.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# Ontology Declaration
+<http://json-rpc.org/ontology> a owl:Ontology ;
+    dcterms:title "JSON-RPC 2.0 Ontology" ;
+    dcterms:description "A semantic ontology for JSON-RPC 2.0 protocol specification" ;
+    dcterms:creator "AI Assistant" ;
+    dcterms:created "2025-08-29"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+    rdfs:seeAlso <https://www.jsonrpc.org/specification> .
+
+# ==========================================
+# CORE MESSAGE CLASSES
+# ==========================================
+
+jsonrpc:Message a owl:Class ;
+    rdfs:label "JSON-RPC Message" ;
+    rdfs:comment "Base class for all JSON-RPC 2.0 messages" .
+
+jsonrpc:Request a owl:Class ;
+    rdfs:subClassOf jsonrpc:Message ;
+    rdfs:label "Request" ;
+    rdfs:comment "A rpc call that expects a response" .
+
+jsonrpc:Notification a owl:Class ;
+    rdfs:subClassOf jsonrpc:Message ;
+    rdfs:label "Notification" ;
+    rdfs:comment "A rpc call that does not expect a response" .
+
+jsonrpc:Response a owl:Class ;
+    rdfs:subClassOf jsonrpc:Message ;
+    rdfs:label "Response" ;
+    rdfs:comment "A successful response to a request" .
+
+jsonrpc:ErrorResponse a owl:Class ;
+    rdfs:subClassOf jsonrpc:Message ;
+    rdfs:label "Error Response" ;
+    rdfs:comment "An error response to a request" .
+
+jsonrpc:Error a owl:Class ;
+    rdfs:label "Error" ;
+    rdfs:comment "JSON-RPC error object" .
+
+# ==========================================
+# IDENTIFIER CLASSES
+# ==========================================
+
+jsonrpc:RequestId a owl:Class ;
+    rdfs:label "Request ID" ;
+    rdfs:comment "A unique identifier for a JSON-RPC request" .
+
+jsonrpc:StringId a owl:Class ;
+    rdfs:subClassOf jsonrpc:RequestId ;
+    rdfs:label "String ID" .
+
+jsonrpc:NumberId a owl:Class ;
+    rdfs:subClassOf jsonrpc:RequestId ;
+    rdfs:label "Number ID" .
+
+jsonrpc:NullId a owl:Class ;
+    rdfs:subClassOf jsonrpc:RequestId ;
+    rdfs:label "Null ID" .
+
+# ==========================================
+# OBJECT PROPERTIES
+# ==========================================
+
+jsonrpc:hasId a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( jsonrpc:Request jsonrpc:Response jsonrpc:ErrorResponse ) ] ;
+    rdfs:range jsonrpc:RequestId ;
+    rdfs:label "has ID" .
+
+jsonrpc:hasError a owl:ObjectProperty ;
+    rdfs:domain jsonrpc:ErrorResponse ;
+    rdfs:range jsonrpc:Error ;
+    rdfs:label "has error" .
+
+# ==========================================
+# DATA PROPERTIES
+# ==========================================
+
+# Protocol Version
+jsonrpc:hasVersion a owl:DatatypeProperty ;
+    rdfs:domain jsonrpc:Message ;
+    rdfs:range xsd:string ;
+    rdfs:label "has version" ;
+    rdfs:comment "The JSON-RPC protocol version (must be '2.0')" .
+
+# Method Name
+jsonrpc:hasMethod a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( jsonrpc:Request jsonrpc:Notification ) ] ;
+    rdfs:range xsd:string ;
+    rdfs:label "has method" ;
+    rdfs:comment "The name of the method to be invoked" .
+
+# Parameters
+jsonrpc:hasParameters a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( jsonrpc:Request jsonrpc:Notification ) ] ;
+    rdfs:label "has parameters" ;
+    rdfs:comment "Parameter values to be used during the invocation of the method" .
+
+# Result
+jsonrpc:hasResult a owl:DatatypeProperty ;
+    rdfs:domain jsonrpc:Response ;
+    rdfs:label "has result" ;
+    rdfs:comment "The result of the method invocation" .
+
+# Error Properties
+jsonrpc:hasErrorCode a owl:DatatypeProperty ;
+    rdfs:domain jsonrpc:Error ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has error code" ;
+    rdfs:comment "A number that indicates the error type that occurred" .
+
+jsonrpc:hasErrorMessage a owl:DatatypeProperty ;
+    rdfs:domain jsonrpc:Error ;
+    rdfs:range xsd:string ;
+    rdfs:label "has error message" ;
+    rdfs:comment "A short description of the error" .
+
+jsonrpc:hasErrorData a owl:DatatypeProperty ;
+    rdfs:domain jsonrpc:Error ;
+    rdfs:label "has error data" ;
+    rdfs:comment "Additional information about the error" .
+
+# ID Value Properties
+jsonrpc:hasStringValue a owl:DatatypeProperty ;
+    rdfs:domain jsonrpc:StringId ;
+    rdfs:range xsd:string ;
+    rdfs:label "has string value" .
+
+jsonrpc:hasNumberValue a owl:DatatypeProperty ;
+    rdfs:domain jsonrpc:NumberId ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "has number value" .
+
+# ==========================================
+# CONSTRAINTS AND AXIOMS
+# ==========================================
+
+# Protocol version must be "2.0"
+[] a owl:Restriction ;
+   owl:onProperty jsonrpc:hasVersion ;
+   owl:hasValue "2.0" ;
+   rdfs:subClassOf jsonrpc:Message .
+
+# Request must have ID
+jsonrpc:Request rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty jsonrpc:hasId ;
+    owl:exactCardinality 1
+] .
+
+# Response must have ID
+jsonrpc:Response rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty jsonrpc:hasId ;
+    owl:exactCardinality 1
+] .
+
+# ErrorResponse must have ID
+jsonrpc:ErrorResponse rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty jsonrpc:hasId ;
+    owl:exactCardinality 1
+] .
+
+# Notification must not have ID
+jsonrpc:Notification rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty jsonrpc:hasId ;
+    owl:exactCardinality 0
+] .
+
+# Request/Notification must have method
+jsonrpc:Request rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty jsonrpc:hasMethod ;
+    owl:exactCardinality 1
+] .
+
+jsonrpc:Notification rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty jsonrpc:hasMethod ;
+    owl:exactCardinality 1
+] .
+
+# Response must have result
+jsonrpc:Response rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty jsonrpc:hasResult ;
+    owl:exactCardinality 1
+] .
+
+# ErrorResponse must have error
+jsonrpc:ErrorResponse rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty jsonrpc:hasError ;
+    owl:exactCardinality 1
+] .
+
+# Error must have code and message
+jsonrpc:Error rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty jsonrpc:hasErrorCode ;
+    owl:exactCardinality 1
+] .
+
+jsonrpc:Error rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty jsonrpc:hasErrorMessage ;
+    owl:exactCardinality 1
+] .
+
+# Disjoint Classes
+jsonrpc:Request owl:disjointWith jsonrpc:Notification, jsonrpc:Response, jsonrpc:ErrorResponse .
+jsonrpc:Notification owl:disjointWith jsonrpc:Response, jsonrpc:ErrorResponse .
+jsonrpc:Response owl:disjointWith jsonrpc:ErrorResponse .
+
+jsonrpc:StringId owl:disjointWith jsonrpc:NumberId, jsonrpc:NullId .
+jsonrpc:NumberId owl:disjointWith jsonrpc:NullId .
+
+# ==========================================
+# STANDARD ERROR CODES
+# ==========================================
+
+jsonrpc:ParseError a jsonrpc:Error ;
+    jsonrpc:hasErrorCode -32700 ;
+    jsonrpc:hasErrorMessage "Parse error" ;
+    rdfs:comment "Invalid JSON was received by the server" .
+
+jsonrpc:InvalidRequest a jsonrpc:Error ;
+    jsonrpc:hasErrorCode -32600 ;
+    jsonrpc:hasErrorMessage "Invalid Request" ;
+    rdfs:comment "The JSON sent is not a valid Request object" .
+
+jsonrpc:MethodNotFound a jsonrpc:Error ;
+    jsonrpc:hasErrorCode -32601 ;
+    jsonrpc:hasErrorMessage "Method not found" ;
+    rdfs:comment "The method does not exist / is not available" .
+
+jsonrpc:InvalidParams a jsonrpc:Error ;
+    jsonrpc:hasErrorCode -32602 ;
+    jsonrpc:hasErrorMessage "Invalid params" ;
+    rdfs:comment "Invalid method parameter(s)" .
+
+jsonrpc:InternalError a jsonrpc:Error ;
+    jsonrpc:hasErrorCode -32603 ;
+    jsonrpc:hasErrorMessage "Internal error" ;
+    rdfs:comment "Internal JSON-RPC error" .
+
+# Server error range (-32099 to -32000)
+jsonrpc:ServerError a owl:Class ;
+    rdfs:subClassOf jsonrpc:Error ;
+    rdfs:label "Server Error" ;
+    rdfs:comment "Reserved for implementation-defined server-errors" .

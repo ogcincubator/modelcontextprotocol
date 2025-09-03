@@ -1,0 +1,131 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "http://json-rpc.org/ontology#",
+    "@base": "https://schemas.json-rpc.org/2.0/",
+
+    "jsonrpc": "http://json-rpc.org/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    // Core Message Types
+    "Message": {
+      "@id": "jsonrpc:Message",
+      "@type": "@id"
+    },
+    "Request": {
+      "@id": "jsonrpc:Request",
+      "@type": "@id"
+    },
+    "Notification": {
+      "@id": "jsonrpc:Notification",
+      "@type": "@id"
+    },
+    "Response": {
+      "@id": "jsonrpc:Response",
+      "@type": "@id"
+    },
+    "ErrorResponse": {
+      "@id": "jsonrpc:ErrorResponse",
+      "@type": "@id"
+    },
+    "Error": {
+      "@id": "jsonrpc:Error",
+      "@type": "@id"
+    },
+
+
+    "RequestId": {
+      "@id": "jsonrpc:RequestId",
+      "@type": "@id"
+    },
+    "StringId": {
+      "@id": "jsonrpc:StringId",
+      "@type": "@id"
+    },
+    "NumberId": {
+      "@id": "jsonrpc:NumberId",
+      "@type": "@id"
+    },
+    "NullId": {
+      "@id": "jsonrpc:NullId",
+      "@type": "@id"
+    },
+
+
+    "jsonrpc": {
+      "@id": "jsonrpc:hasVersion",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "jsonrpc:hasId",
+      "@type": "@id"
+    },
+    "method": {
+      "@id": "jsonrpc:hasMethod",
+      "@type": "xsd:string"
+    },
+    "params": {
+      "@id": "jsonrpc:hasParameters",
+      "@type": "@json"
+    },
+    "result": {
+      "@id": "jsonrpc:hasResult",
+      "@type": "@json"
+    },
+    "error": {
+      "@id": "jsonrpc:hasError",
+      "@type": "@id"
+    },
+
+
+    "code": {
+      "@id": "jsonrpc:hasErrorCode",
+      "@type": "xsd:integer"
+    },
+    "message": {
+      "@id": "jsonrpc:hasErrorMessage",
+      "@type": "xsd:string"
+    },
+    "data": {
+      "@id": "jsonrpc:hasErrorData",
+      "@type": "@json"
+    },
+
+
+    "stringValue": {
+      "@id": "jsonrpc:hasStringValue",
+      "@type": "xsd:string"
+    },
+    "numberValue": {
+      "@id": "jsonrpc:hasNumberValue",
+      "@type": "xsd:decimal"
+    },
+
+
+    "ParseError": {
+      "@id": "jsonrpc:ParseError",
+      "@type": "@id"
+    },
+    "InvalidRequest": {
+      "@id": "jsonrpc:InvalidRequest",
+      "@type": "@id"
+    },
+    "MethodNotFound": {
+      "@id": "jsonrpc:MethodNotFound",
+      "@type": "@id"
+    },
+    "InvalidParams": {
+      "@id": "jsonrpc:InvalidParams",
+      "@type": "@id"
+    },
+    "InternalError": {
+      "@id": "jsonrpc:InternalError",
+      "@type": "@id"
+    },
+    "ServerError": {
+      "@id": "jsonrpc:ServerError",
+      "@type": "@id"
+    }
+  }
+}

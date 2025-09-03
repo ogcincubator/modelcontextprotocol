@@ -1,0 +1,15 @@
+{
+  "name": "JSON-RPC",
+  "highlighted": true,
+  "title": "JSON-RPC Ontology and JSON-LD",
+  "description": "Annotates the JSON-RPC schemas with a JSON-LD context and ontology",
+  "status": "under-development",
+  "version": "2.0.0",
+  "itemClass": "model",
+  "dependsOn": [
+  ],
+  "rules": [
+  ],
+  "dateTimeAddition": "2025-06-12T00:00:00Z",
+  "dateOfLastChange": "2025-06-12"
+}
