@@ -1,0 +1,57 @@
+{
+  "name": "My OGC Building Blocks repository",
+  "abstract": "This is an example text for the abstract. It should be short and to the point.\nA \"Tell me more\" link will appear if there is an additional description with a longer explanation.\n",
+  "description": "The description can be longer. Both **the abstract** *and the description* support Markdown,\nincluding [links](https://google.es).\n",
+  "modified": "2025-09-03T22:24:39.488630",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"7706428cacea50013f04585b5be2d7d29b7b2d9b",
+      "shortCommitId": "\"770642",
+      "date": "2025-08-25T11:10:01+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/ogcincubator/modelcontextprotocol",
+  "gitHubRepository": "https://github.com/ogcincubator/modelcontextprotocol/blob/master/",
+  "baseURL": "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/",
+  "viewerURL": "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/",
+  "validationReport": "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/tests/report.html",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json"
+  ],
+  "bblocks": [
+    {
+      "itemIdentifier": "ogc.bbr.template.json-rpc",
+      "name": "JSON-RPC",
+      "highlighted": true,
+      "title": "JSON-RPC Ontology and JSON-LD",
+      "description": "Annotates the JSON-RPC schemas with a JSON-LD context and ontology",
+      "status": "under-development",
+      "version": "2.0.0",
+      "itemClass": "model",
+      "dependsOn": [],
+      "rules": [],
+      "dateTimeAddition": "2025-06-12T00:00:00Z",
+      "dateOfLastChange": "2025-09-03",
+      "shaclShapes": {},
+      "ontology": "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/annotated/bbr/template/json-rpc/ontology.ttl",
+      "sourceFiles": "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/_sources/json-rpc/",
+      "rdfData": [],
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/generateddocs/markdown/bbr/template/json-rpc/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/generateddocs/json-full/bbr/template/json-rpc/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/bblock/ogc.bbr.template.json-rpc"
+        }
+      }
+    }
+  ],
+  "remoteCacheDir": "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/annotated/_cache"
+}
