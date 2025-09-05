@@ -1,0 +1,9 @@
+@prefix jsonrpc: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] jsonrpc: "2.0" ;
+    jsonrpc:id "1" ;
+    jsonrpc:method "subtract" ;
+    jsonrpc:params [ jsonrpc:minuend 42 ;
+            jsonrpc:subtrahend 23 ] .
+

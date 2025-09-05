@@ -1,0 +1,82 @@
+{
+  "@context": {
+    "@base": "https://schemas.json-rpc.org/2.0/",
+    "@vocab": "http://json-rpc.org/ontology#",
+    "Message": {
+      "@id": "jsonrpc:Message",
+      "@type": "@id"
+    },
+    "Request": {
+      "@id": "jsonrpc:Request",
+      "@type": "@id"
+    },
+    "Notification": {
+      "@id": "jsonrpc:Notification",
+      "@type": "@id"
+    },
+    "Response": {
+      "@id": "jsonrpc:Response",
+      "@type": "@id"
+    },
+    "ErrorResponse": {
+      "@id": "jsonrpc:ErrorResponse",
+      "@type": "@id"
+    },
+    "Error": {
+      "@id": "jsonrpc:Error",
+      "@type": "@id"
+    },
+    "RequestId": {
+      "@id": "jsonrpc:RequestId",
+      "@type": "@id"
+    },
+    "StringId": {
+      "@id": "jsonrpc:StringId",
+      "@type": "@id"
+    },
+    "NumberId": {
+      "@id": "jsonrpc:NumberId",
+      "@type": "@id"
+    },
+    "NullId": {
+      "@id": "jsonrpc:NullId",
+      "@type": "@id"
+    },
+    "stringValue": {
+      "@id": "jsonrpc:hasStringValue",
+      "@type": "xsd:string"
+    },
+    "numberValue": {
+      "@id": "jsonrpc:hasNumberValue",
+      "@type": "xsd:decimal"
+    },
+    "ParseError": {
+      "@id": "jsonrpc:ParseError",
+      "@type": "@id"
+    },
+    "InvalidRequest": {
+      "@id": "jsonrpc:InvalidRequest",
+      "@type": "@id"
+    },
+    "MethodNotFound": {
+      "@id": "jsonrpc:MethodNotFound",
+      "@type": "@id"
+    },
+    "InvalidParams": {
+      "@id": "jsonrpc:InvalidParams",
+      "@type": "@id"
+    },
+    "InternalError": {
+      "@id": "jsonrpc:InternalError",
+      "@type": "@id"
+    },
+    "ServerError": {
+      "@id": "jsonrpc:ServerError",
+      "@type": "@id"
+    },
+    "jsonrpc": "http://json-rpc.org/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "@version": 1.1
+  }
+}

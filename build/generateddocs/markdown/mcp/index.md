@@ -1,5 +1,19 @@
+
+# MCP (Schema)
+
+`mcp.mcp` *v1.0.0*
+
+None
+
+[*Status*](http://www.opengis.net/def/status): Stable
+
+## Schema
+
+```yaml
 $schema: http://json-schema.org/draft-07/schema#
 definitions:
+  ProgressToken:
+    $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#ProgressToken
   Annotations:
     description: Optional annotations for the client. The client can use annotations
       to inform how objects are used or displayed
@@ -1312,12 +1326,6 @@ definitions:
     - method
     - params
     type: object
-  ProgressToken:
-    description: A progress token, used to associate progress notifications with the
-      original request.
-    type:
-    - string
-    - integer
   Prompt:
     description: A prompt or prompt template that the server offers.
     properties:
@@ -2159,3 +2167,23 @@ definitions:
     - method
     - params
     type: object
+
+```
+
+Links to the schema:
+
+* YAML version: [schema.yaml](https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/schema.json)
+* JSON version: [schema.json](https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/schema.yaml)
+
+## Sources
+
+* [Model Context Protocol](https://modelcontextprotocol.io/specification/2025-06-18)
+* [Model Context Protocol schema](https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/refs/heads/main/schema/2025-06-18/schema.json)
+
+# For developers
+
+The source code for this Building Block can be found in the following repository:
+
+* URL: [https://github.com/ogcincubator/modelcontextprotocol](https://github.com/ogcincubator/modelcontextprotocol)
+* Path: `_sources/mcp`
+

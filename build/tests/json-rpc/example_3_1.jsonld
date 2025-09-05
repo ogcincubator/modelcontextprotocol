@@ -1,0 +1,11 @@
+{
+  "@context": [
+    {
+      "mydata": "http://example.com/rpc/"
+    },
+    "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld"
+  ],
+  "jsonrpc": "2.0",
+  "result": 19,
+  "id": "1"
+}

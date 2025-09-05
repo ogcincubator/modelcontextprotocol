@@ -1,0 +1,14 @@
+{
+  "title": "Validation report for mcp.mcp - MCP",
+  "bblockName": "MCP",
+  "bblockId": "mcp.mcp",
+  "generated": "2025-09-05T04:20:03.784244+00:00",
+  "result": true,
+  "items": [],
+  "globalErrors": {},
+  "counts": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  }
+}

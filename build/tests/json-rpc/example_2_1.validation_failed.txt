@@ -1,0 +1,16 @@
+Validation report for mcp.json-rpc - JSON-RPC
+Generated 2025-09-05T04:20:03.738707+00:00
+=== Files ===
+Using example_2_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_2_1.jsonld created
+Output Turtle example_2_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Using the following JSON Schema: #JSONRPCRequest
+
+** Validation error **
+Error loading schema from snippet schema-ref: AttributeError: 'PathOrUrl' object has no attribute 'joinpath'
+=== End JSON Schema ===
+

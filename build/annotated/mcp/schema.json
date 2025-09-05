@@ -1,6 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "ProgressToken": {
+      "$ref": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.json#ProgressToken"
+    },
     "Annotations": {
       "description": "Optional annotations for the client. The client can use annotations to inform how objects are used or displayed",
       "properties": {
@@ -1539,13 +1542,6 @@
         "params"
       ],
       "type": "object"
-    },
-    "ProgressToken": {
-      "description": "A progress token, used to associate progress notifications with the original request.",
-      "type": [
-        "string",
-        "integer"
-      ]
     },
     "Prompt": {
       "description": "A prompt or prompt template that the server offers.",

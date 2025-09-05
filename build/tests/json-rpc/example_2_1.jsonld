@@ -1,0 +1,15 @@
+{
+  "@context": [
+    {
+      "mydata": "http://example.com/rpc/"
+    },
+    "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld"
+  ],
+  "jsonrpc": "2.0",
+  "method": "subtract",
+  "params": {
+    "subtrahend": 23,
+    "minuend": 42
+  },
+  "id": "1"
+}
