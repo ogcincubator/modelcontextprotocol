@@ -7,39 +7,64 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/ogc.bbr.template.json-rpc> a skos:Concept,
+<https://ogcincubator.github.io/modelcontextprotocol/build/bblocks.ttl> a prov:Entity ;
+    dct:format "text/turtle" ;
+    prov:wasAttributedTo _:N21850d220d3a41048a1f9da1aa3f0920 ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            prov:endedAtTime "2025-09-05T04:16:48.728600"^^xsd:dateTime ;
+            prov:startedAtTime "2025-09-05T04:16:48.663264"^^xsd:dateTime ;
+            prov:used [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:c83077f50702764713c0077a8f473e8025e38d85" ;
+                    rdfs:seeAlso <https://ogcincubator.github.io/modelcontextprotocol/build/register.json> ],
+                [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
+            prov:wasAssociatedWith _:N21850d220d3a41048a1f9da1aa3f0920 ] .
+
+<https://ogcincubator.github.io/ogc.bbr.template.json-rpc> a skos:Concept,
         dcat:Dataset,
         bblocks:Model ;
     rdfs:label "JSON-RPC" ;
     dct:created "2025-06-12T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/generateddocs/markdown/bbr/template/json-rpc/index.md" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/bblock/ogc.bbr.template.json-rpc" ],
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/markdown/bbr/template/json-rpc/index.md" ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/generateddocs/json-full/bbr/template/json-rpc/index.json" ],
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/json-full/bbr/template/json-rpc/index.json" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/bblock/ogc.bbr.template.json-rpc" ],
         "Annotates the JSON-RPC schemas with a JSON-LD context and ontology"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:hasVersion "2.0.0" ;
-    dct:modified "2025-09-03"^^xsd:date ;
-    skos:inScheme <https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/> ;
+    dct:modified "2025-09-05"^^xsd:date ;
+    skos:inScheme <https://ogcincubator.github.io/modelcontextprotocol/> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> .
 
-<https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/bblocks.ttl> a prov:Entity ;
-    dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N18f38bb7ad044a4cad03725d5630e0f9 ;
-    prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2025-09-03T22:24:39.729558"^^xsd:dateTime ;
-            prov:startedAtTime "2025-09-03T22:24:39.664783"^^xsd:dateTime ;
-            prov:used [ a prov:Entity ;
-                    dct:format "application/json" ;
-                    dct:hasVersion "git:28788f0c02514b7ee4580abed926e0aa5e597a7a" ;
-                    rdfs:seeAlso <https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/register.json> ],
-                [ a prov:Entity ;
-                    dct:format "application/yaml" ;
-                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
-            prov:wasAssociatedWith _:N18f38bb7ad044a4cad03725d5630e0f9 ] .
+<https://ogcincubator.github.io/ogc.bbr.template.mcp> a skos:Concept,
+        dcat:Dataset,
+        bblocks:Schema ;
+    rdfs:label "MCP JSON-RPC" ;
+    dct:created "2025-06-12T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/json-full/bbr/template/mcp/index.json" ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/markdown/bbr/template/mcp/index.md" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/bblock/ogc.bbr.template.mcp" ],
+        "Derived from MCP."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:hasVersion "1.0.0" ;
+    dct:modified "2025-09-05"^^xsd:date ;
+    dct:source <https://modelcontextprotocol.io/specification/2025-06-18>,
+        <https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/refs/heads/main/schema/2025-06-18/schema.json> ;
+    skos:inScheme <https://ogcincubator.github.io/modelcontextprotocol/> ;
+    bblocks:hasSchema <https://ogcincubator.github.io/modelcontextprotocol/build/annotated/bbr/template/mcp/schema.json>,
+        <https://ogcincubator.github.io/modelcontextprotocol/build/annotated/bbr/template/mcp/schema.yaml> ;
+    bblocks:status <http://www.opengis.net/def/status/stable> .
 
-<https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/> a skos:ConceptScheme,
+<https://modelcontextprotocol.io/specification/2025-06-18> rdfs:label "Model Context Protocol" .
+
+<https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/refs/heads/main/schema/2025-06-18/schema.json> rdfs:label "Model Context Protocol schema" .
+
+<https://ogcincubator.github.io/modelcontextprotocol/> a skos:ConceptScheme,
         dcat:Catalog ;
     rdfs:label "Building Blocks - My OGC Building Blocks repository" ;
     dct:abstract """This is an example text for the abstract. It should be short and to the point.
@@ -49,10 +74,10 @@ A "Tell me more" link will appear if there is an additional description with a l
 including [links](https://google.es).
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     skos:prefLabel "Building Blocks - My OGC Building Blocks repository" ;
-    bblocks:hasValidationReport <https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/tests/report.html> ;
+    bblocks:hasValidationReport <https://ogcincubator.github.io/modelcontextprotocol/build/tests/report.html> ;
     bblocks:imports <https://opengeospatial.github.io/bblocks/register.json> .
 
-_:N18f38bb7ad044a4cad03725d5630e0f9 a prov:Agent,
+_:N21850d220d3a41048a1f9da1aa3f0920 a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.4.2" ;
