@@ -1,0 +1,56 @@
+## Prefixes will be used for all RDF Turtle resources so that they can be omitted from the actual snippets
+# prefixes:
+#   dct: http://purl.org/dc/terms/
+
+## List of examples
+examples:
+  - title: Call (positional params)
+
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+
+    ## The example can define its own prefixes, that will be merged with the global ones
+    prefixes:
+      mydata: http://example.com/rpc/
+
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#JSONRPCRequest"
+        # Reference to file
+        code: |
+          {"jsonrpc": "2.0", "method": "subtract", "params": [42, 23], "id": "1"}
+
+  - title: Call (named params)
+
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+
+    ## The example can define its own prefixes, that will be merged with the global ones
+    prefixes:
+      mydata: http://example.com/rpc/
+
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#JSONRPCRequest"
+        # Reference to file
+        code: |
+          {"jsonrpc": "2.0", "method": "subtract",  "params": {"subtrahend": 23, "minuend": 42}, "id": "1"}
+
+  - title: Response
+
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+
+    ## The example can define its own prefixes, that will be merged with the global ones
+    prefixes:
+      mydata: http://example.com/rpc/
+
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#JSONRPCResponse"
+        # Reference to file
+        code: |
+          {"jsonrpc": "2.0", "result": 19, "id": "1"}

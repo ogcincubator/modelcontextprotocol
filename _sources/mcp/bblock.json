@@ -1,8 +1,8 @@
 {
-  "name": "MCP JSON-RPC",
+  "name": "MCP",
   "highlighted": true,
-  "title": "Model Context Protocol JSON-RPC base",
-  "description": "Derived from MCP.",
+  "title": "Model Context Protocol",
+  "description": "Schema refactored to use a JSON-RPC buildingblock",
   "status": "stable",
   "version": "1.0.0",
   "itemClass": "schema",

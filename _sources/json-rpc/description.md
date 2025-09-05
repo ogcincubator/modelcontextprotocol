@@ -19,7 +19,7 @@ This BBlock implements the JSON-RPC specification as reusable ontology and JSON 
 
 There is no official schema for JSON-RPC or the Model Context Protocol that uses it - unofficial schemas tend to bundle the JSON-RPC elements into the MCP schema, which hides the dependencies, reduces re-usability and obscures testing.
 
-Note the JSON-LD enabled of the RPC elements is necessary to build a graph out of a JSON MCP object - it supports RDF identifiers of the object containers, which then allows MCP components to be mapped to RDF models
+Note the JSON-LD enabled of the RPC elements is necessary to build a graph out of a JSON MCP object - it supports RDF identifiers of the object containers, which then allows MCP components to be mapped to RDF models.
 
 ## Usage
 
