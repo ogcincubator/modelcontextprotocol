@@ -1,0 +1,518 @@
+@prefix : <http://modelcontextprotocol.io/ontology#> .
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix jsonrpc: <http://json-rpc.org/ontology#> .
+
+# Ontology Declaration
+<http://modelcontextprotocol.io/ontology> a owl:Ontology ;
+    dcterms:title "Model Context Protocol (MCP) Ontology" ;
+    dcterms:description "A semantic ontology for the Model Context Protocol, defining actors, operations, and data structures for AI-external system integration" ;
+    dcterms:creator "AI Assistant" ;
+    dcterms:created "2025-08-20"^^xsd:date ;
+    owl:versionInfo "1.0" .
+
+# ==========================================
+# CORE ACTOR CLASSES
+# ==========================================
+
+mcp:Actor a owl:Class ;
+    rdfs:label "MCP Actor" ;
+    rdfs:comment "Base class for all participants in MCP communication" .
+
+mcp:MCPHost a owl:Class ;
+    rdfs:subClassOf mcp:Actor ;
+    rdfs:label "MCP Host" ;
+    rdfs:comment "An LLM application that initiates MCP connections" .
+
+mcp:MCPClient a owl:Class ;
+    rdfs:subClassOf mcp:Actor ;
+    rdfs:label "MCP Client" ;
+    rdfs:comment "A connector component within a host application" .
+
+mcp:MCPServer a owl:Class ;
+    rdfs:subClassOf mcp:Actor ;
+    rdfs:label "MCP Server" ;
+    rdfs:comment "A service that provides context, tools, and capabilities" .
+
+# ==========================================
+# PROTOCOL MESSAGE CLASSES
+# ==========================================
+
+mcp:JSONRPCMessage a owl:Class ;
+    rdfs:label "JSON-RPC Message" ;
+    rdfs:comment "Base message format using JSON-RPC 2.0 specification" .
+
+mcp:RequestMessage a owl:Class ;
+    rdfs:subClassOf mcp:JSONRPCMessage ;
+    rdfs:label "Request Message" ;
+    rdfs:comment "Messages sent to request operations" .
+
+mcp:ResponseMessage a owl:Class ;
+    rdfs:subClassOf mcp:JSONRPCMessage ;
+    rdfs:label "Response Message" ;
+    rdfs:comment "Messages sent in response to requests" .
+
+mcp:NotificationMessage a owl:Class ;
+    rdfs:subClassOf mcp:JSONRPCMessage ;
+    rdfs:label "Notification Message" ;
+    rdfs:comment "One-way messages that don't expect responses" .
+
+mcp:RPCError a owl:Class ;
+    rdfs:label "RPC Error" ;
+    rdfs:comment "JSON-RPC error information" .
+
+# ==========================================
+# OPERATION CLASSES
+# ==========================================
+
+mcp:Operation a owl:Class ;
+    rdfs:label "MCP Operation" ;
+    rdfs:comment "Base class for all MCP operations" .
+
+mcp:InitializationOperation a owl:Class ;
+    rdfs:subClassOf mcp:Operation ;
+    rdfs:label "Initialization Operation" ;
+    rdfs:comment "Operations that establish protocol connection" .
+
+mcp:DiscoveryOperation a owl:Class ;
+    rdfs:subClassOf mcp:Operation ;
+    rdfs:label "Discovery Operation" ;
+    rdfs:comment "Operations that enumerate available capabilities" .
+
+mcp:AccessOperation a owl:Class ;
+    rdfs:subClassOf mcp:Operation ;
+    rdfs:label "Access Operation" ;
+    rdfs:comment "Operations that retrieve or execute capabilities" .
+
+mcp:LifecycleOperation a owl:Class ;
+    rdfs:subClassOf mcp:Operation ;
+    rdfs:label "Lifecycle Operation" ;
+    rdfs:comment "Operations that manage connection lifecycle" .
+
+mcp:SubscriptionOperation a owl:Class ;
+    rdfs:subClassOf mcp:Operation ;
+    rdfs:label "Subscription Operation" ;
+    rdfs:comment "Operations that manage change notifications" .
+
+# Specific Operations
+mcp:InitializeOperation a owl:Class ;
+    rdfs:subClassOf mcp:InitializationOperation ;
+    rdfs:label "Initialize" .
+
+mcp:InitializedOperation a owl:Class ;
+    rdfs:subClassOf mcp:InitializationOperation ;
+    rdfs:label "Initialized" .
+
+mcp:ListResourcesOperation a owl:Class ;
+    rdfs:subClassOf mcp:DiscoveryOperation ;
+    rdfs:label "List Resources" .
+
+mcp:ListToolsOperation a owl:Class ;
+    rdfs:subClassOf mcp:DiscoveryOperation ;
+    rdfs:label "List Tools" .
+
+mcp:ListPromptsOperation a owl:Class ;
+    rdfs:subClassOf mcp:DiscoveryOperation ;
+    rdfs:label "List Prompts" .
+
+mcp:ReadResourceOperation a owl:Class ;
+    rdfs:subClassOf mcp:AccessOperation ;
+    rdfs:label "Read Resource" .
+
+mcp:CallToolOperation a owl:Class ;
+    rdfs:subClassOf mcp:AccessOperation ;
+    rdfs:label "Call Tool" .
+
+mcp:GetPromptOperation a owl:Class ;
+    rdfs:subClassOf mcp:AccessOperation ;
+    rdfs:label "Get Prompt" .
+
+mcp:PingOperation a owl:Class ;
+    rdfs:subClassOf mcp:LifecycleOperation ;
+    rdfs:label "Ping" .
+
+# ==========================================
+# CAPABILITY CLASSES
+# ==========================================
+
+mcp:Capability a owl:Class ;
+    rdfs:label "Capability" ;
+    rdfs:comment "Base class for MCP capabilities" .
+
+mcp:Resource a owl:Class ;
+    rdfs:subClassOf mcp:Capability ;
+    rdfs:label "Resource" ;
+    rdfs:comment "External data or information source accessible to AI models" .
+
+mcp:Tool a owl:Class ;
+    rdfs:subClassOf mcp:Capability ;
+    rdfs:label "Tool" ;
+    rdfs:comment "Executable capability provided by an MCP server" .
+
+mcp:Prompt a owl:Class ;
+    rdfs:subClassOf mcp:Capability ;
+    rdfs:label "Prompt" ;
+    rdfs:comment "Reusable prompt template with optional parameterization" .
+
+# Resource Subtypes
+mcp:FileResource a owl:Class ;
+    rdfs:subClassOf mcp:Resource ;
+    rdfs:label "File Resource" .
+
+mcp:DatabaseResource a owl:Class ;
+    rdfs:subClassOf mcp:Resource ;
+    rdfs:label "Database Resource" .
+
+mcp:APIResource a owl:Class ;
+    rdfs:subClassOf mcp:Resource ;
+    rdfs:label "API Resource" .
+
+mcp:WebResource a owl:Class ;
+    rdfs:subClassOf mcp:Resource ;
+    rdfs:label "Web Resource" .
+
+# Tool Categories
+mcp:ComputationTool a owl:Class ;
+    rdfs:subClassOf mcp:Tool ;
+    rdfs:label "Computation Tool" .
+
+mcp:CommunicationTool a owl:Class ;
+    rdfs:subClassOf mcp:Tool ;
+    rdfs:label "Communication Tool" .
+
+mcp:DataTool a owl:Class ;
+    rdfs:subClassOf mcp:Tool ;
+    rdfs:label "Data Tool" .
+
+mcp:FileTool a owl:Class ;
+    rdfs:subClassOf mcp:Tool ;
+    rdfs:label "File Tool" .
+
+mcp:WebTool a owl:Class ;
+    rdfs:subClassOf mcp:Tool ;
+    rdfs:label "Web Tool" .
+
+# ==========================================
+# CONTENT CLASSES
+# ==========================================
+
+mcp:Content a owl:Class ;
+    rdfs:label "Content" ;
+    rdfs:comment "Base class for all content types" .
+
+mcp:ResourceContents a owl:Class ;
+    rdfs:subClassOf mcp:Content ;
+    rdfs:label "Resource Contents" ;
+    rdfs:comment "The actual content of a resource" .
+
+mcp:TextResourceContents a owl:Class ;
+    rdfs:subClassOf mcp:ResourceContents ;
+    rdfs:label "Text Resource Contents" .
+
+mcp:BlobResourceContents a owl:Class ;
+    rdfs:subClassOf mcp:ResourceContents ;
+    rdfs:label "Blob Resource Contents" .
+
+mcp:ToolResult a owl:Class ;
+    rdfs:subClassOf mcp:Content ;
+    rdfs:label "Tool Result" ;
+    rdfs:comment "Output from tool execution" .
+
+mcp:TextContent a owl:Class ;
+    rdfs:subClassOf mcp:Content ;
+    rdfs:label "Text Content" .
+
+mcp:ImageContent a owl:Class ;
+    rdfs:subClassOf mcp:Content ;
+    rdfs:label "Image Content" .
+
+mcp:ResourceContent a owl:Class ;
+    rdfs:subClassOf mcp:Content ;
+    rdfs:label "Resource Content" .
+
+mcp:PromptMessage a owl:Class ;
+    rdfs:label "Prompt Message" ;
+    rdfs:comment "Individual message within a prompt template" .
+
+mcp:PromptArgument a owl:Class ;
+    rdfs:label "Prompt Argument" ;
+    rdfs:comment "Parameter that can customize prompt behavior" .
+
+# ==========================================
+# TRANSPORT AND CONFIGURATION CLASSES
+# ==========================================
+
+mcp:TransportMechanism a owl:Class ;
+    rdfs:label "Transport Mechanism" ;
+    rdfs:comment "Communication channel between client and server" .
+
+mcp:StdioTransport a owl:Class ;
+    rdfs:subClassOf mcp:TransportMechanism ;
+    rdfs:label "Stdio Transport" .
+
+mcp:SSETransport a owl:Class ;
+    rdfs:subClassOf mcp:TransportMechanism ;
+    rdfs:label "SSE Transport" .
+
+mcp:WebSocketTransport a owl:Class ;
+    rdfs:subClassOf mcp:TransportMechanism ;
+    rdfs:label "WebSocket Transport" .
+
+mcp:HTTPTransport a owl:Class ;
+    rdfs:subClassOf mcp:TransportMechanism ;
+    rdfs:label "HTTP Transport" .
+
+mcp:ServerCapabilities a owl:Class ;
+    rdfs:label "Server Capabilities" .
+
+mcp:ClientCapabilities a owl:Class ;
+    rdfs:label "Client Capabilities" .
+
+mcp:ResourceCapabilities a owl:Class ;
+    rdfs:label "Resource Capabilities" .
+
+# ==========================================
+# OBJECT PROPERTIES
+# ==========================================
+
+# Actor Relationships
+mcp:hasClient a owl:ObjectProperty ;
+    rdfs:domain mcp:MCPHost ;
+    rdfs:range mcp:MCPClient ;
+    rdfs:label "has client" .
+
+mcp:belongsToHost a owl:ObjectProperty ;
+    rdfs:domain mcp:MCPClient ;
+    rdfs:range mcp:MCPHost ;
+    rdfs:label "belongs to host" ;
+    owl:inverseOf mcp:hasClient .
+
+mcp:connectsToServer a owl:ObjectProperty ;
+    rdfs:domain mcp:MCPClient ;
+    rdfs:range mcp:MCPServer ;
+    rdfs:label "connects to server" .
+
+mcp:usesTransport a owl:ObjectProperty ;
+    rdfs:domain mcp:MCPClient ;
+    rdfs:range mcp:TransportMechanism ;
+    rdfs:label "uses transport" .
+
+# Capability Relationships
+mcp:providesResource a owl:ObjectProperty ;
+    rdfs:domain mcp:MCPServer ;
+    rdfs:range mcp:Resource ;
+    rdfs:label "provides resource" .
+
+mcp:exposesTool a owl:ObjectProperty ;
+    rdfs:domain mcp:MCPServer ;
+    rdfs:range mcp:Tool ;
+    rdfs:label "exposes tool" .
+
+mcp:offersPrompt a owl:ObjectProperty ;
+    rdfs:domain mcp:MCPServer ;
+    rdfs:range mcp:Prompt ;
+    rdfs:label "offers prompt" .
+
+mcp:hasCapabilities a owl:ObjectProperty ;
+    rdfs:domain mcp:MCPServer ;
+    rdfs:range mcp:ServerCapabilities ;
+    rdfs:label "has capabilities" .
+
+# Content Relationships
+mcp:hasContents a owl:ObjectProperty ;
+    rdfs:domain mcp:Resource ;
+    rdfs:range mcp:ResourceContents ;
+    rdfs:label "has contents" .
+
+mcp:produces a owl:ObjectProperty ;
+    rdfs:domain mcp:Tool ;
+    rdfs:range mcp:ToolResult ;
+    rdfs:label "produces" .
+
+mcp:containsMessage a owl:ObjectProperty ;
+    rdfs:domain mcp:Prompt ;
+    rdfs:range mcp:PromptMessage ;
+    rdfs:label "contains message" .
+
+mcp:hasArgument a owl:ObjectProperty ;
+    rdfs:domain mcp:Prompt ;
+    rdfs:range mcp:PromptArgument ;
+    rdfs:label "has argument" .
+
+# Operation Relationships
+mcp:initiatesOperation a owl:ObjectProperty ;
+    rdfs:domain mcp:MCPClient ;
+    rdfs:range mcp:Operation ;
+    rdfs:label "initiates operation" .
+
+mcp:respondsToOperation a owl:ObjectProperty ;
+    rdfs:domain mcp:MCPServer ;
+    rdfs:range mcp:Operation ;
+    rdfs:label "responds to operation" .
+
+mcp:accessesResource a owl:ObjectProperty ;
+    rdfs:domain mcp:ReadResourceOperation ;
+    rdfs:range mcp:Resource ;
+    rdfs:label "accesses resource" .
+
+mcp:executesTool a owl:ObjectProperty ;
+    rdfs:domain mcp:CallToolOperation ;
+    rdfs:range mcp:Tool ;
+    rdfs:label "executes tool" .
+
+mcp:instantiatesPrompt a owl:ObjectProperty ;
+    rdfs:domain mcp:GetPromptOperation ;
+    rdfs:range mcp:Prompt ;
+    rdfs:label "instantiates prompt" .
+
+# ==========================================
+# DATA PROPERTIES
+# ==========================================
+
+# Identifier Properties
+mcp:hasURI a owl:DatatypeProperty ;
+    rdfs:domain mcp:Resource ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "has URI" .
+
+mcp:hasName a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "has name" .
+
+mcp:hasDescription a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "has description" .
+
+# Protocol Properties
+mcp:hasProtocolVersion a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "has protocol version" .
+
+mcp:hasMethod a owl:DatatypeProperty ;
+    rdfs:domain mcp:JSONRPCMessage ;
+    rdfs:range xsd:string ;
+    rdfs:label "has method" .
+
+mcp:hasID a owl:DatatypeProperty ;
+    rdfs:domain mcp:JSONRPCMessage ;
+    rdfs:label "has ID" .
+
+# Content Properties
+mcp:hasText a owl:DatatypeProperty ;
+    rdfs:domain mcp:TextContent ;
+    rdfs:range xsd:string ;
+    rdfs:label "has text" .
+
+mcp:hasMimeType a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "has MIME type" .
+
+mcp:hasBlob a owl:DatatypeProperty ;
+    rdfs:domain mcp:BlobResourceContents ;
+    rdfs:range xsd:base64Binary ;
+    rdfs:label "has blob" .
+
+# Tool Properties
+mcp:hasInputSchema a owl:DatatypeProperty ;
+    rdfs:domain mcp:Tool ;
+    rdfs:label "has input schema" .
+
+mcp:isError a owl:DatatypeProperty ;
+    rdfs:domain mcp:ToolResult ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is error" .
+
+# Prompt Properties
+mcp:hasRole a owl:DatatypeProperty ;
+    rdfs:domain mcp:PromptMessage ;
+    rdfs:range xsd:string ;
+    rdfs:label "has role" .
+
+mcp:isRequired a owl:DatatypeProperty ;
+    rdfs:domain mcp:PromptArgument ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is required" .
+
+# Boolean Properties
+mcp:initiatesConnection a owl:DatatypeProperty ;
+    rdfs:domain mcp:MCPHost ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "initiates connection" .
+
+mcp:managesSession a owl:DatatypeProperty ;
+    rdfs:domain mcp:MCPHost ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "manages session" .
+
+mcp:supportsSubscription a owl:DatatypeProperty ;
+    rdfs:domain mcp:ResourceCapabilities ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "supports subscription" .
+
+mcp:supportsListChanged a owl:DatatypeProperty ;
+    rdfs:domain mcp:ResourceCapabilities ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "supports list changed" .
+
+# ==========================================
+# CONSTRAINTS AND AXIOMS
+# ==========================================
+
+# Cardinality Constraints
+mcp:MCPHost rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty mcp:hasClient ;
+    owl:minCardinality 1
+] .
+
+mcp:MCPClient rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty mcp:belongsToHost ;
+    owl:exactCardinality 1
+] .
+
+mcp:Resource rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty mcp:hasURI ;
+    owl:exactCardinality 1
+] .
+
+mcp:Tool rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty mcp:hasName ;
+    owl:exactCardinality 1
+] .
+
+mcp:Prompt rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty mcp:hasName ;
+    owl:exactCardinality 1
+] .
+
+# Disjoint Classes
+mcp:MCPHost owl:disjointWith mcp:MCPClient, mcp:MCPServer .
+mcp:MCPClient owl:disjointWith mcp:MCPServer .
+
+mcp:Resource owl:disjointWith mcp:Tool, mcp:Prompt .
+mcp:Tool owl:disjointWith mcp:Prompt .
+
+mcp:RequestMessage owl:disjointWith mcp:ResponseMessage, mcp:NotificationMessage .
+mcp:ResponseMessage owl:disjointWith mcp:NotificationMessage .
+
+# Role Enumeration
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( "user" "assistant" "system" ) .
+
+# ==========================================
+# ANNOTATIONS
+# ==========================================
+
+# Add additional metadata
+mcp:MCPHost rdfs:seeAlso <https://modelcontextprotocol.io/specification> .
+mcp:MCPServer rdfs:seeAlso <https://modelcontextprotocol.io/specification> .
+mcp:JSONRPCMessage rdfs:seeAlso <https://www.jsonrpc.org/specification> .

@@ -1,0 +1,25 @@
+{
+  "name": "MCP JSON-RPC",
+  "highlighted": true,
+  "title": "Model Context Protocol JSON-RPC base",
+  "description": "Derived from MCP.",
+  "status": "stable",
+  "version": "1.0.0",
+  "itemClass": "schema",
+  "dependsOn": [
+  ],
+  "sources": [
+    {
+      "title": "Model Context Protocol",
+      "link": "https://modelcontextprotocol.io/specification/2025-06-18"
+    },
+    {
+      "title": "Model Context Protocol schema",
+      "link": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/refs/heads/main/schema/2025-06-18/schema.json"
+    }
+  ],
+  "rules": [
+  ],
+  "dateTimeAddition": "2025-06-12T00:00:00Z",
+  "dateOfLastChange": "2025-06-12"
+}
