@@ -2176,8 +2176,8 @@ definitions:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/annotated/bbr/template/mcp/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/ogcincubator/modelcontextprotocol/undefined/build/annotated/bbr/template/mcp/schema.yaml)
+* YAML version: [schema.yaml](https://ogcincubator.github.io/modelcontextprotocol/build/annotated/bbr/template/mcp/schema.json)
+* JSON version: [schema.json](https://ogcincubator.github.io/modelcontextprotocol/build/annotated/bbr/template/mcp/schema.yaml)
 
 ## Sources
 
