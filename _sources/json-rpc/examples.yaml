@@ -19,7 +19,7 @@ examples:
         schema-ref: "#JSONRPCRequest"
         # Reference to file
         code: |
-          {"jsonrpc": "2.0", "method": "subtract", "params": [42, 23], "id": "1"}
+          {"jsonrpc": "2.0", "method": "subtract", "params": {"p1": 42, "p2": 23}, "id": "1"}
 
   - title: Call (named params)
 
@@ -53,4 +53,4 @@ examples:
         schema-ref: "#JSONRPCResponse"
         # Reference to file
         code: |
-          {"jsonrpc": "2.0", "result": 19, "id": "1"}
+          {"jsonrpc": "2.0", "result": {"value": 19}, "id": "1"}
