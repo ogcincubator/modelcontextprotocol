@@ -1,8 +1,7 @@
 {
-  "name": "My OGC Building Blocks repository",
-  "abstract": "This is an example text for the abstract. It should be short and to the point.\nA \"Tell me more\" link will appear if there is an additional description with a longer explanation.\n",
-  "description": "The description can be longer. Both **the abstract** *and the description* support Markdown,\nincluding [links](https://google.es).\n",
-  "modified": "2025-09-16T08:38:22.578648",
+  "name": "Model Context Protocol (MCP) Building Blocks",
+  "abstract": "BuildingBlock descriptions of the the elements of the\n[Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) \n",
+  "modified": "2025-09-16T08:44:16.093118",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"10fe1f567f328b657227dab78e1628d3a8dd91dd",
