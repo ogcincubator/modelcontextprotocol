@@ -7,9 +7,9 @@
   ],
   "jsonrpc": "2.0",
   "method": "subtract",
-  "params": [
-    42,
-    23
-  ],
+  "params": {
+    "p1": 42,
+    "p2": 23
+  },
   "id": "1"
 }

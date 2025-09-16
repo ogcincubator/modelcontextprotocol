@@ -4,6 +4,6 @@
 [] jsonrpc: "2.0" ;
     jsonrpc:id "1" ;
     jsonrpc:method "subtract" ;
-    jsonrpc:params 23,
-        42 .
+    jsonrpc:params [ jsonrpc:p1 42 ;
+            jsonrpc:p2 23 ] .
 

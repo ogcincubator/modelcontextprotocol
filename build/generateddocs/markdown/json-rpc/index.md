@@ -45,7 +45,7 @@ At this stage no additional semantic rules have been defined.
 ### Call (positional params)
 #### json
 ```json
-{"jsonrpc": "2.0", "method": "subtract", "params": [42, 23], "id": "1"}
+{"jsonrpc": "2.0", "method": "subtract", "params": {"p1": 42, "p2": 23}, "id": "1"}
 
 ```
 
@@ -60,10 +60,10 @@ At this stage no additional semantic rules have been defined.
   ],
   "jsonrpc": "2.0",
   "method": "subtract",
-  "params": [
-    42,
-    23
-  ],
+  "params": {
+    "p1": 42,
+    "p2": 23
+  },
   "id": "1"
 }
 ```
@@ -76,8 +76,8 @@ At this stage no additional semantic rules have been defined.
 [] jsonrpc: "2.0" ;
     jsonrpc:id "1" ;
     jsonrpc:method "subtract" ;
-    jsonrpc:params 23,
-        42 .
+    jsonrpc:params [ jsonrpc:p1 42 ;
+            jsonrpc:p2 23 ] .
 
 
 ```
@@ -127,7 +127,7 @@ At this stage no additional semantic rules have been defined.
 ### Response
 #### json
 ```json
-{"jsonrpc": "2.0", "result": 19, "id": "1"}
+{"jsonrpc": "2.0", "result": {"value": 19}, "id": "1"}
 ```
 
 #### jsonld
@@ -140,7 +140,9 @@ At this stage no additional semantic rules have been defined.
     "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld"
   ],
   "jsonrpc": "2.0",
-  "result": 19,
+  "result": {
+    "value": 19
+  },
   "id": "1"
 }
 ```
@@ -152,7 +154,7 @@ At this stage no additional semantic rules have been defined.
 
 [] jsonrpc: "2.0" ;
     jsonrpc:id "1" ;
-    jsonrpc:result 19 .
+    jsonrpc:result [ jsonrpc:value 19 ] .
 
 
 ```

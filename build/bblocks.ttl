@@ -12,15 +12,15 @@
         bblocks:Schema ;
     rdfs:label "MCP" ;
     dct:created "2025-06-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/json-full/mcp/index.json" ],
+        [ dct:format "text/markdown" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/markdown/mcp/index.md" ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/bblock/mcp.mcp" ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/json-full/mcp/index.json" ],
         "Schema refactored to use a JSON-RPC buildingblock"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:hasVersion "1.0.0" ;
-    dct:modified "2025-09-05"^^xsd:date ;
+    dct:modified "2025-09-16"^^xsd:date ;
     dct:source <https://modelcontextprotocol.io/specification/2025-06-18>,
         <https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/refs/heads/main/schema/2025-06-18/schema.json> ;
     skos:inScheme <https://ogcincubator.github.io/modelcontextprotocol/> ;
@@ -31,18 +31,18 @@
 
 <https://ogcincubator.github.io/modelcontextprotocol/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:Nbe97dc8f71ff4b689b8d52a0c26d003b ;
+    prov:wasAttributedTo _:Nbb18646c531840989755bb12ab35aa78 ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2025-09-05T04:20:03.860719"^^xsd:dateTime ;
-            prov:startedAtTime "2025-09-05T04:20:03.798139"^^xsd:dateTime ;
+            prov:endedAtTime "2025-09-16T08:38:23.540693"^^xsd:dateTime ;
+            prov:startedAtTime "2025-09-16T08:38:23.477068"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
                     dct:format "application/json" ;
-                    dct:hasVersion "git:d3290f08ac6e8843da810573fb9dc156381ad648" ;
+                    dct:hasVersion "git:960baf792b03ad04490f73f0f9b4112c687a4d73" ;
                     rdfs:seeAlso <https://ogcincubator.github.io/modelcontextprotocol/build/register.json> ],
                 [ a prov:Entity ;
                     dct:format "application/yaml" ;
                     rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
-            prov:wasAssociatedWith _:Nbe97dc8f71ff4b689b8d52a0c26d003b ] .
+            prov:wasAssociatedWith _:Nbb18646c531840989755bb12ab35aa78 ] .
 
 <https://modelcontextprotocol.io/specification/2025-06-18> rdfs:label "Model Context Protocol" .
 
@@ -51,15 +51,15 @@
         bblocks:Model ;
     rdfs:label "JSON-RPC" ;
     dct:created "2025-06-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/bblock/mcp.json-rpc" ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/markdown/json-rpc/index.md" ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/json-full/json-rpc/index.json" ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/markdown/json-rpc/index.md" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/bblock/mcp.json-rpc" ],
         "Annotates the JSON-RPC schemas with a JSON-LD context and ontology"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:hasVersion "2.0.0" ;
-    dct:modified "2025-09-05"^^xsd:date ;
+    dct:modified "2025-09-16"^^xsd:date ;
     skos:inScheme <https://ogcincubator.github.io/modelcontextprotocol/> ;
     bblocks:hasJsonLdContext <https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld> ;
     bblocks:hasSchema <https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.json>,
@@ -82,7 +82,7 @@ including [links](https://google.es).
     bblocks:hasValidationReport <https://ogcincubator.github.io/modelcontextprotocol/build/tests/report.html> ;
     bblocks:imports <https://opengeospatial.github.io/bblocks/register.json> .
 
-_:Nbe97dc8f71ff4b689b8d52a0c26d003b a prov:Agent,
+_:Nbb18646c531840989755bb12ab35aa78 a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.4.2" ;

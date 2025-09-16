@@ -2,8 +2,8 @@
   "title": "Validation report for mcp.json-rpc - JSON-RPC",
   "bblockName": "JSON-RPC",
   "bblockId": "mcp.json-rpc",
-  "generated": "2025-09-05T04:20:03.740710+00:00",
-  "result": false,
+  "generated": "2025-09-16T08:38:23.419624+00:00",
+  "result": true,
   "items": [
     {
       "source": {
@@ -15,7 +15,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": false,
+      "result": true,
       "sections": [
         {
           "name": "FILES",
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 5,
+              "size": 6,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }
@@ -56,8 +56,10 @@
               "message": "Using the following JSON Schema: #JSONRPCRequest"
             },
             {
-              "isError": true,
-              "message": "Error loading schema from snippet schema-ref: AttributeError: 'PathOrUrl' object has no attribute 'joinpath'"
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
             }
           ]
         }
@@ -73,7 +75,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": false,
+      "result": true,
       "sections": [
         {
           "name": "FILES",
@@ -114,8 +116,10 @@
               "message": "Using the following JSON Schema: #JSONRPCRequest"
             },
             {
-              "isError": true,
-              "message": "Error loading schema from snippet schema-ref: AttributeError: 'PathOrUrl' object has no attribute 'joinpath'"
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
             }
           ]
         }
@@ -131,7 +135,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": false,
+      "result": true,
       "sections": [
         {
           "name": "FILES",
@@ -156,7 +160,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_3_1.ttl",
-              "size": 3,
+              "size": 4,
               "isError": false,
               "message": "Output Turtle example_3_1.ttl created"
             }
@@ -172,8 +176,10 @@
               "message": "Using the following JSON Schema: #JSONRPCResponse"
             },
             {
-              "isError": true,
-              "message": "Error loading schema from snippet schema-ref: AttributeError: 'PathOrUrl' object has no attribute 'joinpath'"
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
             }
           ]
         }
@@ -183,7 +189,7 @@
   "globalErrors": {},
   "counts": {
     "total": 3,
-    "passed": 0,
-    "failed": 3
+    "passed": 3,
+    "failed": 0
   }
 }

@@ -12,7 +12,7 @@
   "dependsOn": [],
   "rules": [],
   "dateTimeAddition": "2025-06-12T00:00:00Z",
-  "dateOfLastChange": "2025-09-05",
+  "dateOfLastChange": "2025-09-16",
   "shaclShapes": {},
   "ldContext": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld",
   "ontology": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/ontology.ttl",
@@ -24,7 +24,7 @@
   "sourceLdContext": "https://ogcincubator.github.io/modelcontextprotocol/_sources/json-rpc/context.jsonld",
   "sourceFiles": "https://ogcincubator.github.io/modelcontextprotocol/_sources/json-rpc/",
   "rdfData": [],
-  "validationPassed": false,
+  "validationPassed": true,
   "testOutputs": "https://github.com/ogcincubator/modelcontextprotocol/blob/master/build/tests/json-rpc/",
   "examples": [
     {
@@ -37,17 +37,17 @@
         {
           "language": "json",
           "schema-ref": "#JSONRPCRequest",
-          "code": "{\"jsonrpc\": \"2.0\", \"method\": \"subtract\", \"params\": [42, 23], \"id\": \"1\"}\n",
+          "code": "{\"jsonrpc\": \"2.0\", \"method\": \"subtract\", \"params\": {\"p1\": 42, \"p2\": 23}, \"id\": \"1\"}\n",
           "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/json-rpc/example_1_1.json"
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"@context\": [\n    {\n      \"mydata\": \"http://example.com/rpc/\"\n    },\n    \"https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld\"\n  ],\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"subtract\",\n  \"params\": [\n    42,\n    23\n  ],\n  \"id\": \"1\"\n}",
+          "code": "{\n  \"@context\": [\n    {\n      \"mydata\": \"http://example.com/rpc/\"\n    },\n    \"https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld\"\n  ],\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"subtract\",\n  \"params\": {\n    \"p1\": 42,\n    \"p2\": 23\n  },\n  \"id\": \"1\"\n}",
           "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/json-rpc/example_1_1.jsonld"
         },
         {
           "language": "ttl",
-          "code": "@prefix jsonrpc: <http://json-rpc.org/ontology#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] jsonrpc: \"2.0\" ;\n    jsonrpc:id \"1\" ;\n    jsonrpc:method \"subtract\" ;\n    jsonrpc:params 23,\n        42 .\n\n",
+          "code": "@prefix jsonrpc: <http://json-rpc.org/ontology#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] jsonrpc: \"2.0\" ;\n    jsonrpc:id \"1\" ;\n    jsonrpc:method \"subtract\" ;\n    jsonrpc:params [ jsonrpc:p1 42 ;\n            jsonrpc:p2 23 ] .\n\n",
           "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/json-rpc/example_1_1.ttl"
         }
       ]
@@ -87,17 +87,17 @@
         {
           "language": "json",
           "schema-ref": "#JSONRPCResponse",
-          "code": "{\"jsonrpc\": \"2.0\", \"result\": 19, \"id\": \"1\"}",
+          "code": "{\"jsonrpc\": \"2.0\", \"result\": {\"value\": 19}, \"id\": \"1\"}",
           "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/json-rpc/example_3_1.json"
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"@context\": [\n    {\n      \"mydata\": \"http://example.com/rpc/\"\n    },\n    \"https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld\"\n  ],\n  \"jsonrpc\": \"2.0\",\n  \"result\": 19,\n  \"id\": \"1\"\n}",
+          "code": "{\n  \"@context\": [\n    {\n      \"mydata\": \"http://example.com/rpc/\"\n    },\n    \"https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld\"\n  ],\n  \"jsonrpc\": \"2.0\",\n  \"result\": {\n    \"value\": 19\n  },\n  \"id\": \"1\"\n}",
           "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/json-rpc/example_3_1.jsonld"
         },
         {
           "language": "ttl",
-          "code": "@prefix jsonrpc: <http://json-rpc.org/ontology#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] jsonrpc: \"2.0\" ;\n    jsonrpc:id \"1\" ;\n    jsonrpc:result 19 .\n\n",
+          "code": "@prefix jsonrpc: <http://json-rpc.org/ontology#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] jsonrpc: \"2.0\" ;\n    jsonrpc:id \"1\" ;\n    jsonrpc:result [ jsonrpc:value 19 ] .\n\n",
           "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/json-rpc/example_3_1.ttl"
         }
       ]

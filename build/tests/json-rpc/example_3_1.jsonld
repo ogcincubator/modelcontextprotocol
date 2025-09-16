@@ -6,6 +6,8 @@
     "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld"
   ],
   "jsonrpc": "2.0",
-  "result": 19,
+  "result": {
+    "value": 19
+  },
   "id": "1"
 }

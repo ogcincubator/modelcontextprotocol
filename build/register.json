@@ -2,12 +2,12 @@
   "name": "My OGC Building Blocks repository",
   "abstract": "This is an example text for the abstract. It should be short and to the point.\nA \"Tell me more\" link will appear if there is an additional description with a longer explanation.\n",
   "description": "The description can be longer. Both **the abstract** *and the description* support Markdown,\nincluding [links](https://google.es).\n",
-  "modified": "2025-09-05T04:20:02.819689",
+  "modified": "2025-09-16T08:38:22.578648",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"7706428cacea50013f04585b5be2d7d29b7b2d9b",
-      "shortCommitId": "\"770642",
-      "date": "2025-08-25T11:10:01+00:00\""
+      "commitId": "\"10fe1f567f328b657227dab78e1628d3a8dd91dd",
+      "shortCommitId": "\"10fe1f",
+      "date": "2025-09-16T08:35:58+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/modelcontextprotocol",
@@ -31,7 +31,7 @@
       "dependsOn": [],
       "rules": [],
       "dateTimeAddition": "2025-06-12T00:00:00Z",
-      "dateOfLastChange": "2025-09-05",
+      "dateOfLastChange": "2025-09-16",
       "shaclShapes": {},
       "ldContext": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld",
       "ontology": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/ontology.ttl",
@@ -43,7 +43,7 @@
       "sourceLdContext": "https://ogcincubator.github.io/modelcontextprotocol/_sources/json-rpc/context.jsonld",
       "sourceFiles": "https://ogcincubator.github.io/modelcontextprotocol/_sources/json-rpc/",
       "rdfData": [],
-      "validationPassed": false,
+      "validationPassed": true,
       "testOutputs": "https://github.com/ogcincubator/modelcontextprotocol/blob/master/build/tests/json-rpc/",
       "documentation": {
         "markdown": {
@@ -84,7 +84,7 @@
       ],
       "rules": [],
       "dateTimeAddition": "2025-06-12T00:00:00Z",
-      "dateOfLastChange": "2025-09-05",
+      "dateOfLastChange": "2025-09-16",
       "shaclShapes": {},
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/schema.yaml",
