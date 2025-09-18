@@ -1,0 +1,18 @@
+## Prefixes will be used for all RDF Turtle resources so that they can be omitted from the actual snippets
+# prefixes:
+#   dct: http://purl.org/dc/terms/
+
+## List of examples
+examples:
+  - title: { method name }
+
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#{schema reference}"
+        ref: examples/mcp-methods/{filename}
+        # Reference to file
+        code: |
+          {"jsonrpc": "2.0", "method": "subtract", "params": {"p1": 42, "p2": 23}, "id": "1"}

@@ -1,0 +1,15 @@
+{
+  "jsonrpc": "2.0",
+  "id": "11",
+  "method": "completion/complete",
+  "params": {
+    "ref": {
+      "type": "ref/resource",
+      "uri": "file:///path/to/file.py"
+    },
+    "argument": {
+      "name": "query",
+      "value": "def calculate_"
+    }
+  }
+}

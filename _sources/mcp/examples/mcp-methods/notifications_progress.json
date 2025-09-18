@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "method": "notifications/progress",
+  "params": {
+    "progressToken": "upload_123",
+    "progress": 75,
+    "total": 100
+  }
+}

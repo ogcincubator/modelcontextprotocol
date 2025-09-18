@@ -1,0 +1,180 @@
+examples:
+  - title: initialize
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/InitializeRequest"
+        ref: examples/mcp-methods/initialize.json
+
+  - title: notifications/initialized
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/InitializedNotification"
+        ref: examples/mcp-methods/initialized.json
+
+  - title: tools/list
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/ListToolsRequest"
+        ref: examples/mcp-methods/tools_list.json
+
+  - title: tools/call
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/CallToolRequest"
+        ref: examples/mcp-methods/tools_call.json
+
+  - title: resources/list
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/ListResourcesRequest"
+        ref: examples/mcp-methods/resources_list.json
+
+  - title: resources/read
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/ReadResourceRequest"
+        ref: examples/mcp-methods/resources_read.json
+
+  - title: resources/subscribe
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/SubscribeRequest"
+        ref: examples/mcp-methods/resources_subscribe.json
+
+  - title: resources/unsubscribe
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/UnsubscribeRequest"
+        ref: examples/mcp-methods/resources_unsubscribe.json
+
+  - title: prompts/list
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/ListPromptsRequest"
+        ref: examples/mcp-methods/prompts_list.json
+
+  - title: prompts/get
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/GetPromptRequest"
+        ref: examples/mcp-methods/prompts_get.json
+
+  - title: logging/setLevel
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/SetLevelRequest"
+        ref: examples/mcp-methods/logging_setLevel.json
+
+  - title: completion/complete
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/CompleteRequest"
+        ref: examples/mcp-methods/completion_complete.json
+
+  - title: notifications/cancelled
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/CancelledNotification"
+        ref: examples/mcp-methods/notifications_cancelled.json
+
+  - title: notifications/progress
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/ProgressNotification"
+        ref: examples/mcp-methods/notifications_progress.json
+
+  - title: notifications/resources/updated
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/ResourceUpdatedNotification"
+        ref: examples/mcp-methods/notifications_resources_updated.json
+
+  - title: notifications/resources/list_changed
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/ResourceListChangedNotification"
+        ref: examples/mcp-methods/notifications_resources_list_changed.json
+
+  - title: notifications/tools/list_changed
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/ToolListChangedNotification"
+        ref: examples/mcp-methods/notifications_tools_list_changed.json
+
+  - title: notifications/prompts/list_changed
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/PromptListChangedNotification"
+        ref: examples/mcp-methods/notifications_prompts_list_changed.json
+
+  - title: sampling/createMessage
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/CreateMessageRequest"
+        ref: examples/mcp-methods/sampling_createMessage.json
+
+  - title: roots/list
+    ## Base URI for semantic uplift
+    base-uri: http://example.com/activities/
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        schema-ref: "#definitions/ListRootsRequest"
+        ref: examples/mcp-methods/roots_list.json

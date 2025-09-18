@@ -6,6 +6,10 @@
     "jsonrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "jsonrpc": {
+      "@id": "jsonrpc:version",
+      "@type": "xsd:string"
+    },
     "Message": {
       "@id": "jsonrpc:Message",
       "@type": "@id"
