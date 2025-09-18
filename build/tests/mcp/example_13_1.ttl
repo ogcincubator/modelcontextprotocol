@@ -1,0 +1,7 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:jsonrpc "2.0" ;
+    mcp:method "notifications/cancelled" ;
+    mcp:params [ mcp:reason "User requested cancellation" ;
+            mcp:requestId "3" ] .
+

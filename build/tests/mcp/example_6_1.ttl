@@ -1,0 +1,7 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:id "5" ;
+    mcp:jsonrpc "2.0" ;
+    mcp:method "resources/read" ;
+    mcp:params [ mcp:uri "file:///path/to/document.txt" ] .
+

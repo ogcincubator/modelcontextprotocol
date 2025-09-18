@@ -1,0 +1,7 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:id "10" ;
+    mcp:jsonrpc "2.0" ;
+    mcp:method "logging/setLevel" ;
+    mcp:params [ mcp:level "info" ] .
+

@@ -1,0 +1,8 @@
+{
+  "jsonrpc": "2.0",
+  "id": "7",
+  "method": "resources/unsubscribe",
+  "params": {
+    "uri": "file:///path/to/watched/directory"
+  }
+}

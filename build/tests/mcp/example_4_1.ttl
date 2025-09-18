@@ -1,0 +1,9 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:id "3" ;
+    mcp:jsonrpc "2.0" ;
+    mcp:method "tools/call" ;
+    mcp:params [ mcp:arguments [ mcp:location "San Francisco" ;
+                    mcp:units "celsius" ] ;
+            mcp:name "get_weather" ] .
+

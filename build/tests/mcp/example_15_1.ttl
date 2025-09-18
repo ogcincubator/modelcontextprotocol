@@ -1,0 +1,6 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:jsonrpc "2.0" ;
+    mcp:method "notifications/resources/updated" ;
+    mcp:params [ mcp:uri "file:///path/to/document.txt" ] .
+

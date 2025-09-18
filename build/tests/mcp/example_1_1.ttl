@@ -1,0 +1,13 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:id "1" ;
+    mcp:jsonrpc "2.0" ;
+    mcp:method "initialize" ;
+    mcp:params [ mcp:capabilities [ mcp:logging [ ] ;
+                    mcp:prompts [ ] ;
+                    mcp:resources [ ] ;
+                    mcp:tools [ ] ] ;
+            mcp:clientInfo [ mcp:name "example-client" ;
+                    mcp:version "1.0.0" ] ;
+            mcp:protocolVersion "2024-11-05" ] .
+

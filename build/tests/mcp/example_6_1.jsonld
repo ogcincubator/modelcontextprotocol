@@ -1,0 +1,9 @@
+{
+  "@context": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/context.jsonld",
+  "jsonrpc": "2.0",
+  "id": "5",
+  "method": "resources/read",
+  "params": {
+    "uri": "file:///path/to/document.txt"
+  }
+}

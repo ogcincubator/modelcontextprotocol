@@ -1,0 +1,19 @@
+{
+  "@context": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/context.jsonld",
+  "jsonrpc": "2.0",
+  "id": "1",
+  "method": "initialize",
+  "params": {
+    "protocolVersion": "2024-11-05",
+    "capabilities": {
+      "tools": {},
+      "resources": {},
+      "prompts": {},
+      "logging": {}
+    },
+    "clientInfo": {
+      "name": "example-client",
+      "version": "1.0.0"
+    }
+  }
+}

@@ -1,7 +1,7 @@
-@prefix jsonrpc: <http://json-rpc.org/ontology#> .
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] jsonrpc: "2.0" ;
-    jsonrpc:id "1" ;
-    jsonrpc:result [ jsonrpc:value 19 ] .
+[] jrpc:id "1" ;
+    jrpc:jsonrpc "2.0" ;
+    jrpc:result [ jrpc:value 19 ] .
 

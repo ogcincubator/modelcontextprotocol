@@ -103,7 +103,8 @@
         "jsonrpc": {
           "const": "2.0",
           "type": "string",
-          "x-jsonld-id": "http://json-rpc.org/ontology#"
+          "x-jsonld-id": "http://json-rpc.org/ontology#version",
+          "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#string"
         }
       },
       "required": [
@@ -138,7 +139,8 @@
         "jsonrpc": {
           "const": "2.0",
           "type": "string",
-          "x-jsonld-id": "http://json-rpc.org/ontology#"
+          "x-jsonld-id": "http://json-rpc.org/ontology#version",
+          "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#string"
         },
         "method": {
           "type": "string",
@@ -178,7 +180,8 @@
         "jsonrpc": {
           "const": "2.0",
           "type": "string",
-          "x-jsonld-id": "http://json-rpc.org/ontology#"
+          "x-jsonld-id": "http://json-rpc.org/ontology#version",
+          "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#string"
         },
         "method": {
           "type": "string",
@@ -226,7 +229,8 @@
         "jsonrpc": {
           "const": "2.0",
           "type": "string",
-          "x-jsonld-id": "http://json-rpc.org/ontology#"
+          "x-jsonld-id": "http://json-rpc.org/ontology#version",
+          "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#string"
         },
         "result": {
           "$ref": "#/definitions/Result",
@@ -319,7 +323,7 @@
   "x-jsonld-base": "https://schemas.json-rpc.org/2.0/",
   "x-jsonld-vocab": "http://json-rpc.org/ontology#",
   "x-jsonld-prefixes": {
-    "jsonrpc": "http://json-rpc.org/ontology#",
+    "jrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   }

@@ -1,0 +1,7 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:id "7" ;
+    mcp:jsonrpc "2.0" ;
+    mcp:method "resources/unsubscribe" ;
+    mcp:params [ mcp:uri "file:///path/to/watched/directory" ] .
+

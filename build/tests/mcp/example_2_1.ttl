@@ -1,0 +1,5 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:jsonrpc "2.0" ;
+    mcp:method "notifications/initialized" .
+

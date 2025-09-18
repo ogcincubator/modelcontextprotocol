@@ -1,0 +1,9 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] mcp:jsonrpc "2.0" ;
+    mcp:method "notifications/progress" ;
+    mcp:params [ mcp:progress 75 ;
+            mcp:progressToken "upload_123" ;
+            mcp:total 100 ] .
+

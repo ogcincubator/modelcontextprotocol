@@ -1,0 +1,31 @@
+{
+  "@context": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/context.jsonld",
+  "jsonrpc": "2.0",
+  "id": "12",
+  "method": "sampling/createMessage",
+  "params": {
+    "messages": [
+      {
+        "role": "user",
+        "content": {
+          "type": "text",
+          "text": "What's the weather like today?"
+        }
+      }
+    ],
+    "modelPreferences": {
+      "hints": [
+        {
+          "name": "claude-3-sonnet"
+        }
+      ],
+      "costPriority": 0.5,
+      "speedPriority": 0.8,
+      "intelligencePriority": 0.9
+    },
+    "systemPrompt": "You are a helpful weather assistant.",
+    "includeContext": "thisServer",
+    "temperature": 0.7,
+    "maxTokens": 1000
+  }
+}

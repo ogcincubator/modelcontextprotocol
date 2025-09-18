@@ -1,0 +1,12 @@
+{
+  "jsonrpc": "2.0",
+  "id": "9",
+  "method": "prompts/get",
+  "params": {
+    "name": "code_review",
+    "arguments": {
+      "language": "python",
+      "complexity": "high"
+    }
+  }
+}

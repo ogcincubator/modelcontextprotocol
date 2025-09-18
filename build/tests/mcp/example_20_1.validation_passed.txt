@@ -1,0 +1,14 @@
+Validation report for mcp.mcp - MCP
+Generated 2025-09-18T10:16:39.283143+00:00
+=== Files ===
+Using example_20_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_20_1.jsonld created
+Output Turtle example_20_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Using the following JSON Schema: #definitions/ListRootsRequest
+Validation passed
+=== End JSON Schema ===
+

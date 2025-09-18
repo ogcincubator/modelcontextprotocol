@@ -1,0 +1,9 @@
+{
+  "@context": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/context.jsonld",
+  "jsonrpc": "2.0",
+  "id": "6",
+  "method": "resources/subscribe",
+  "params": {
+    "uri": "file:///path/to/watched/directory"
+  }
+}

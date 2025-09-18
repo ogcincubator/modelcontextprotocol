@@ -1,0 +1,10 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:id "11" ;
+    mcp:jsonrpc "2.0" ;
+    mcp:method "completion/complete" ;
+    mcp:params [ mcp:argument [ mcp:name "query" ;
+                    mcp:value "def calculate_" ] ;
+            mcp:ref [ mcp:type "ref/resource" ;
+                    mcp:uri "file:///path/to/file.py" ] ] .
+

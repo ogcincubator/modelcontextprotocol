@@ -1,12 +1,12 @@
 {
   "name": "Model Context Protocol (MCP) Building Blocks",
   "abstract": "BuildingBlock descriptions of the the elements of the\n[Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) \n",
-  "modified": "2025-09-16T08:44:16.093118",
+  "modified": "2025-09-18T10:16:37.624857",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"10fe1f567f328b657227dab78e1628d3a8dd91dd",
-      "shortCommitId": "\"10fe1f",
-      "date": "2025-09-16T08:35:58+00:00\""
+      "commitId": "\"2b5877b48fd9de11b12a10c5844909caf9ed9e5f",
+      "shortCommitId": "\"2b5877",
+      "date": "2025-09-16T10:45:14+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/modelcontextprotocol",
@@ -30,7 +30,7 @@
       "dependsOn": [],
       "rules": [],
       "dateTimeAddition": "2025-06-12T00:00:00Z",
-      "dateOfLastChange": "2025-09-16",
+      "dateOfLastChange": "2025-09-18",
       "shaclShapes": {},
       "ldContext": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld",
       "ontology": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/ontology.ttl",
@@ -83,16 +83,19 @@
       ],
       "rules": [],
       "dateTimeAddition": "2025-06-12T00:00:00Z",
-      "dateOfLastChange": "2025-09-16",
+      "dateOfLastChange": "2025-09-18",
       "shaclShapes": {},
+      "ldContext": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/context.jsonld",
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/schema.yaml",
         "application/json": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/schema.json"
       },
       "sourceSchema": "https://ogcincubator.github.io/modelcontextprotocol/_sources/mcp/schema.json",
+      "sourceLdContext": "https://ogcincubator.github.io/modelcontextprotocol/_sources/mcp/context.jsonld",
       "sourceFiles": "https://ogcincubator.github.io/modelcontextprotocol/_sources/mcp/",
       "rdfData": [],
       "validationPassed": true,
+      "testOutputs": "https://github.com/ogcincubator/modelcontextprotocol/blob/master/build/tests/mcp/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",

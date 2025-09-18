@@ -2,13 +2,1214 @@
   "title": "Validation report for mcp.mcp - MCP",
   "bblockName": "MCP",
   "bblockId": "mcp.mcp",
-  "generated": "2025-09-16T08:44:17.108329+00:00",
+  "generated": "2025-09-18T10:16:39.283204+00:00",
   "result": true,
-  "items": [],
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_1_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_1_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_1_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.ttl",
+              "size": 13,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/InitializeRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/InitializeRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_2_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_2_1.json",
+        "exampleIndex": 2,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_2_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_2_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_2_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_2_1.ttl",
+              "size": 2,
+              "isError": false,
+              "message": "Output Turtle example_2_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/InitializedNotification",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/InitializedNotification"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_3_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_3_1.json",
+        "exampleIndex": 3,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_3_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_3_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_3_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_3_1.ttl",
+              "size": 4,
+              "isError": false,
+              "message": "Output Turtle example_3_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/ListToolsRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/ListToolsRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_4_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_4_1.json",
+        "exampleIndex": 4,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_4_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_4_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_4_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_4_1.ttl",
+              "size": 8,
+              "isError": false,
+              "message": "Output Turtle example_4_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/CallToolRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/CallToolRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_5_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_5_1.json",
+        "exampleIndex": 5,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_5_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_5_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_5_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_5_1.ttl",
+              "size": 4,
+              "isError": false,
+              "message": "Output Turtle example_5_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/ListResourcesRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/ListResourcesRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_6_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_6_1.json",
+        "exampleIndex": 6,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_6_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_6_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_6_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_6_1.ttl",
+              "size": 5,
+              "isError": false,
+              "message": "Output Turtle example_6_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/ReadResourceRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/ReadResourceRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_7_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_7_1.json",
+        "exampleIndex": 7,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_7_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_7_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_7_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_7_1.ttl",
+              "size": 5,
+              "isError": false,
+              "message": "Output Turtle example_7_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/SubscribeRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/SubscribeRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_8_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_8_1.json",
+        "exampleIndex": 8,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_8_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_8_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_8_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_8_1.ttl",
+              "size": 5,
+              "isError": false,
+              "message": "Output Turtle example_8_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/UnsubscribeRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/UnsubscribeRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_9_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_9_1.json",
+        "exampleIndex": 9,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_9_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_9_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_9_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_9_1.ttl",
+              "size": 4,
+              "isError": false,
+              "message": "Output Turtle example_9_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/ListPromptsRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/ListPromptsRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_10_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_10_1.json",
+        "exampleIndex": 10,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_10_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_10_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_10_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_10_1.ttl",
+              "size": 8,
+              "isError": false,
+              "message": "Output Turtle example_10_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/GetPromptRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/GetPromptRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_11_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_11_1.json",
+        "exampleIndex": 11,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_11_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_11_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_11_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_11_1.ttl",
+              "size": 5,
+              "isError": false,
+              "message": "Output Turtle example_11_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/SetLevelRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/SetLevelRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_12_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_12_1.json",
+        "exampleIndex": 12,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_12_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_12_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_12_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_12_1.ttl",
+              "size": 10,
+              "isError": false,
+              "message": "Output Turtle example_12_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/CompleteRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/CompleteRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_13_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_13_1.json",
+        "exampleIndex": 13,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_13_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_13_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_13_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_13_1.ttl",
+              "size": 5,
+              "isError": false,
+              "message": "Output Turtle example_13_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/CancelledNotification",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/CancelledNotification"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_14_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_14_1.json",
+        "exampleIndex": 14,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_14_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_14_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_14_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_14_1.ttl",
+              "size": 6,
+              "isError": false,
+              "message": "Output Turtle example_14_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/ProgressNotification",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/ProgressNotification"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_15_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_15_1.json",
+        "exampleIndex": 15,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_15_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_15_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_15_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_15_1.ttl",
+              "size": 4,
+              "isError": false,
+              "message": "Output Turtle example_15_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/ResourceUpdatedNotification",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/ResourceUpdatedNotification"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_16_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_16_1.json",
+        "exampleIndex": 16,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_16_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_16_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_16_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_16_1.ttl",
+              "size": 2,
+              "isError": false,
+              "message": "Output Turtle example_16_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/ResourceListChangedNotification",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/ResourceListChangedNotification"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_17_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_17_1.json",
+        "exampleIndex": 17,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_17_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_17_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_17_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_17_1.ttl",
+              "size": 2,
+              "isError": false,
+              "message": "Output Turtle example_17_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/ToolListChangedNotification",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/ToolListChangedNotification"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_18_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_18_1.json",
+        "exampleIndex": 18,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_18_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_18_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_18_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_18_1.ttl",
+              "size": 2,
+              "isError": false,
+              "message": "Output Turtle example_18_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/PromptListChangedNotification",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/PromptListChangedNotification"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_19_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_19_1.json",
+        "exampleIndex": 19,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_19_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_19_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_19_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_19_1.ttl",
+              "size": 19,
+              "isError": false,
+              "message": "Output Turtle example_19_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/CreateMessageRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/CreateMessageRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/mcp/example_20_1.json",
+        "url": "https://ogcincubator.github.io/modelcontextprotocol/build/tests/mcp/example_20_1.json",
+        "exampleIndex": 20,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_20_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_20_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_20_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_20_1.ttl",
+              "size": 4,
+              "isError": false,
+              "message": "Output Turtle example_20_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "filename": "#definitions/ListRootsRequest",
+              "isError": false,
+              "message": "Using the following JSON Schema: #definitions/ListRootsRequest"
+            },
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "globalErrors": {},
   "counts": {
-    "total": 0,
-    "passed": 0,
+    "total": 20,
+    "passed": 20,
     "failed": 0
   }
 }

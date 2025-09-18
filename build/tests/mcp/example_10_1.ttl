@@ -1,0 +1,9 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:id "9" ;
+    mcp:jsonrpc "2.0" ;
+    mcp:method "prompts/get" ;
+    mcp:params [ mcp:arguments [ mcp:complexity "high" ;
+                    mcp:language "python" ] ;
+            mcp:name "code_review" ] .
+

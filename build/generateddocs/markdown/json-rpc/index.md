@@ -70,14 +70,14 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
-@prefix jsonrpc: <http://json-rpc.org/ontology#> .
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] jsonrpc: "2.0" ;
-    jsonrpc:id "1" ;
-    jsonrpc:method "subtract" ;
-    jsonrpc:params [ jsonrpc:p1 42 ;
-            jsonrpc:p2 23 ] .
+[] jrpc:id "1" ;
+    jrpc:jsonrpc "2.0" ;
+    jrpc:method "subtract" ;
+    jrpc:params [ jrpc:p1 42 ;
+            jrpc:p2 23 ] .
 
 
 ```
@@ -111,14 +111,14 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
-@prefix jsonrpc: <http://json-rpc.org/ontology#> .
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] jsonrpc: "2.0" ;
-    jsonrpc:id "1" ;
-    jsonrpc:method "subtract" ;
-    jsonrpc:params [ jsonrpc:minuend 42 ;
-            jsonrpc:subtrahend 23 ] .
+[] jrpc:id "1" ;
+    jrpc:jsonrpc "2.0" ;
+    jrpc:method "subtract" ;
+    jrpc:params [ jrpc:minuend 42 ;
+            jrpc:subtrahend 23 ] .
 
 
 ```
@@ -149,12 +149,12 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
-@prefix jsonrpc: <http://json-rpc.org/ontology#> .
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] jsonrpc: "2.0" ;
-    jsonrpc:id "1" ;
-    jsonrpc:result [ jsonrpc:value 19 ] .
+[] jrpc:id "1" ;
+    jrpc:jsonrpc "2.0" ;
+    jrpc:result [ jrpc:value 19 ] .
 
 
 ```
@@ -253,7 +253,8 @@ definitions:
       jsonrpc:
         const: '2.0'
         type: string
-        x-jsonld-id: http://json-rpc.org/ontology#
+        x-jsonld-id: http://json-rpc.org/ontology#version
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - error
     - id
@@ -275,7 +276,8 @@ definitions:
       jsonrpc:
         const: '2.0'
         type: string
-        x-jsonld-id: http://json-rpc.org/ontology#
+        x-jsonld-id: http://json-rpc.org/ontology#version
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       method:
         type: string
         x-jsonld-id: http://json-rpc.org/ontology#hasMethod
@@ -307,7 +309,8 @@ definitions:
       jsonrpc:
         const: '2.0'
         type: string
-        x-jsonld-id: http://json-rpc.org/ontology#
+        x-jsonld-id: http://json-rpc.org/ontology#version
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       method:
         type: string
         x-jsonld-id: http://json-rpc.org/ontology#hasMethod
@@ -349,7 +352,8 @@ definitions:
       jsonrpc:
         const: '2.0'
         type: string
-        x-jsonld-id: http://json-rpc.org/ontology#
+        x-jsonld-id: http://json-rpc.org/ontology#version
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       result:
         $ref: '#/definitions/Result'
         x-jsonld-id: http://json-rpc.org/ontology#hasResult
@@ -417,7 +421,7 @@ x-jsonld-extra-terms:
 x-jsonld-base: https://schemas.json-rpc.org/2.0/
 x-jsonld-vocab: http://json-rpc.org/ontology#
 x-jsonld-prefixes:
-  jsonrpc: http://json-rpc.org/ontology#
+  jrpc: http://json-rpc.org/ontology#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 
@@ -437,78 +441,78 @@ Links to the schema:
     "@base": "https://schemas.json-rpc.org/2.0/",
     "@vocab": "http://json-rpc.org/ontology#",
     "Message": {
-      "@id": "jsonrpc:Message",
+      "@id": "jrpc:Message",
       "@type": "@id"
     },
     "Request": {
-      "@id": "jsonrpc:Request",
+      "@id": "jrpc:Request",
       "@type": "@id"
     },
     "Notification": {
-      "@id": "jsonrpc:Notification",
+      "@id": "jrpc:Notification",
       "@type": "@id"
     },
     "Response": {
-      "@id": "jsonrpc:Response",
+      "@id": "jrpc:Response",
       "@type": "@id"
     },
     "ErrorResponse": {
-      "@id": "jsonrpc:ErrorResponse",
+      "@id": "jrpc:ErrorResponse",
       "@type": "@id"
     },
     "Error": {
-      "@id": "jsonrpc:Error",
+      "@id": "jrpc:Error",
       "@type": "@id"
     },
     "RequestId": {
-      "@id": "jsonrpc:RequestId",
+      "@id": "jrpc:RequestId",
       "@type": "@id"
     },
     "StringId": {
-      "@id": "jsonrpc:StringId",
+      "@id": "jrpc:StringId",
       "@type": "@id"
     },
     "NumberId": {
-      "@id": "jsonrpc:NumberId",
+      "@id": "jrpc:NumberId",
       "@type": "@id"
     },
     "NullId": {
-      "@id": "jsonrpc:NullId",
+      "@id": "jrpc:NullId",
       "@type": "@id"
     },
     "stringValue": {
-      "@id": "jsonrpc:hasStringValue",
+      "@id": "jrpc:hasStringValue",
       "@type": "xsd:string"
     },
     "numberValue": {
-      "@id": "jsonrpc:hasNumberValue",
+      "@id": "jrpc:hasNumberValue",
       "@type": "xsd:decimal"
     },
     "ParseError": {
-      "@id": "jsonrpc:ParseError",
+      "@id": "jrpc:ParseError",
       "@type": "@id"
     },
     "InvalidRequest": {
-      "@id": "jsonrpc:InvalidRequest",
+      "@id": "jrpc:InvalidRequest",
       "@type": "@id"
     },
     "MethodNotFound": {
-      "@id": "jsonrpc:MethodNotFound",
+      "@id": "jrpc:MethodNotFound",
       "@type": "@id"
     },
     "InvalidParams": {
-      "@id": "jsonrpc:InvalidParams",
+      "@id": "jrpc:InvalidParams",
       "@type": "@id"
     },
     "InternalError": {
-      "@id": "jsonrpc:InternalError",
+      "@id": "jrpc:InternalError",
       "@type": "@id"
     },
     "ServerError": {
-      "@id": "jsonrpc:ServerError",
+      "@id": "jrpc:ServerError",
       "@type": "@id"
     },
-    "jsonrpc": "http://json-rpc.org/ontology#",
+    "jrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "@version": 1.1

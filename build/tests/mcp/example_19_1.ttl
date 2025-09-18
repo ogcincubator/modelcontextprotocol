@@ -1,0 +1,18 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] mcp:id "12" ;
+    mcp:jsonrpc "2.0" ;
+    mcp:method "sampling/createMessage" ;
+    mcp:params [ mcp:includeContext "thisServer" ;
+            mcp:maxTokens 1000 ;
+            mcp:messages [ mcp:content [ mcp:text "What's the weather like today?" ;
+                            mcp:type "text" ] ;
+                    mcp:role "user" ] ;
+            mcp:modelPreferences [ mcp:costPriority 5e-01 ;
+                    mcp:hints [ mcp:name "claude-3-sonnet" ] ;
+                    mcp:intelligencePriority 9e-01 ;
+                    mcp:speedPriority 8e-01 ] ;
+            mcp:systemPrompt "You are a helpful weather assistant." ;
+            mcp:temperature 7e-01 ] .
+

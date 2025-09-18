@@ -1,0 +1,7 @@
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+
+[] mcp:id "4" ;
+    mcp:jsonrpc "2.0" ;
+    mcp:method "resources/list" ;
+    mcp:params [ ] .
+
