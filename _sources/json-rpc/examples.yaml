@@ -16,7 +16,7 @@ examples:
     ## List of code snippets for this example
     snippets:
       - language: json
-        schema-ref: "#JSONRPCRequest"
+        schema-ref: "#Request"
         # Reference to file
         code: |
           {"jsonrpc": "2.0", "method": "subtract", "params": {"p1": 42, "p2": 23}, "id": "1"}
@@ -33,7 +33,7 @@ examples:
     ## List of code snippets for this example
     snippets:
       - language: json
-        schema-ref: "#JSONRPCRequest"
+        schema-ref: "#Request"
         # Reference to file
         code: |
           {"jsonrpc": "2.0", "method": "subtract",  "params": {"subtrahend": 23, "minuend": 42}, "id": "1"}
@@ -50,7 +50,7 @@ examples:
     ## List of code snippets for this example
     snippets:
       - language: json
-        schema-ref: "#JSONRPCResponse"
+        schema-ref: "#Response"
         # Reference to file
         code: |
           {"jsonrpc": "2.0", "result": {"value": 19}, "id": "1"}

@@ -1,0 +1,73 @@
+$schema: http://json-schema.org/draft-07/schema#
+$defs:
+  JSONRPC2Object:
+    type: object
+    required: [jsonrpc]
+    properties:
+      jsonrpc:
+        const: "2.0"
+  IDObject:
+    allOf:
+      - $ref: "#/$defs/JSONRPC2Object"
+      - type: object
+        properties:
+          id:
+            type:
+              - string
+              - integer
+              - 'null'
+  ErrorObject:
+    type: object
+    required: [code, message]
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+      data: {}
+  Notification:
+    $anchor: "Notification"
+    allOf:
+      - $ref: "#/$defs/JSONRPC2Object"
+      - type: object
+        required: [method]
+        properties:
+          method:
+            type: string
+          params:
+            type:
+              - object
+              - array
+  Request:
+    $anchor: "Request"
+    allOf:
+      - $ref: "#/$defs/IDObject"
+      - $ref: "#/$defs/Notification"
+  Response:
+    $anchor: "Response"
+    allOf:
+      - $ref: "#/$defs/IDObject"
+      - oneOf:
+          - required: [result]
+            properties:
+              result: {}
+          - required: [error]
+            properties:
+              error:
+                $ref: "#/$defs/ErrorObject"
+  BatchRequest:
+    $anchor: "BatchRequest"
+    type: array
+    items:
+      $ref: "#/$defs/Request"
+  BatchResponse:
+    $anchor: "BatchResponse"
+    type: array
+    items:
+      $ref: "#/$defs/Response"
+oneOf:
+  - $ref: "#/$defs/Request"
+  - $ref: "#/$defs/Notification"
+  - $ref: "#/$defs/Response"
+  - $ref: "#/$defs/BatchRequest"
+  - $ref: "#/$defs/BatchResponse"

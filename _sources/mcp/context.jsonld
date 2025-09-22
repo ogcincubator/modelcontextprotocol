@@ -1,12 +1,9 @@
 {
   "@context": {
     "@version": 1.1,
-    "@vocab": "http://modelcontextprotocol.io/ontology#",
     "mcp": "http://modelcontextprotocol.io/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-
-
     "RequestId": {
       "@id": "mcp:RequestId"
     },
@@ -17,7 +14,6 @@
     "ProgressToken": {
       "@id": "mcp:ProgressToken"
     },
-
     "_meta": {
       "@id": "mcp:hasMetadata",
       "@type": "@json"
@@ -26,8 +22,6 @@
       "@id": "mcp:hasProgressToken",
       "@type": "mcp:ProgressToken"
     },
-    
-
     "Implementation": {
       "@id": "mcp:Implementation",
       "@type": "@id"
@@ -48,8 +42,6 @@
       "@id": "mcp:hasDescription",
       "@type": "xsd:string"
     },
-    
-
     "InitializeRequest": {
       "@id": "mcp:InitializeRequest",
       "@type": "@id"
@@ -75,15 +67,13 @@
       "@type": "mcp:Implementation"
     },
     "serverInfo": {
-      "@id": "mcp:hasServerInfo", 
+      "@id": "mcp:hasServerInfo",
       "@type": "mcp:Implementation"
     },
     "instructions": {
       "@id": "mcp:hasInstructions",
       "@type": "xsd:string"
     },
-    
-
     "ClientCapabilities": {
       "@id": "mcp:ClientCapabilities",
       "@type": "@id"
@@ -105,7 +95,7 @@
       "@type": "@json"
     },
     "elicitation": {
-      "@id": "mcp:hasElicitationCapability", 
+      "@id": "mcp:hasElicitationCapability",
       "@type": "@json"
     },
     "resources": {
@@ -136,8 +126,6 @@
       "@id": "mcp:supportsSubscription",
       "@type": "xsd:boolean"
     },
-    
-
     "Resource": {
       "@id": "mcp:Resource",
       "@type": "@id"
@@ -155,7 +143,7 @@
       "@type": "@id"
     },
     "BlobResourceContents": {
-      "@id": "mcp:BlobResourceContents", 
+      "@id": "mcp:BlobResourceContents",
       "@type": "@id"
     },
     "ResourceLink": {
@@ -194,8 +182,6 @@
       "@id": "mcp:embedsResource",
       "@type": "@id"
     },
-    
-
     "ListResourcesRequest": {
       "@id": "mcp:ListResourcesRequest",
       "@type": "@id"
@@ -254,8 +240,6 @@
       "@type": "@id",
       "@container": "@list"
     },
-    
-
     "Tool": {
       "@id": "mcp:Tool",
       "@type": "@id"
@@ -273,7 +257,7 @@
       "@type": "@json"
     },
     "outputSchema": {
-      "@id": "mcp:hasOutputSchema", 
+      "@id": "mcp:hasOutputSchema",
       "@type": "@json"
     },
     "annotations": {
@@ -296,8 +280,6 @@
       "@id": "mcp:isOpenWorldHint",
       "@type": "xsd:boolean"
     },
-    
-
     "ListToolsRequest": {
       "@id": "mcp:ListToolsRequest",
       "@type": "@id"
@@ -330,8 +312,6 @@
       "@id": "mcp:hasStructuredContent",
       "@type": "@json"
     },
-    
-
     "Prompt": {
       "@id": "mcp:Prompt",
       "@type": "@id"
@@ -352,8 +332,6 @@
       "@id": "mcp:isRequired",
       "@type": "xsd:boolean"
     },
-    
-
     "ListPromptsRequest": {
       "@id": "mcp:ListPromptsRequest",
       "@type": "@id"
@@ -379,8 +357,6 @@
       "@type": "@id",
       "@container": "@list"
     },
-    
-
     "ContentBlock": {
       "@id": "mcp:ContentBlock",
       "@type": "@id"
@@ -410,8 +386,6 @@
       "@type": "@id",
       "@container": "@list"
     },
-    
-
     "Role": {
       "@id": "mcp:Role",
       "@type": "xsd:string"
@@ -424,8 +398,6 @@
       "@id": "mcp:SamplingMessage",
       "@type": "@id"
     },
-    
-
     "Annotations": {
       "@id": "mcp:Annotations",
       "@type": "@id"
@@ -443,8 +415,6 @@
       "@id": "mcp:hasLastModified",
       "@type": "xsd:dateTime"
     },
-    
-
     "CreateMessageRequest": {
       "@id": "mcp:CreateMessageRequest",
       "@type": "@id"
@@ -515,7 +485,6 @@
       "@id": "mcp:hasIntelligencePriority",
       "@type": "xsd:decimal"
     },
-
     "Root": {
       "@id": "mcp:Root",
       "@type": "@id"
@@ -537,8 +506,6 @@
       "@type": "mcp:Root",
       "@container": "@list"
     },
-    
-
     "ElicitRequest": {
       "@id": "mcp:ElicitRequest",
       "@type": "@id"
@@ -559,8 +526,6 @@
       "@id": "mcp:hasAction",
       "@type": "xsd:string"
     },
-    
-
     "CompleteRequest": {
       "@id": "mcp:CompleteRequest",
       "@type": "@id"
@@ -602,8 +567,6 @@
       "@id": "mcp:hasMore",
       "@type": "xsd:boolean"
     },
-    
-
     "LoggingLevel": {
       "@id": "mcp:LoggingLevel",
       "@type": "xsd:string"
@@ -624,8 +587,6 @@
       "@id": "mcp:hasLogger",
       "@type": "xsd:string"
     },
-    
-
     "ProgressNotification": {
       "@id": "mcp:ProgressNotification",
       "@type": "@id"
@@ -646,8 +607,6 @@
       "@id": "mcp:hasReason",
       "@type": "xsd:string"
     },
-    
-
     "PingRequest": {
       "@id": "mcp:PingRequest",
       "@type": "@id"
@@ -660,8 +619,6 @@
       "@id": "mcp:EmptyResult",
       "@type": "@id"
     },
-    
-
     "StringSchema": {
       "@id": "mcp:StringSchema",
       "@type": "@id"
