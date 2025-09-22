@@ -1,16 +1,14 @@
 Validation report for mcp.json-rpc - JSON-RPC
-Generated 2025-09-22T07:23:06.279045+00:00
+Generated 2025-09-22T13:34:38.297001+00:00
 === Files ===
 Using example_2_1.json from examples
 JSON-LD context is present - uplifting
 Output JSON-LD example_2_1.jsonld created
-
-** Validation error **
-**Empty** output Turtle example_2_1.ttl created
+Output Turtle example_2_1.ttl created
 === End Files ===
 
 === JSON Schema ===
-Using the following JSON Schema: #JSONRPCRequest
+Using the following JSON Schema: #Request
 Validation passed
 === End JSON Schema ===
 

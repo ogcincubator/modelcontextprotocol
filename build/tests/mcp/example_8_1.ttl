@@ -1,7 +1,9 @@
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "7" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "resources/unsubscribe" ;
-    mcp:params [ mcp:uri "file:///path/to/watched/directory" ] .
+[] x@vocab:hasId <http://example.com/activities/7> ;
+    x@vocab:hasMethod "resources/unsubscribe"^^xsd:string ;
+    x@vocab:hasParameters "{\"uri\":\"file:///path/to/watched/directory\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 

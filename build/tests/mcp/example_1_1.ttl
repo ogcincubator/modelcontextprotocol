@@ -1,13 +1,9 @@
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "1" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "initialize" ;
-    mcp:params [ mcp:capabilities [ mcp:logging [ ] ;
-                    mcp:prompts [ ] ;
-                    mcp:resources [ ] ;
-                    mcp:tools [ ] ] ;
-            mcp:clientInfo [ mcp:name "example-client" ;
-                    mcp:version "1.0.0" ] ;
-            mcp:protocolVersion "2024-11-05" ] .
+[] x@vocab:hasId <http://example.com/activities/1> ;
+    x@vocab:hasMethod "initialize"^^xsd:string ;
+    x@vocab:hasParameters "{\"capabilities\":{\"logging\":{},\"prompts\":{},\"resources\":{},\"tools\":{}},\"clientInfo\":{\"name\":\"example-client\",\"version\":\"1.0.0\"},\"protocolVersion\":\"2024-11-05\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 

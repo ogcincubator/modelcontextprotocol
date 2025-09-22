@@ -1,1 +1,10 @@
 path	@id
+/jsonrpc	http://json-rpc.org/ontology#version
+/id	http://json-rpc.org/ontology#hasId
+/method	http://json-rpc.org/ontology#hasMethod
+/params	http://json-rpc.org/ontology#hasParameters
+/result	http://json-rpc.org/ontology#hasResult
+/error	http://json-rpc.org/ontology#hasError
+/error/code	http://json-rpc.org/ontology#hasErrorCode
+/error/message	http://json-rpc.org/ontology#hasErrorMessage
+/error/data	http://json-rpc.org/ontology#hasErrorData

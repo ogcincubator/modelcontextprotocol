@@ -1,7 +1,9 @@
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "8" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "prompts/list" ;
-    mcp:params [ ] .
+[] x@vocab:hasId <http://example.com/activities/8> ;
+    x@vocab:hasMethod "prompts/list"^^xsd:string ;
+    x@vocab:hasParameters "{}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 

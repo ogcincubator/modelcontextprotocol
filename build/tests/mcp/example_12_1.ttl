@@ -1,10 +1,9 @@
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "11" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "completion/complete" ;
-    mcp:params [ mcp:argument [ mcp:name "query" ;
-                    mcp:value "def calculate_" ] ;
-            mcp:ref [ mcp:type "ref/resource" ;
-                    mcp:uri "file:///path/to/file.py" ] ] .
+[] x@vocab:hasId <http://example.com/activities/11> ;
+    x@vocab:hasMethod "completion/complete"^^xsd:string ;
+    x@vocab:hasParameters "{\"argument\":{\"name\":\"query\",\"value\":\"def calculate_\"},\"ref\":{\"type\":\"ref/resource\",\"uri\":\"file:///path/to/file.py\"}}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 

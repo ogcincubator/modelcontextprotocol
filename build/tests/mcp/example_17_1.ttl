@@ -1,5 +1,6 @@
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:jsonrpc "2.0" ;
-    mcp:method "notifications/tools/list_changed" .
+[] x@vocab:hasMethod "notifications/tools/list_changed"^^xsd:string ;
+    x@vocab:version "2.0"^^xsd:string .
 

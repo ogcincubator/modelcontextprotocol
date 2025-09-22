@@ -1,6 +1,44 @@
 {
   "@context": {
     "@base": "https://override-me-for-custom-content.eg/",
+    "jsonrpc": {
+      "@id": "jrpc:version",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "jrpc:hasId",
+      "@type": "@id"
+    },
+    "method": {
+      "@id": "jrpc:hasMethod",
+      "@type": "xsd:string"
+    },
+    "params": {
+      "@id": "jrpc:hasParameters",
+      "@type": "@json"
+    },
+    "result": {
+      "@id": "jrpc:hasResult",
+      "@type": "@json"
+    },
+    "error": {
+      "@context": {
+        "code": {
+          "@id": "jrpc:hasErrorCode",
+          "@type": "xsd:integer"
+        },
+        "message": {
+          "@id": "jrpc:hasErrorMessage",
+          "@type": "xsd:string"
+        },
+        "data": {
+          "@id": "jrpc:hasErrorData",
+          "@type": "@json"
+        }
+      },
+      "@id": "jrpc:hasError",
+      "@type": "@id"
+    },
     "Message": {
       "@id": "jrpc:Message",
       "@type": "@id"

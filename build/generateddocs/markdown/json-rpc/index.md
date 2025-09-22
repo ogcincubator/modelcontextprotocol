@@ -70,6 +70,14 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] x@vocab:hasId <https://override-me-for-custom-content.eg/1> ;
+    x@vocab:hasMethod "subtract"^^xsd:string ;
+    x@vocab:hasParameters "{\"p1\":42,\"p2\":23}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -103,6 +111,14 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] x@vocab:hasId <https://override-me-for-custom-content.eg/1> ;
+    x@vocab:hasMethod "subtract"^^xsd:string ;
+    x@vocab:hasParameters "{\"minuend\":42,\"subtrahend\":23}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -133,6 +149,13 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] x@vocab:hasId <https://override-me-for-custom-content.eg/1> ;
+    x@vocab:hasResult "{\"value\":19}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -141,201 +164,102 @@ At this stage no additional semantic rules have been defined.
 
 ```yaml
 $schema: http://json-schema.org/draft-07/schema#
-definitions:
-  jsonrpc:
-    $anchor: jsonrpc
-    description: JSON-RPC version
-    const: '2.0'
-    type: string
-  RequestId:
-    $anchor: RequestId
-    description: A uniquely identifying ID for a request in JSON-RPC.
-    type:
-    - string
-  ProgressToken:
-    $anchor: ProgressToken
-    description: A progress token, used to associate progress notifications with the
-      original request.
-    type:
-    - string
+$defs:
+  JSONRPC2Object:
+    type: object
+    required:
+    - jsonrpc
+    properties:
+      jsonrpc:
+        const: '2.0'
+        x-jsonld-id: http://json-rpc.org/ontology#version
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+  IDObject:
+    allOf:
+    - $ref: '#/$defs/JSONRPC2Object'
+    - type: object
+      properties:
+        id:
+          type:
+          - string
+          - integer
+          - 'null'
+          x-jsonld-id: http://json-rpc.org/ontology#hasId
+          x-jsonld-type: '@id'
+  ErrorObject:
+    type: object
+    required:
+    - code
+    - message
+    properties:
+      code:
+        type: integer
+        x-jsonld-id: http://json-rpc.org/ontology#hasErrorCode
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
+      message:
+        type: string
+        x-jsonld-id: http://json-rpc.org/ontology#hasErrorMessage
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+      data:
+        x-jsonld-id: http://json-rpc.org/ontology#hasErrorData
+        x-jsonld-type: '@json'
+  Notification:
+    $anchor: Notification
+    allOf:
+    - $ref: '#/$defs/JSONRPC2Object'
+    - type: object
+      required:
+      - method
+      properties:
+        method:
+          type: string
+          x-jsonld-id: http://json-rpc.org/ontology#hasMethod
+          x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+        params:
+          type:
+          - object
+          - array
+          x-jsonld-id: http://json-rpc.org/ontology#hasParameters
+          x-jsonld-type: '@json'
   Request:
     $anchor: Request
-    properties:
-      method:
-        type: string
-        x-jsonld-id: http://json-rpc.org/ontology#hasMethod
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-      params:
-        additionalProperties: {}
+    allOf:
+    - $ref: '#/$defs/IDObject'
+    - $ref: '#/$defs/Notification'
+  Response:
+    $anchor: Response
+    allOf:
+    - $ref: '#/$defs/IDObject'
+    - oneOf:
+      - required:
+        - result
         properties:
-          _meta:
-            additionalProperties: {}
-            description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
-              for notes on `_meta` usage.'
-            properties:
-              progressToken:
-                $ref: '#/definitions/ProgressToken'
-                description: If specified, the caller is requesting out-of-band progress
-                  notifications for this request (as represented by notifications/progress).
-                  The value of this parameter is an opaque token that will be attached
-                  to any subsequent notifications. The receiver is not obligated to
-                  provide these notifications.
-            type: object
-        type: object
-        x-jsonld-id: http://json-rpc.org/ontology#hasParameters
-        x-jsonld-type: '@json'
-    required:
-    - method
-    type: object
-  Result:
-    $anchor: Result
-    additionalProperties: {}
-    properties:
-      _meta:
-        additionalProperties: {}
-        description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
-          for notes on `_meta` usage.'
-        type: object
-    type: object
-  JSONRPCError:
-    $anchor: JSONRPCError
-    description: A response to a request that indicates an error occurred.
-    properties:
-      error:
-        properties:
-          code:
-            description: The error type that occurred.
-            type: integer
-            x-jsonld-id: http://json-rpc.org/ontology#hasErrorCode
-            x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
-          data:
-            description: Additional information about the error. The value of this
-              member is defined by the sender (e.g. detailed error information, nested
-              errors etc.).
-            x-jsonld-id: http://json-rpc.org/ontology#hasErrorData
+          result:
+            x-jsonld-id: http://json-rpc.org/ontology#hasResult
             x-jsonld-type: '@json'
-          message:
-            description: A short description of the error. The message SHOULD be limited
-              to a concise single sentence.
-            type: string
-            x-jsonld-id: http://json-rpc.org/ontology#hasErrorMessage
-            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-        required:
-        - code
-        - message
-        type: object
-        x-jsonld-id: http://json-rpc.org/ontology#hasError
-        x-jsonld-type: '@id'
-      id:
-        $ref: '#/definitions/RequestId'
-        x-jsonld-id: http://json-rpc.org/ontology#hasId
-        x-jsonld-type: '@id'
-      jsonrpc:
-        $ref: '#/definitions/jsonrpc'
-        x-jsonld-id: http://json-rpc.org/ontology#version
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-    required:
-    - error
-    - id
-    - jsonrpc
-    type: object
-  JSONRPCMessage:
-    $anchor: JSONRPCMessage
-    anyOf:
-    - $ref: '#/definitions/JSONRPCRequest'
-    - $ref: '#/definitions/JSONRPCNotification'
-    - $ref: '#/definitions/JSONRPCResponse'
-    - $ref: '#/definitions/JSONRPCError'
-    description: Refers to any valid JSON-RPC object that can be decoded off the wire,
-      or encoded to be sent.
-  JSONRPCNotification:
-    $anchor: JSONRPCNotification
-    description: A notification which does not expect a response.
-    properties:
-      jsonrpc:
-        $ref: '#/definitions/jsonrpc'
-        x-jsonld-id: http://json-rpc.org/ontology#version
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-      method:
-        type: string
-        x-jsonld-id: http://json-rpc.org/ontology#hasMethod
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-      params:
-        additionalProperties: {}
+      - required:
+        - error
         properties:
-          _meta:
-            additionalProperties: {}
-            description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
-              for notes on `_meta` usage.'
-            type: object
-        type: object
-        x-jsonld-id: http://json-rpc.org/ontology#hasParameters
-        x-jsonld-type: '@json'
-    required:
-    - jsonrpc
-    - method
-    type: object
-  JSONRPCRequest:
-    $anchor: JSONRPCRequest
-    description: A request that expects a response.
-    properties:
-      id:
-        $ref: '#/definitions/RequestId'
-        x-jsonld-id: http://json-rpc.org/ontology#hasId
-        x-jsonld-type: '@id'
-      jsonrpc:
-        $ref: '#/definitions/jsonrpc'
-        x-jsonld-id: http://json-rpc.org/ontology#version
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-      method:
-        type: string
-        x-jsonld-id: http://json-rpc.org/ontology#hasMethod
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-      params:
-        additionalProperties: {}
-        properties:
-          _meta:
-            additionalProperties: {}
-            description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
-              for notes on `_meta` usage.'
-            properties:
-              progressToken:
-                $ref: '#/definitions/ProgressToken'
-                description: If specified, the caller is requesting out-of-band progress
-                  notifications for this request (as represented by notifications/progress).
-                  The value of this parameter is an opaque token that will be attached
-                  to any subsequent notifications. The receiver is not obligated to
-                  provide these notifications.
-            type: object
-        type: object
-        x-jsonld-id: http://json-rpc.org/ontology#hasParameters
-        x-jsonld-type: '@json'
-    required:
-    - id
-    - jsonrpc
-    - method
-    type: object
-  JSONRPCResponse:
-    $anchor: JSONRPCResponse
-    description: A successful (non-error) response to a request.
-    properties:
-      id:
-        $ref: '#/definitions/RequestId'
-        x-jsonld-id: http://json-rpc.org/ontology#hasId
-        x-jsonld-type: '@id'
-      jsonrpc:
-        $ref: '#/definitions/jsonrpc'
-        x-jsonld-id: http://json-rpc.org/ontology#version
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-      result:
-        $ref: '#/definitions/Result'
-        x-jsonld-id: http://json-rpc.org/ontology#hasResult
-        x-jsonld-type: '@json'
-    required:
-    - id
-    - jsonrpc
-    - result
-    type: object
+          error:
+            $ref: '#/$defs/ErrorObject'
+            x-jsonld-id: http://json-rpc.org/ontology#hasError
+            x-jsonld-type: '@id'
+  BatchRequest:
+    $anchor: BatchRequest
+    type: array
+    items:
+      $ref: '#/$defs/Request'
+  BatchResponse:
+    $anchor: BatchResponse
+    type: array
+    items:
+      $ref: '#/$defs/Response'
+oneOf:
+- $ref: '#/$defs/Request'
+- $ref: '#/$defs/Notification'
+- $ref: '#/$defs/Response'
+- $ref: '#/$defs/BatchRequest'
+- $ref: '#/$defs/BatchResponse'
 x-jsonld-extra-terms:
   Message:
     x-jsonld-id: http://json-rpc.org/ontology#Message
@@ -412,6 +336,44 @@ Links to the schema:
 {
   "@context": {
     "@base": "https://override-me-for-custom-content.eg/",
+    "jsonrpc": {
+      "@id": "jrpc:version",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "jrpc:hasId",
+      "@type": "@id"
+    },
+    "method": {
+      "@id": "jrpc:hasMethod",
+      "@type": "xsd:string"
+    },
+    "params": {
+      "@id": "jrpc:hasParameters",
+      "@type": "@json"
+    },
+    "result": {
+      "@id": "jrpc:hasResult",
+      "@type": "@json"
+    },
+    "error": {
+      "@context": {
+        "code": {
+          "@id": "jrpc:hasErrorCode",
+          "@type": "xsd:integer"
+        },
+        "message": {
+          "@id": "jrpc:hasErrorMessage",
+          "@type": "xsd:string"
+        },
+        "data": {
+          "@id": "jrpc:hasErrorData",
+          "@type": "@json"
+        }
+      },
+      "@id": "jrpc:hasError",
+      "@type": "@id"
+    },
     "Message": {
       "@id": "jrpc:Message",
       "@type": "@id"

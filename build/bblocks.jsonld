@@ -111,12 +111,12 @@
   ],
   "name": "Building Blocks - Model Context Protocol (MCP) Building Blocks",
   "abstract": "BuildingBlock descriptions of the the elements of the\n[Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) \n",
-  "modified": "2025-09-22T07:23:05.201824",
+  "modified": "2025-09-22T13:34:34.752756",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"cbdf0741daa8bb5e8edcce157ff8f4bb6d0d71fa",
       "shortCommitId": "\"cbdf07",
-      "date": "2025-09-18T13:42:00+00:00\""
+      "date": "2025-09-22T08:13:53+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/modelcontextprotocol",
@@ -154,11 +154,11 @@
         "application/yaml": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml",
         "application/json": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.json"
       },
-      "sourceSchema": "https://ogcincubator.github.io/modelcontextprotocol/_sources/json-rpc/schema.json",
+      "sourceSchema": "https://ogcincubator.github.io/modelcontextprotocol/_sources/json-rpc/schema.yaml",
       "sourceLdContext": "https://ogcincubator.github.io/modelcontextprotocol/_sources/json-rpc/context.jsonld",
       "sourceFiles": "https://ogcincubator.github.io/modelcontextprotocol/_sources/json-rpc/",
       "rdfData": [],
-      "validationPassed": false,
+      "validationPassed": true,
       "testOutputs": "https://github.com/ogcincubator/modelcontextprotocol/blob/master/build/tests/json-rpc/",
       "documentation": {
         "markdown": {

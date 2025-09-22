@@ -1,9 +1,9 @@
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "3" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "tools/call" ;
-    mcp:params [ mcp:arguments [ mcp:location "San Francisco" ;
-                    mcp:units "celsius" ] ;
-            mcp:name "get_weather" ] .
+[] x@vocab:hasId <http://example.com/activities/3> ;
+    x@vocab:hasMethod "tools/call"^^xsd:string ;
+    x@vocab:hasParameters "{\"arguments\":{\"location\":\"San Francisco\",\"units\":\"celsius\"},\"name\":\"get_weather\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 

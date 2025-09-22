@@ -57,18 +57,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "1" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "initialize" ;
-    mcp:params [ mcp:capabilities [ mcp:logging [ ] ;
-                    mcp:prompts [ ] ;
-                    mcp:resources [ ] ;
-                    mcp:tools [ ] ] ;
-            mcp:clientInfo [ mcp:name "example-client" ;
-                    mcp:version "1.0.0" ] ;
-            mcp:protocolVersion "2024-11-05" ] .
+[] x@vocab:hasId <http://example.com/activities/1> ;
+    x@vocab:hasMethod "initialize"^^xsd:string ;
+    x@vocab:hasParameters "{\"capabilities\":{\"logging\":{},\"prompts\":{},\"resources\":{},\"tools\":{}},\"clientInfo\":{\"name\":\"example-client\",\"version\":\"1.0.0\"},\"protocolVersion\":\"2024-11-05\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -94,10 +90,11 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:jsonrpc "2.0" ;
-    mcp:method "notifications/initialized" .
+[] x@vocab:hasMethod "notifications/initialized"^^xsd:string ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -127,12 +124,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "2" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "tools/list" ;
-    mcp:params [ ] .
+[] x@vocab:hasId <http://example.com/activities/2> ;
+    x@vocab:hasMethod "tools/list"^^xsd:string ;
+    x@vocab:hasParameters "{}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -174,14 +173,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "3" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "tools/call" ;
-    mcp:params [ mcp:arguments [ mcp:location "San Francisco" ;
-                    mcp:units "celsius" ] ;
-            mcp:name "get_weather" ] .
+[] x@vocab:hasId <http://example.com/activities/3> ;
+    x@vocab:hasMethod "tools/call"^^xsd:string ;
+    x@vocab:hasParameters "{\"arguments\":{\"location\":\"San Francisco\",\"units\":\"celsius\"},\"name\":\"get_weather\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -211,12 +210,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "4" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "resources/list" ;
-    mcp:params [ ] .
+[] x@vocab:hasId <http://example.com/activities/4> ;
+    x@vocab:hasMethod "resources/list"^^xsd:string ;
+    x@vocab:hasParameters "{}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -250,12 +251,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "5" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "resources/read" ;
-    mcp:params [ mcp:uri "file:///path/to/document.txt" ] .
+[] x@vocab:hasId <http://example.com/activities/5> ;
+    x@vocab:hasMethod "resources/read"^^xsd:string ;
+    x@vocab:hasParameters "{\"uri\":\"file:///path/to/document.txt\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -289,12 +292,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "6" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "resources/subscribe" ;
-    mcp:params [ mcp:uri "file:///path/to/watched/directory" ] .
+[] x@vocab:hasId <http://example.com/activities/6> ;
+    x@vocab:hasMethod "resources/subscribe"^^xsd:string ;
+    x@vocab:hasParameters "{\"uri\":\"file:///path/to/watched/directory\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -328,12 +333,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "7" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "resources/unsubscribe" ;
-    mcp:params [ mcp:uri "file:///path/to/watched/directory" ] .
+[] x@vocab:hasId <http://example.com/activities/7> ;
+    x@vocab:hasMethod "resources/unsubscribe"^^xsd:string ;
+    x@vocab:hasParameters "{\"uri\":\"file:///path/to/watched/directory\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -363,12 +370,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "8" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "prompts/list" ;
-    mcp:params [ ] .
+[] x@vocab:hasId <http://example.com/activities/8> ;
+    x@vocab:hasMethod "prompts/list"^^xsd:string ;
+    x@vocab:hasParameters "{}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -410,14 +419,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "9" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "prompts/get" ;
-    mcp:params [ mcp:arguments [ mcp:complexity "high" ;
-                    mcp:language "python" ] ;
-            mcp:name "code_review" ] .
+[] x@vocab:hasId <http://example.com/activities/9> ;
+    x@vocab:hasMethod "prompts/get"^^xsd:string ;
+    x@vocab:hasParameters "{\"arguments\":{\"complexity\":\"high\",\"language\":\"python\"},\"name\":\"code_review\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -451,12 +460,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "10" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "logging/setLevel" ;
-    mcp:params [ mcp:level "info" ] .
+[] x@vocab:hasId <http://example.com/activities/10> ;
+    x@vocab:hasMethod "logging/setLevel"^^xsd:string ;
+    x@vocab:hasParameters "{\"level\":\"info\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -504,15 +515,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "11" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "completion/complete" ;
-    mcp:params [ mcp:argument [ mcp:name "query" ;
-                    mcp:value "def calculate_" ] ;
-            mcp:ref [ mcp:type "ref/resource" ;
-                    mcp:uri "file:///path/to/file.py" ] ] .
+[] x@vocab:hasId <http://example.com/activities/11> ;
+    x@vocab:hasMethod "completion/complete"^^xsd:string ;
+    x@vocab:hasParameters "{\"argument\":{\"name\":\"query\",\"value\":\"def calculate_\"},\"ref\":{\"type\":\"ref/resource\",\"uri\":\"file:///path/to/file.py\"}}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -546,12 +556,13 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:jsonrpc "2.0" ;
-    mcp:method "notifications/cancelled" ;
-    mcp:params [ mcp:reason "User requested cancellation" ;
-            mcp:requestId "3" ] .
+[] x@vocab:hasMethod "notifications/cancelled"^^xsd:string ;
+    x@vocab:hasParameters "{\"reason\":\"User requested cancellation\",\"requestId\":\"3\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -587,14 +598,13 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:jsonrpc "2.0" ;
-    mcp:method "notifications/progress" ;
-    mcp:params [ mcp:progress 75 ;
-            mcp:progressToken "upload_123" ;
-            mcp:total 100 ] .
+[] x@vocab:hasMethod "notifications/progress"^^xsd:string ;
+    x@vocab:hasParameters "{\"progress\":75,\"progressToken\":\"upload_123\",\"total\":100}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -626,11 +636,13 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:jsonrpc "2.0" ;
-    mcp:method "notifications/resources/updated" ;
-    mcp:params [ mcp:uri "file:///path/to/document.txt" ] .
+[] x@vocab:hasMethod "notifications/resources/updated"^^xsd:string ;
+    x@vocab:hasParameters "{\"uri\":\"file:///path/to/document.txt\"}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -656,10 +668,11 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:jsonrpc "2.0" ;
-    mcp:method "notifications/resources/list_changed" .
+[] x@vocab:hasMethod "notifications/resources/list_changed"^^xsd:string ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -685,10 +698,11 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:jsonrpc "2.0" ;
-    mcp:method "notifications/tools/list_changed" .
+[] x@vocab:hasMethod "notifications/tools/list_changed"^^xsd:string ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -714,10 +728,11 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:jsonrpc "2.0" ;
-    mcp:method "notifications/prompts/list_changed" .
+[] x@vocab:hasMethod "notifications/prompts/list_changed"^^xsd:string ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -795,23 +810,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "12" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "sampling/createMessage" ;
-    mcp:params [ mcp:includeContext "thisServer" ;
-            mcp:maxTokens 1000 ;
-            mcp:messages [ mcp:content [ mcp:text "What's the weather like today?" ;
-                            mcp:type "text" ] ;
-                    mcp:role "user" ] ;
-            mcp:modelPreferences [ mcp:costPriority 5e-01 ;
-                    mcp:hints [ mcp:name "claude-3-sonnet" ] ;
-                    mcp:intelligencePriority 9e-01 ;
-                    mcp:speedPriority 8e-01 ] ;
-            mcp:systemPrompt "You are a helpful weather assistant." ;
-            mcp:temperature 7e-01 ] .
+[] x@vocab:hasId <http://example.com/activities/12> ;
+    x@vocab:hasMethod "sampling/createMessage"^^xsd:string ;
+    x@vocab:hasParameters "{\"includeContext\":\"thisServer\",\"maxTokens\":1000,\"messages\":[{\"content\":{\"text\":\"What's the weather like today?\",\"type\":\"text\"},\"role\":\"user\"}],\"modelPreferences\":{\"costPriority\":0.5,\"hints\":[{\"name\":\"claude-3-sonnet\"}],\"intelligencePriority\":0.9,\"speedPriority\":0.8},\"systemPrompt\":\"You are a helpful weather assistant.\",\"temperature\":0.7}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -841,12 +847,14 @@ None
 
 #### ttl
 ```ttl
-@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] mcp:id "13" ;
-    mcp:jsonrpc "2.0" ;
-    mcp:method "roots/list" ;
-    mcp:params [ ] .
+[] x@vocab:hasId <http://example.com/activities/13> ;
+    x@vocab:hasMethod "roots/list"^^xsd:string ;
+    x@vocab:hasParameters "{}"^^rdf:JSON ;
+    x@vocab:version "2.0"^^xsd:string .
 
 
 ```
@@ -857,7 +865,11 @@ None
 $schema: http://json-schema.org/draft-07/schema#
 definitions:
   ProgressToken:
-    $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#ProgressToken
+    $anchor: ProgressToken
+    description: A progress token, used to associate progress notifications with the
+      original request.
+    type:
+    - string
   Annotations:
     description: Optional annotations for the client. The client can use annotations
       to inform how objects are used or displayed
@@ -1014,12 +1026,13 @@ definitions:
     - type
     type: object
   CallToolRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: Used by the client to invoke a tool provided by the server.
     properties:
       method:
         const: tools/call
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           arguments:
@@ -1034,12 +1047,13 @@ definitions:
         required:
         - name
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
     type: object
   CallToolResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: The server's response to a tool call.
     properties:
       _meta:
@@ -1093,6 +1107,8 @@ definitions:
     - content
     type: object
   CancelledNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     description: 'This notification can be sent by either side to indicate that it
       is cancelling a previously-issued request.
 
@@ -1111,7 +1127,6 @@ definitions:
       method:
         const: notifications/cancelled
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           reason:
@@ -1132,7 +1147,6 @@ definitions:
         required:
         - requestId
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
@@ -1180,12 +1194,16 @@ definitions:
         x-jsonld-type: '@json'
     type: object
   ClientNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     anyOf:
     - $ref: '#/definitions/CancelledNotification'
     - $ref: '#/definitions/InitializedNotification'
     - $ref: '#/definitions/ProgressNotification'
     - $ref: '#/definitions/RootsListChangedNotification'
   ClientRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     anyOf:
     - $ref: '#/definitions/InitializeRequest'
     - $ref: '#/definitions/PingRequest'
@@ -1201,18 +1219,21 @@ definitions:
     - $ref: '#/definitions/SetLevelRequest'
     - $ref: '#/definitions/CompleteRequest'
   ClientResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     anyOf:
     - $ref: '#/definitions/Result'
     - $ref: '#/definitions/CreateMessageResult'
     - $ref: '#/definitions/ListRootsResult'
     - $ref: '#/definitions/ElicitResult'
   CompleteRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: A request from the client to the server, to ask for completion options.
     properties:
       method:
         const: completion/complete
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           argument:
@@ -1226,7 +1247,6 @@ definitions:
               value:
                 description: The value of the argument to use for completion matching.
                 type: string
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#value
             required:
             - name
             - value
@@ -1256,12 +1276,13 @@ definitions:
         - argument
         - ref
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
     type: object
   CompleteResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: The server's response to a completion/complete request
     properties:
       _meta:
@@ -1310,6 +1331,8 @@ definitions:
     - $ref: '#/definitions/ResourceLink'
     - $ref: '#/definitions/EmbeddedResource'
   CreateMessageRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: A request from the server to sample an LLM via the client. The client
       has full discretion over which model to select. The client should also inform
       the user before beginning sampling, to allow them to inspect the request (human
@@ -1318,7 +1341,6 @@ definitions:
       method:
         const: sampling/createMessage
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           includeContext:
@@ -1380,12 +1402,13 @@ definitions:
         - maxTokens
         - messages
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
     type: object
   CreateMessageResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: The client's response to a sampling/create_message request from the
       server. The client should inform the user before returning the sampled message,
       to allow them to inspect the response (human in the loop) and decide whether
@@ -1429,13 +1452,14 @@ definitions:
     description: An opaque token used to represent a cursor for pagination.
     type: string
   ElicitRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: A request from the server to elicit additional information from the
       user via the client.
     properties:
       method:
         const: elicitation/create
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           message:
@@ -1475,12 +1499,13 @@ definitions:
         - message
         - requestedSchema
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
     type: object
   ElicitResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: The client's response to an elicitation request.
     properties:
       _meta:
@@ -1593,12 +1618,13 @@ definitions:
     - type
     type: object
   GetPromptRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: Used by the client to get a prompt provided by the server.
     properties:
       method:
         const: prompts/get
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           arguments:
@@ -1616,12 +1642,13 @@ definitions:
         required:
         - name
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
     type: object
   GetPromptResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: The server's response to a prompts/get request from the client.
     properties:
       _meta:
@@ -1711,13 +1738,14 @@ definitions:
     - version
     type: object
   InitializeRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: This request is sent from the client to the server when it first
       connects, asking it to begin initialization.
     properties:
       method:
         const: initialize
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           capabilities:
@@ -1740,12 +1768,13 @@ definitions:
         - clientInfo
         - protocolVersion
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
     type: object
   InitializeResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: After receiving an initialize request from the client, the server
       sends this response.
     properties:
@@ -1787,13 +1816,14 @@ definitions:
     - serverInfo
     type: object
   InitializedNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     description: This notification is sent from the client to the server after initialization
       has finished.
     properties:
       method:
         const: notifications/initialized
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         additionalProperties: {}
         properties:
@@ -1805,144 +1835,25 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
-    type: object
-  JSONRPCError:
-    description: A response to a request that indicates an error occurred.
-    properties:
-      error:
-        properties:
-          code:
-            description: The error type that occurred.
-            type: integer
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#code
-          data:
-            description: Additional information about the error. The value of this
-              member is defined by the sender (e.g. detailed error information, nested
-              errors etc.).
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasData
-            x-jsonld-type: http://www.w3.org/2001/XMLSchema#base64Binary
-          message:
-            description: A short description of the error. The message SHOULD be limited
-              to a concise single sentence.
-            type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMessage
-            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-        required:
-        - code
-        - message
-        type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#error
-      id:
-        $ref: '#/definitions/RequestId'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#id
-      jsonrpc:
-        $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#jsonrpc
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#jsonrpc
-    required:
-    - error
-    - id
-    - jsonrpc
     type: object
   JSONRPCMessage:
     anyOf:
-    - $ref: '#/definitions/JSONRPCRequest'
-    - $ref: '#/definitions/JSONRPCNotification'
-    - $ref: '#/definitions/JSONRPCResponse'
-    - $ref: '#/definitions/JSONRPCError'
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     description: Refers to any valid JSON-RPC object that can be decoded off the wire,
       or encoded to be sent.
-  JSONRPCNotification:
-    description: A notification which does not expect a response.
-    properties:
-      jsonrpc:
-        $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#jsonrpc
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#jsonrpc
-      method:
-        type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
-      params:
-        additionalProperties: {}
-        properties:
-          _meta:
-            additionalProperties: {}
-            description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
-              for notes on `_meta` usage.'
-            type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
-            x-jsonld-type: '@json'
-        type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
-    required:
-    - jsonrpc
-    - method
-    type: object
-  JSONRPCRequest:
-    description: A request that expects a response.
-    properties:
-      id:
-        $ref: '#/definitions/RequestId'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#id
-      jsonrpc:
-        $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#jsonrpc
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#jsonrpc
-      method:
-        type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
-      params:
-        additionalProperties: {}
-        properties:
-          _meta:
-            additionalProperties: {}
-            description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
-              for notes on `_meta` usage.'
-            properties:
-              progressToken:
-                $ref: '#/definitions/ProgressToken'
-                description: If specified, the caller is requesting out-of-band progress
-                  notifications for this request (as represented by notifications/progress).
-                  The value of this parameter is an opaque token that will be attached
-                  to any subsequent notifications. The receiver is not obligated to
-                  provide these notifications.
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProgressToken
-                x-jsonld-type: http://modelcontextprotocol.io/ontology#ProgressToken
-            type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
-            x-jsonld-type: '@json'
-        type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
-    required:
-    - id
-    - jsonrpc
-    - method
-    type: object
-  JSONRPCResponse:
-    description: A successful (non-error) response to a request.
-    properties:
-      id:
-        $ref: '#/definitions/RequestId'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#id
-      jsonrpc:
-        $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#jsonrpc
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#jsonrpc
-      result:
-        $ref: '#/definitions/Result'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#result
-    required:
-    - id
-    - jsonrpc
-    - result
-    type: object
   ListPromptsRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: Sent from the client to request a list of prompts and prompt templates
       the server has.
     properties:
       method:
         const: prompts/list
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           cursor:
@@ -1953,11 +1864,12 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
   ListPromptsResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: The server's response to a prompts/list request from the client.
     properties:
       _meta:
@@ -1985,13 +1897,14 @@ definitions:
     - prompts
     type: object
   ListResourceTemplatesRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: Sent from the client to request a list of resource templates the
       server has.
     properties:
       method:
         const: resources/templates/list
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           cursor:
@@ -2002,11 +1915,12 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
   ListResourceTemplatesResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: The server's response to a resources/templates/list request from
       the client.
     properties:
@@ -2036,12 +1950,13 @@ definitions:
     - resourceTemplates
     type: object
   ListResourcesRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: Sent from the client to request a list of resources the server has.
     properties:
       method:
         const: resources/list
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           cursor:
@@ -2052,11 +1967,12 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
   ListResourcesResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: The server's response to a resources/list request from the client.
     properties:
       _meta:
@@ -2084,6 +2000,8 @@ definitions:
     - resources
     type: object
   ListRootsRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: 'Sent from the server to request a list of root URIs from the client.
       Roots allow
 
@@ -2104,7 +2022,6 @@ definitions:
       method:
         const: roots/list
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         additionalProperties: {}
         properties:
@@ -2126,11 +2043,12 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
   ListRootsResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: 'The client''s response to a roots/list request from the server.
 
       This result contains an array of Root objects, each representing a root directory
@@ -2155,12 +2073,13 @@ definitions:
     - roots
     type: object
   ListToolsRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: Sent from the client to request a list of tools the server has.
     properties:
       method:
         const: tools/list
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           cursor:
@@ -2171,11 +2090,12 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
   ListToolsResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: The server's response to a tools/list request from the client.
     properties:
       _meta:
@@ -2220,6 +2140,8 @@ definitions:
     - warning
     type: string
   LoggingMessageNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     description: Notification of a log message passed from server to client. If no
       logging/setLevel request has been sent from the client, the server MAY decide
       which messages to send automatically.
@@ -2227,7 +2149,6 @@ definitions:
       method:
         const: notifications/message
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           data:
@@ -2249,7 +2170,6 @@ definitions:
         - data
         - level
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
@@ -2343,10 +2263,11 @@ definitions:
         x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal
     type: object
   Notification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     properties:
       method:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         additionalProperties: {}
         properties:
@@ -2358,7 +2279,6 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
@@ -2391,10 +2311,11 @@ definitions:
     - type
     type: object
   PaginatedRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     properties:
       method:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           cursor:
@@ -2405,11 +2326,12 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
   PaginatedResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     properties:
       _meta:
         additionalProperties: {}
@@ -2428,6 +2350,8 @@ definitions:
         x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
     type: object
   PingRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: A ping, issued by either the server or the client, to check that
       the other party is still alive. The receiver must promptly respond, or else
       may be disconnected.
@@ -2435,7 +2359,6 @@ definitions:
       method:
         const: ping
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         additionalProperties: {}
         properties:
@@ -2457,7 +2380,6 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
@@ -2471,13 +2393,14 @@ definitions:
 
       without nested objects or arrays.'
   ProgressNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     description: An out-of-band notification used to inform the receiver of a progress
       update for a long-running request.
     properties:
       method:
         const: notifications/progress
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           message:
@@ -2507,7 +2430,6 @@ definitions:
         - progress
         - progressToken
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
@@ -2584,6 +2506,8 @@ definitions:
     - name
     type: object
   PromptListChangedNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     description: An optional notification from the server to the client, informing
       it that the list of prompts it offers has changed. This may be issued by servers
       without any previous subscription from the client.
@@ -2591,7 +2515,6 @@ definitions:
       method:
         const: notifications/prompts/list_changed
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         additionalProperties: {}
         properties:
@@ -2603,7 +2526,6 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
@@ -2656,12 +2578,13 @@ definitions:
     - type
     type: object
   ReadResourceRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: Sent from the client to the server, to read a specific resource URI.
     properties:
       method:
         const: resources/read
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           uri:
@@ -2674,12 +2597,13 @@ definitions:
         required:
         - uri
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
     type: object
   ReadResourceResult:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     description: The server's response to a resources/read request from the client.
     properties:
       _meta:
@@ -2702,10 +2626,11 @@ definitions:
     - contents
     type: object
   Request:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     properties:
       method:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         additionalProperties: {}
         properties:
@@ -2727,7 +2652,6 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
@@ -2900,6 +2824,8 @@ definitions:
     - uri
     type: object
   ResourceListChangedNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     description: An optional notification from the server to the client, informing
       it that the list of resources it can read from has changed. This may be issued
       by servers without any previous subscription from the client.
@@ -2907,7 +2833,6 @@ definitions:
       method:
         const: notifications/resources/list_changed
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         additionalProperties: {}
         properties:
@@ -2919,7 +2844,6 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
@@ -2999,6 +2923,8 @@ definitions:
     - uri
     type: object
   ResourceUpdatedNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     description: A notification from the server to the client, informing it that a
       resource has changed and may need to be read again. This should only be sent
       if the client previously sent a resources/subscribe request.
@@ -3006,7 +2932,6 @@ definitions:
       method:
         const: notifications/resources/updated
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           uri:
@@ -3019,12 +2944,13 @@ definitions:
         required:
         - uri
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
     type: object
   Result:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Response
     additionalProperties: {}
     properties:
       _meta:
@@ -3076,6 +3002,8 @@ definitions:
     - uri
     type: object
   RootsListChangedNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     description: 'A notification from the client to the server, informing it that
       the list of roots has changed.
 
@@ -3087,7 +3015,6 @@ definitions:
       method:
         const: notifications/roots/list_changed
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         additionalProperties: {}
         properties:
@@ -3099,7 +3026,6 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
@@ -3193,6 +3119,8 @@ definitions:
         x-jsonld-type: '@json'
     type: object
   ServerNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     anyOf:
     - $ref: '#/definitions/CancelledNotification'
     - $ref: '#/definitions/ProgressNotification'
@@ -3202,6 +3130,8 @@ definitions:
     - $ref: '#/definitions/ToolListChangedNotification'
     - $ref: '#/definitions/LoggingMessageNotification'
   ServerRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     anyOf:
     - $ref: '#/definitions/PingRequest'
     - $ref: '#/definitions/CreateMessageRequest'
@@ -3220,12 +3150,13 @@ definitions:
     - $ref: '#/definitions/CallToolResult'
     - $ref: '#/definitions/CompleteResult'
   SetLevelRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: A request from the client to the server, to enable or adjust logging.
     properties:
       method:
         const: logging/setLevel
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           level:
@@ -3238,7 +3169,6 @@ definitions:
         required:
         - level
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
@@ -3279,13 +3209,14 @@ definitions:
     - type
     type: object
   SubscribeRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: Sent from the client to request resources/updated notifications from
       the server whenever a particular resource changes.
     properties:
       method:
         const: resources/subscribe
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           uri:
@@ -3298,7 +3229,6 @@ definitions:
         required:
         - uri
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
@@ -3536,6 +3466,8 @@ definitions:
         x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     type: object
   ToolListChangedNotification:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Notification
     description: An optional notification from the server to the client, informing
       it that the list of tools it offers has changed. This may be issued by servers
       without any previous subscription from the client.
@@ -3543,7 +3475,6 @@ definitions:
       method:
         const: notifications/tools/list_changed
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         additionalProperties: {}
         properties:
@@ -3555,11 +3486,12 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     type: object
   UnsubscribeRequest:
+    allOf:
+    - $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#Request
     description: Sent from the client to request cancellation of resources/updated
       notifications from the server. This should follow a previous resources/subscribe
       request.
@@ -3567,7 +3499,6 @@ definitions:
       method:
         const: resources/unsubscribe
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#method
       params:
         properties:
           uri:
@@ -3579,11 +3510,15 @@ definitions:
         required:
         - uri
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
     - method
     - params
     type: object
+anyOf:
+- $ref: '#/definitions/ClientRequest'
+- $ref: '#/definitions/ClientResult'
+- $ref: '#/definitions/ServerRequest'
+- $ref: '#/definitions/ServerResult'
 x-jsonld-extra-terms:
   RequestId: http://modelcontextprotocol.io/ontology#RequestId
   Cursor:
@@ -3631,6 +3566,9 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   EmbeddedResource:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#EmbeddedResource
+    x-jsonld-type: '@id'
+  resource:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#embedsResource
     x-jsonld-type: '@id'
   ListResourcesRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ListResourcesRequest
@@ -3686,6 +3624,12 @@ x-jsonld-extra-terms:
   ToolListChangedNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ToolListChangedNotification
     x-jsonld-type: '@id'
+  isError:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#isError
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
+  structuredContent:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasStructuredContent
+    x-jsonld-type: '@json'
   Prompt:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#Prompt
     x-jsonld-type: '@id'
@@ -3773,6 +3717,19 @@ x-jsonld-extra-terms:
   ResourceTemplateReference:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ResourceTemplateReference
     x-jsonld-type: '@id'
+  completion:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCompletion
+    x-jsonld-type: '@json'
+  values:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasValues
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+    x-jsonld-container: '@list'
+  total:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTotal
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
+  hasMore:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMore
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
   LoggingLevel:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#LoggingLevel
     x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
@@ -3782,12 +3739,27 @@ x-jsonld-extra-terms:
   LoggingMessageNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#LoggingMessageNotification
     x-jsonld-type: '@id'
+  level:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLevel
+    x-jsonld-type: http://modelcontextprotocol.io/ontology#LoggingLevel
+  logger:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLogger
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
   ProgressNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ProgressNotification
     x-jsonld-type: '@id'
   CancelledNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#CancelledNotification
     x-jsonld-type: '@id'
+  progress:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProgress
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal
+  requestId:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasRequestId
+    x-jsonld-type: http://modelcontextprotocol.io/ontology#RequestId
+  reason:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasReason
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
   PingRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#PingRequest
     x-jsonld-type: '@id'
@@ -3812,7 +3784,14 @@ x-jsonld-extra-terms:
   PrimitiveSchemaDefinition:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#PrimitiveSchemaDefinition
     x-jsonld-type: '@id'
-x-jsonld-vocab: http://modelcontextprotocol.io/ontology#
+  enum:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasEnumValues
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+    x-jsonld-container: '@list'
+  enumNames:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasEnumNames
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+    x-jsonld-container: '@list'
 x-jsonld-prefixes:
   mcp: http://modelcontextprotocol.io/ontology#
   xsd: http://www.w3.org/2001/XMLSchema#
@@ -3831,7 +3810,588 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "@vocab": "http://modelcontextprotocol.io/ontology#",
+    "jsonrpc": {
+      "@id": "jrpc:version",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "jrpc:hasId",
+      "@type": "@id"
+    },
+    "method": {
+      "@id": "jrpc:hasMethod",
+      "@type": "xsd:string"
+    },
+    "params": {
+      "@id": "jrpc:hasParameters",
+      "@type": "@json"
+    },
+    "capabilities": {
+      "@context": {
+        "elicitation": {
+          "@id": "mcp:hasElicitationCapability",
+          "@type": "@json"
+        },
+        "experimental": {
+          "@id": "mcp:hasExperimentalCapabilities",
+          "@type": "@json"
+        },
+        "roots": {
+          "@context": {
+            "listChanged": {
+              "@id": "mcp:supportsListChanged",
+              "@type": "xsd:boolean"
+            }
+          },
+          "@id": "mcp:containsRoot",
+          "@type": "mcp:Root",
+          "@container": "@list"
+        },
+        "sampling": {
+          "@id": "mcp:hasSamplingCapability",
+          "@type": "@json"
+        },
+        "completions": {
+          "@id": "mcp:hasCompletionsCapability",
+          "@type": "@json"
+        },
+        "logging": {
+          "@id": "mcp:hasLoggingCapability",
+          "@type": "@json"
+        },
+        "prompts": {
+          "@context": {
+            "listChanged": {
+              "@id": "mcp:supportsListChanged",
+              "@type": "xsd:boolean"
+            }
+          },
+          "@id": "mcp:hasPromptsCapability",
+          "@type": "@json"
+        },
+        "resources": {
+          "@context": {
+            "listChanged": {
+              "@id": "mcp:supportsListChanged",
+              "@type": "xsd:boolean"
+            },
+            "subscribe": {
+              "@id": "mcp:supportsSubscription",
+              "@type": "xsd:boolean"
+            }
+          },
+          "@id": "mcp:hasResourcesCapability",
+          "@type": "@json"
+        },
+        "tools": {
+          "@context": {
+            "listChanged": {
+              "@id": "mcp:supportsListChanged",
+              "@type": "xsd:boolean"
+            }
+          },
+          "@id": "mcp:hasToolsCapability",
+          "@type": "@json"
+        }
+      },
+      "@id": "mcp:hasCapabilities",
+      "@type": "@id"
+    },
+    "clientInfo": {
+      "@context": {
+        "title": {
+          "@id": "mcp:hasTitle",
+          "@type": "xsd:string"
+        },
+        "version": {
+          "@id": "mcp:hasVersion",
+          "@type": "xsd:string"
+        }
+      },
+      "@id": "mcp:hasClientInfo",
+      "@type": "mcp:Implementation"
+    },
+    "protocolVersion": {
+      "@id": "mcp:hasProtocolVersion",
+      "@type": "xsd:string"
+    },
+    "_meta": {
+      "@context": {
+        "progressToken": {
+          "@id": "mcp:hasProgressToken",
+          "@type": "mcp:ProgressToken"
+        }
+      },
+      "@id": "mcp:hasMetadata",
+      "@type": "@json"
+    },
+    "cursor": {
+      "@id": "mcp:hasCursor",
+      "@type": "mcp:Cursor"
+    },
+    "uri": {
+      "@id": "mcp:hasURI",
+      "@type": "xsd:anyURI"
+    },
+    "arguments": {
+      "@id": "mcp:hasArguments",
+      "@type": "@json"
+    },
+    "name": {
+      "@id": "mcp:hasName",
+      "@type": "xsd:string"
+    },
+    "level": {
+      "@id": "mcp:hasLevel",
+      "@type": "mcp:LoggingLevel"
+    },
+    "argument": {
+      "@id": "mcp:hasArgument",
+      "@type": "@json"
+    },
+    "context": {
+      "@id": "mcp:hasContext",
+      "@type": "@json"
+    },
+    "ref": {
+      "@context": {
+        "title": {
+          "@id": "mcp:hasTitle",
+          "@type": "xsd:string"
+        },
+        "type": {
+          "@id": "mcp:hasContentType",
+          "@type": "xsd:string"
+        }
+      },
+      "@id": "mcp:hasReference",
+      "@type": "@id"
+    },
+    "result": {
+      "@id": "jrpc:hasResult",
+      "@type": "@json"
+    },
+    "error": {
+      "@context": {
+        "code": {
+          "@id": "jrpc:hasErrorCode",
+          "@type": "xsd:integer"
+        },
+        "message": {
+          "@id": "jrpc:hasErrorMessage",
+          "@type": "xsd:string"
+        },
+        "data": {
+          "@id": "jrpc:hasErrorData",
+          "@type": "@json"
+        }
+      },
+      "@id": "jrpc:hasError",
+      "@type": "@id"
+    },
+    "content": {
+      "@context": {
+        "annotations": {
+          "@context": {
+            "audience": {
+              "@id": "mcp:hasAudience",
+              "@type": "mcp:Role",
+              "@container": "@list"
+            },
+            "lastModified": {
+              "@id": "mcp:hasLastModified",
+              "@type": "xsd:dateTime"
+            },
+            "priority": {
+              "@id": "mcp:hasPriority",
+              "@type": "xsd:decimal"
+            }
+          },
+          "@id": "mcp:hasAnnotations",
+          "@type": "@id"
+        },
+        "text": {
+          "@id": "mcp:hasText",
+          "@type": "xsd:string"
+        },
+        "type": {
+          "@id": "mcp:hasContentType",
+          "@type": "xsd:string"
+        },
+        "data": {
+          "@id": "mcp:hasData",
+          "@type": "xsd:base64Binary"
+        },
+        "mimeType": {
+          "@id": "mcp:hasMimeType",
+          "@type": "xsd:string"
+        },
+        "size": {
+          "@id": "mcp:hasSize",
+          "@type": "xsd:integer"
+        },
+        "title": {
+          "@id": "mcp:hasTitle",
+          "@type": "xsd:string"
+        },
+        "resource": {
+          "@context": {
+            "blob": {
+              "@id": "mcp:hasBlob",
+              "@type": "xsd:base64Binary"
+            }
+          },
+          "@id": "mcp:embedsResource",
+          "@type": "@id"
+        }
+      },
+      "@id": "mcp:hasContent",
+      "@type": "@id",
+      "@container": "@list"
+    },
+    "model": {
+      "@id": "mcp:hasModel",
+      "@type": "xsd:string"
+    },
+    "role": {
+      "@id": "mcp:hasRole",
+      "@type": "mcp:Role"
+    },
+    "stopReason": {
+      "@id": "mcp:hasStopReason",
+      "@type": "xsd:string"
+    },
+    "roots": {
+      "@id": "mcp:containsRoot",
+      "@type": "mcp:Root",
+      "@container": "@list"
+    },
+    "action": {
+      "@id": "mcp:hasAction",
+      "@type": "xsd:string"
+    },
+    "includeContext": {
+      "@id": "mcp:hasIncludeContext",
+      "@type": "xsd:string"
+    },
+    "maxTokens": {
+      "@id": "mcp:hasMaxTokens",
+      "@type": "xsd:integer"
+    },
+    "messages": {
+      "@id": "mcp:containsMessage",
+      "@type": "@id",
+      "@container": "@list"
+    },
+    "metadata": {
+      "@id": "mcp:hasMetadata",
+      "@type": "@json"
+    },
+    "modelPreferences": {
+      "@context": {
+        "costPriority": {
+          "@id": "mcp:hasCostPriority",
+          "@type": "xsd:decimal"
+        },
+        "hints": {
+          "@id": "mcp:hasHints",
+          "@type": "mcp:ModelHint",
+          "@container": "@list"
+        },
+        "intelligencePriority": {
+          "@id": "mcp:hasIntelligencePriority",
+          "@type": "xsd:decimal"
+        },
+        "speedPriority": {
+          "@id": "mcp:hasSpeedPriority",
+          "@type": "xsd:decimal"
+        }
+      },
+      "@id": "mcp:hasModelPreferences",
+      "@type": "mcp:ModelPreferences"
+    },
+    "stopSequences": {
+      "@id": "mcp:hasStopSequences",
+      "@type": "xsd:string",
+      "@container": "@list"
+    },
+    "systemPrompt": {
+      "@id": "mcp:hasSystemPrompt",
+      "@type": "xsd:string"
+    },
+    "temperature": {
+      "@id": "mcp:hasTemperature",
+      "@type": "xsd:decimal"
+    },
+    "message": {
+      "@id": "mcp:hasMessage",
+      "@type": "xsd:string"
+    },
+    "requestedSchema": {
+      "@context": {
+        "properties": {
+          "@context": {
+            "format": {
+              "@id": "mcp:hasFormat",
+              "@type": "xsd:string"
+            },
+            "maxLength": {
+              "@id": "mcp:hasMaxLength",
+              "@type": "xsd:integer"
+            },
+            "minLength": {
+              "@id": "mcp:hasMinLength",
+              "@type": "xsd:integer"
+            },
+            "title": {
+              "@id": "mcp:hasTitle",
+              "@type": "xsd:string"
+            },
+            "maximum": {
+              "@id": "mcp:hasMaximum",
+              "@type": "xsd:integer"
+            },
+            "minimum": {
+              "@id": "mcp:hasMinimum",
+              "@type": "xsd:integer"
+            },
+            "default": "mcp:hasDefault"
+          },
+          "@id": "mcp:hasProperties",
+          "@type": "@json"
+        },
+        "required": {
+          "@id": "mcp:isRequired",
+          "@type": "xsd:boolean"
+        },
+        "type": {
+          "@id": "mcp:hasContentType",
+          "@type": "xsd:string"
+        }
+      },
+      "@id": "mcp:hasRequestedSchema",
+      "@type": "@json"
+    },
+    "instructions": {
+      "@id": "mcp:hasInstructions",
+      "@type": "xsd:string"
+    },
+    "serverInfo": {
+      "@context": {
+        "title": {
+          "@id": "mcp:hasTitle",
+          "@type": "xsd:string"
+        },
+        "version": {
+          "@id": "mcp:hasVersion",
+          "@type": "xsd:string"
+        }
+      },
+      "@id": "mcp:hasServerInfo",
+      "@type": "mcp:Implementation"
+    },
+    "nextCursor": {
+      "@id": "mcp:hasNextCursor",
+      "@type": "mcp:Cursor"
+    },
+    "resources": {
+      "@context": {
+        "annotations": {
+          "@context": {
+            "audience": {
+              "@id": "mcp:hasAudience",
+              "@type": "mcp:Role",
+              "@container": "@list"
+            },
+            "lastModified": {
+              "@id": "mcp:hasLastModified",
+              "@type": "xsd:dateTime"
+            },
+            "priority": {
+              "@id": "mcp:hasPriority",
+              "@type": "xsd:decimal"
+            }
+          },
+          "@id": "mcp:hasAnnotations",
+          "@type": "@id"
+        },
+        "mimeType": {
+          "@id": "mcp:hasMimeType",
+          "@type": "xsd:string"
+        },
+        "size": {
+          "@id": "mcp:hasSize",
+          "@type": "xsd:integer"
+        },
+        "title": {
+          "@id": "mcp:hasTitle",
+          "@type": "xsd:string"
+        }
+      },
+      "@id": "mcp:hasResourcesCapability",
+      "@type": "@json"
+    },
+    "resourceTemplates": {
+      "@context": {
+        "annotations": {
+          "@context": {
+            "audience": {
+              "@id": "mcp:hasAudience",
+              "@type": "mcp:Role",
+              "@container": "@list"
+            },
+            "lastModified": {
+              "@id": "mcp:hasLastModified",
+              "@type": "xsd:dateTime"
+            },
+            "priority": {
+              "@id": "mcp:hasPriority",
+              "@type": "xsd:decimal"
+            }
+          },
+          "@id": "mcp:hasAnnotations",
+          "@type": "@id"
+        },
+        "mimeType": {
+          "@id": "mcp:hasMimeType",
+          "@type": "xsd:string"
+        },
+        "title": {
+          "@id": "mcp:hasTitle",
+          "@type": "xsd:string"
+        },
+        "uriTemplate": {
+          "@id": "mcp:hasURITemplate",
+          "@type": "xsd:string"
+        }
+      },
+      "@id": "mcp:containsResourceTemplate",
+      "@type": "@id",
+      "@container": "@list"
+    },
+    "contents": {
+      "@context": {
+        "mimeType": {
+          "@id": "mcp:hasMimeType",
+          "@type": "xsd:string"
+        },
+        "text": {
+          "@id": "mcp:hasText",
+          "@type": "xsd:string"
+        },
+        "blob": {
+          "@id": "mcp:hasBlob",
+          "@type": "xsd:base64Binary"
+        }
+      },
+      "@id": "mcp:hasContents",
+      "@type": "@id",
+      "@container": "@list"
+    },
+    "prompts": {
+      "@context": {
+        "arguments": {
+          "@context": {
+            "required": {
+              "@id": "mcp:isRequired",
+              "@type": "xsd:boolean"
+            }
+          },
+          "@id": "mcp:hasArguments",
+          "@type": "@json"
+        },
+        "title": {
+          "@id": "mcp:hasTitle",
+          "@type": "xsd:string"
+        }
+      },
+      "@id": "mcp:hasPromptsCapability",
+      "@type": "@json"
+    },
+    "description": {
+      "@id": "mcp:hasDescription",
+      "@type": "xsd:string"
+    },
+    "tools": {
+      "@context": {
+        "annotations": {
+          "@context": {
+            "destructiveHint": {
+              "@id": "mcp:isDestructiveHint",
+              "@type": "xsd:boolean"
+            },
+            "idempotentHint": {
+              "@id": "mcp:isIdempotentHint",
+              "@type": "xsd:boolean"
+            },
+            "openWorldHint": {
+              "@id": "mcp:isOpenWorldHint",
+              "@type": "xsd:boolean"
+            },
+            "readOnlyHint": {
+              "@id": "mcp:isReadOnlyHint",
+              "@type": "xsd:boolean"
+            }
+          },
+          "@id": "mcp:hasAnnotations",
+          "@type": "@id"
+        },
+        "inputSchema": {
+          "@context": {
+            "properties": {
+              "@id": "mcp:hasProperties",
+              "@type": "@json"
+            },
+            "required": {
+              "@id": "mcp:isRequired",
+              "@type": "xsd:boolean"
+            },
+            "type": {
+              "@id": "mcp:hasContentType",
+              "@type": "xsd:string"
+            }
+          },
+          "@id": "mcp:hasInputSchema",
+          "@type": "@json"
+        },
+        "outputSchema": {
+          "@context": {
+            "properties": {
+              "@id": "mcp:hasProperties",
+              "@type": "@json"
+            },
+            "required": {
+              "@id": "mcp:isRequired",
+              "@type": "xsd:boolean"
+            },
+            "type": {
+              "@id": "mcp:hasContentType",
+              "@type": "xsd:string"
+            }
+          },
+          "@id": "mcp:hasOutputSchema",
+          "@type": "@json"
+        },
+        "title": {
+          "@id": "mcp:hasTitle",
+          "@type": "xsd:string"
+        }
+      },
+      "@id": "mcp:hasToolsCapability",
+      "@type": "@json"
+    },
+    "isError": {
+      "@id": "mcp:isError",
+      "@type": "xsd:boolean"
+    },
+    "structuredContent": {
+      "@id": "mcp:hasStructuredContent",
+      "@type": "@json"
+    },
+    "completion": {
+      "@id": "mcp:hasCompletion",
+      "@type": "@json"
+    },
     "RequestId": "mcp:RequestId",
     "Cursor": {
       "@id": "mcp:Cursor",
@@ -3892,6 +4452,10 @@ Links to the schema:
     },
     "EmbeddedResource": {
       "@id": "mcp:EmbeddedResource",
+      "@type": "@id"
+    },
+    "resource": {
+      "@id": "mcp:embedsResource",
       "@type": "@id"
     },
     "ListResourcesRequest": {
@@ -4082,6 +4646,19 @@ Links to the schema:
       "@id": "mcp:ResourceTemplateReference",
       "@type": "@id"
     },
+    "values": {
+      "@id": "mcp:hasValues",
+      "@type": "xsd:string",
+      "@container": "@list"
+    },
+    "total": {
+      "@id": "mcp:hasTotal",
+      "@type": "xsd:integer"
+    },
+    "hasMore": {
+      "@id": "mcp:hasMore",
+      "@type": "xsd:boolean"
+    },
     "LoggingLevel": {
       "@id": "mcp:LoggingLevel",
       "@type": "xsd:string"
@@ -4094,6 +4671,10 @@ Links to the schema:
       "@id": "mcp:LoggingMessageNotification",
       "@type": "@id"
     },
+    "logger": {
+      "@id": "mcp:hasLogger",
+      "@type": "xsd:string"
+    },
     "ProgressNotification": {
       "@id": "mcp:ProgressNotification",
       "@type": "@id"
@@ -4101,6 +4682,18 @@ Links to the schema:
     "CancelledNotification": {
       "@id": "mcp:CancelledNotification",
       "@type": "@id"
+    },
+    "progress": {
+      "@id": "mcp:hasProgress",
+      "@type": "xsd:decimal"
+    },
+    "requestId": {
+      "@id": "mcp:hasRequestId",
+      "@type": "mcp:RequestId"
+    },
+    "reason": {
+      "@id": "mcp:hasReason",
+      "@type": "xsd:string"
     },
     "PingRequest": {
       "@id": "mcp:PingRequest",
@@ -4134,9 +4727,89 @@ Links to the schema:
       "@id": "mcp:PrimitiveSchemaDefinition",
       "@type": "@id"
     },
-    "mcp": "http://modelcontextprotocol.io/ontology#",
+    "enum": {
+      "@id": "mcp:hasEnumValues",
+      "@type": "xsd:string",
+      "@container": "@list"
+    },
+    "enumNames": {
+      "@id": "mcp:hasEnumNames",
+      "@type": "xsd:string",
+      "@container": "@list"
+    },
+    "Message": {
+      "@id": "jrpc:Message",
+      "@type": "@id"
+    },
+    "Request": {
+      "@id": "jrpc:Request",
+      "@type": "@id"
+    },
+    "Notification": {
+      "@id": "jrpc:Notification",
+      "@type": "@id"
+    },
+    "Response": {
+      "@id": "jrpc:Response",
+      "@type": "@id"
+    },
+    "ErrorResponse": {
+      "@id": "jrpc:ErrorResponse",
+      "@type": "@id"
+    },
+    "Error": {
+      "@id": "jrpc:Error",
+      "@type": "@id"
+    },
+    "StringId": {
+      "@id": "jrpc:StringId",
+      "@type": "@id"
+    },
+    "NumberId": {
+      "@id": "jrpc:NumberId",
+      "@type": "@id"
+    },
+    "NullId": {
+      "@id": "jrpc:NullId",
+      "@type": "@id"
+    },
+    "stringValue": {
+      "@id": "jrpc:hasStringValue",
+      "@type": "xsd:string"
+    },
+    "numberValue": {
+      "@id": "jrpc:hasNumberValue",
+      "@type": "xsd:decimal"
+    },
+    "ParseError": {
+      "@id": "jrpc:ParseError",
+      "@type": "@id"
+    },
+    "InvalidRequest": {
+      "@id": "jrpc:InvalidRequest",
+      "@type": "@id"
+    },
+    "MethodNotFound": {
+      "@id": "jrpc:MethodNotFound",
+      "@type": "@id"
+    },
+    "InvalidParams": {
+      "@id": "jrpc:InvalidParams",
+      "@type": "@id"
+    },
+    "InternalError": {
+      "@id": "jrpc:InternalError",
+      "@type": "@id"
+    },
+    "ServerError": {
+      "@id": "jrpc:ServerError",
+      "@type": "@id"
+    },
+    "jrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "x@vocab": "http://json-rpc.org/ontology#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "mcp": "http://modelcontextprotocol.io/ontology#",
     "@version": 1.1
   }
 }

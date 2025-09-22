@@ -12,12 +12,12 @@
         bblocks:Schema ;
     rdfs:label "MCP" ;
     dct:created "2025-06-12T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/bblock/mcp.mcp" ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/json-full/mcp/index.json" ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/markdown/mcp/index.md" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/bblock/mcp.mcp" ],
         "Schema refactored to use a JSON-RPC buildingblock"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:hasVersion "1.0.0" ;
     dct:modified "2025-09-22"^^xsd:date ;
@@ -33,18 +33,18 @@
 
 <https://ogcincubator.github.io/modelcontextprotocol/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:Nb9be289978a54d61a28c26b1d0bf0895 ;
+    prov:wasAttributedTo _:N961f5cd2e147499b95eee445273faec9 ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2025-09-22T07:23:07.047702"^^xsd:dateTime ;
-            prov:startedAtTime "2025-09-22T07:23:06.985839"^^xsd:dateTime ;
+            prov:endedAtTime "2025-09-22T13:34:39.200060"^^xsd:dateTime ;
+            prov:startedAtTime "2025-09-22T13:34:39.134294"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
-                    dct:format "application/json" ;
-                    dct:hasVersion "git:a17a3b0d0a791de459bcd6f0ccd8a42c5f5aa8d9" ;
-                    rdfs:seeAlso <https://ogcincubator.github.io/modelcontextprotocol/build/register.json> ],
-                [ a prov:Entity ;
                     dct:format "application/yaml" ;
-                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
-            prov:wasAssociatedWith _:Nb9be289978a54d61a28c26b1d0bf0895 ] .
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+                [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:cf0d16bc8aea53d39322b71263ffb4f4810afccd" ;
+                    rdfs:seeAlso <https://ogcincubator.github.io/modelcontextprotocol/build/register.json> ] ;
+            prov:wasAssociatedWith _:N961f5cd2e147499b95eee445273faec9 ] .
 
 <https://modelcontextprotocol.io/specification/2025-06-18> rdfs:label "Model Context Protocol" .
 
@@ -55,10 +55,10 @@
     dct:created "2025-06-12T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/markdown/json-rpc/index.md" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/bblock/mcp.json-rpc" ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/build/generateddocs/json-full/json-rpc/index.json" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/modelcontextprotocol/bblock/mcp.json-rpc" ],
         "Annotates the JSON-RPC schemas with a JSON-LD context and ontology"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:hasVersion "2.0.0" ;
     dct:modified "2025-09-22"^^xsd:date ;
@@ -81,9 +81,9 @@
     bblocks:hasValidationReport <https://ogcincubator.github.io/modelcontextprotocol/build/tests/report.html> ;
     bblocks:imports <https://opengeospatial.github.io/bblocks/register.json> .
 
-_:Nb9be289978a54d61a28c26b1d0bf0895 a prov:Agent,
+_:N961f5cd2e147499b95eee445273faec9 a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
-    dct:hasVersion "0.4.2" ;
+    dct:hasVersion "0.4.3" ;
     rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
 
