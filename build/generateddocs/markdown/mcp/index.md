@@ -57,14 +57,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/1> ;
-    x@vocab:hasMethod "initialize"^^xsd:string ;
-    x@vocab:hasParameters "{\"capabilities\":{\"logging\":{},\"prompts\":{},\"resources\":{},\"tools\":{}},\"clientInfo\":{\"name\":\"example-client\",\"version\":\"1.0.0\"},\"protocolVersion\":\"2024-11-05\"}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/1> ;
+    jrpc:hasMethod "initialize"^^xsd:string ;
+    jrpc:hasParameters "{\"capabilities\":{\"logging\":{},\"prompts\":{},\"resources\":{},\"tools\":{}},\"clientInfo\":{\"name\":\"example-client\",\"version\":\"1.0.0\"},\"protocolVersion\":\"2024-11-05\"}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -90,11 +90,11 @@ None
 
 #### ttl
 ```ttl
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasMethod "notifications/initialized"^^xsd:string ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasMethod "notifications/initialized"^^xsd:string ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -124,14 +124,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/2> ;
-    x@vocab:hasMethod "tools/list"^^xsd:string ;
-    x@vocab:hasParameters "{}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/2> ;
+    jrpc:hasMethod "tools/list"^^xsd:string ;
+    jrpc:hasParameters "{}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -173,14 +173,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/3> ;
-    x@vocab:hasMethod "tools/call"^^xsd:string ;
-    x@vocab:hasParameters "{\"arguments\":{\"location\":\"San Francisco\",\"units\":\"celsius\"},\"name\":\"get_weather\"}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/3> ;
+    jrpc:hasMethod "tools/call"^^xsd:string ;
+    jrpc:hasParameters "{\"arguments\":{\"location\":\"San Francisco\",\"units\":\"celsius\"},\"name\":\"get_weather\"}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -210,14 +210,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/4> ;
-    x@vocab:hasMethod "resources/list"^^xsd:string ;
-    x@vocab:hasParameters "{}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/4> ;
+    jrpc:hasMethod "resources/list"^^xsd:string ;
+    jrpc:hasParameters "{}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -251,14 +251,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/5> ;
-    x@vocab:hasMethod "resources/read"^^xsd:string ;
-    x@vocab:hasParameters "{\"uri\":\"file:///path/to/document.txt\"}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/5> ;
+    jrpc:hasMethod "resources/read"^^xsd:string ;
+    jrpc:hasParameters "{\"uri\":\"file:///path/to/document.txt\"}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -292,14 +292,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/6> ;
-    x@vocab:hasMethod "resources/subscribe"^^xsd:string ;
-    x@vocab:hasParameters "{\"uri\":\"file:///path/to/watched/directory\"}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/6> ;
+    jrpc:hasMethod "resources/subscribe"^^xsd:string ;
+    jrpc:hasParameters "{\"uri\":\"file:///path/to/watched/directory\"}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -333,14 +333,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/7> ;
-    x@vocab:hasMethod "resources/unsubscribe"^^xsd:string ;
-    x@vocab:hasParameters "{\"uri\":\"file:///path/to/watched/directory\"}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/7> ;
+    jrpc:hasMethod "resources/unsubscribe"^^xsd:string ;
+    jrpc:hasParameters "{\"uri\":\"file:///path/to/watched/directory\"}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -370,14 +370,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/8> ;
-    x@vocab:hasMethod "prompts/list"^^xsd:string ;
-    x@vocab:hasParameters "{}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/8> ;
+    jrpc:hasMethod "prompts/list"^^xsd:string ;
+    jrpc:hasParameters "{}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -419,14 +419,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/9> ;
-    x@vocab:hasMethod "prompts/get"^^xsd:string ;
-    x@vocab:hasParameters "{\"arguments\":{\"complexity\":\"high\",\"language\":\"python\"},\"name\":\"code_review\"}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/9> ;
+    jrpc:hasMethod "prompts/get"^^xsd:string ;
+    jrpc:hasParameters "{\"arguments\":{\"complexity\":\"high\",\"language\":\"python\"},\"name\":\"code_review\"}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -460,14 +460,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/10> ;
-    x@vocab:hasMethod "logging/setLevel"^^xsd:string ;
-    x@vocab:hasParameters "{\"level\":\"info\"}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/10> ;
+    jrpc:hasMethod "logging/setLevel"^^xsd:string ;
+    jrpc:hasParameters "{\"level\":\"info\"}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -515,14 +515,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/11> ;
-    x@vocab:hasMethod "completion/complete"^^xsd:string ;
-    x@vocab:hasParameters "{\"argument\":{\"name\":\"query\",\"value\":\"def calculate_\"},\"ref\":{\"type\":\"ref/resource\",\"uri\":\"file:///path/to/file.py\"}}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/11> ;
+    jrpc:hasMethod "completion/complete"^^xsd:string ;
+    jrpc:hasParameters "{\"argument\":{\"name\":\"query\",\"value\":\"def calculate_\"},\"ref\":{\"type\":\"ref/resource\",\"uri\":\"file:///path/to/file.py\"}}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -556,13 +556,13 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasMethod "notifications/cancelled"^^xsd:string ;
-    x@vocab:hasParameters "{\"reason\":\"User requested cancellation\",\"requestId\":\"3\"}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasMethod "notifications/cancelled"^^xsd:string ;
+    jrpc:hasParameters "{\"reason\":\"User requested cancellation\",\"requestId\":\"3\"}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -598,13 +598,13 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasMethod "notifications/progress"^^xsd:string ;
-    x@vocab:hasParameters "{\"progress\":75,\"progressToken\":\"upload_123\",\"total\":100}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasMethod "notifications/progress"^^xsd:string ;
+    jrpc:hasParameters "{\"progress\":75,\"progressToken\":\"upload_123\",\"total\":100}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -636,13 +636,13 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasMethod "notifications/resources/updated"^^xsd:string ;
-    x@vocab:hasParameters "{\"uri\":\"file:///path/to/document.txt\"}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasMethod "notifications/resources/updated"^^xsd:string ;
+    jrpc:hasParameters "{\"uri\":\"file:///path/to/document.txt\"}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -668,11 +668,11 @@ None
 
 #### ttl
 ```ttl
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasMethod "notifications/resources/list_changed"^^xsd:string ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasMethod "notifications/resources/list_changed"^^xsd:string ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -698,11 +698,11 @@ None
 
 #### ttl
 ```ttl
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasMethod "notifications/tools/list_changed"^^xsd:string ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasMethod "notifications/tools/list_changed"^^xsd:string ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -728,11 +728,11 @@ None
 
 #### ttl
 ```ttl
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasMethod "notifications/prompts/list_changed"^^xsd:string ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasMethod "notifications/prompts/list_changed"^^xsd:string ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -810,14 +810,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/12> ;
-    x@vocab:hasMethod "sampling/createMessage"^^xsd:string ;
-    x@vocab:hasParameters "{\"includeContext\":\"thisServer\",\"maxTokens\":1000,\"messages\":[{\"content\":{\"text\":\"What's the weather like today?\",\"type\":\"text\"},\"role\":\"user\"}],\"modelPreferences\":{\"costPriority\":0.5,\"hints\":[{\"name\":\"claude-3-sonnet\"}],\"intelligencePriority\":0.9,\"speedPriority\":0.8},\"systemPrompt\":\"You are a helpful weather assistant.\",\"temperature\":0.7}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/12> ;
+    jrpc:hasMethod "sampling/createMessage"^^xsd:string ;
+    jrpc:hasParameters "{\"includeContext\":\"thisServer\",\"maxTokens\":1000,\"messages\":[{\"content\":{\"text\":\"What's the weather like today?\",\"type\":\"text\"},\"role\":\"user\"}],\"modelPreferences\":{\"costPriority\":0.5,\"hints\":[{\"name\":\"claude-3-sonnet\"}],\"intelligencePriority\":0.9,\"speedPriority\":0.8},\"systemPrompt\":\"You are a helpful weather assistant.\",\"temperature\":0.7}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -847,14 +847,14 @@ None
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/13> ;
-    x@vocab:hasMethod "roots/list"^^xsd:string ;
-    x@vocab:hasParameters "{}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/13> ;
+    jrpc:hasMethod "roots/list"^^xsd:string ;
+    jrpc:hasParameters "{}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -3537,6 +3537,9 @@ x-jsonld-extra-terms:
   InitializedNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#InitializedNotification
     x-jsonld-type: '@id'
+  clientInfo:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasClientInfo
+    x-jsonld-type: http://modelcontextprotocol.io/ontology#Implementation
   ClientCapabilities:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ClientCapabilities
     x-jsonld-type: '@id'
@@ -3545,6 +3548,12 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   rootsX-duplicate-tofix:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#hasRootsCapability
+    x-jsonld-type: '@json'
+  sampling:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasSamplingCapability
+    x-jsonld-type: '@json'
+  elicitation:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasElicitationCapability
     x-jsonld-type: '@json'
   Resource:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#Resource
@@ -3566,9 +3575,6 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   EmbeddedResource:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#EmbeddedResource
-    x-jsonld-type: '@id'
-  resource:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#embedsResource
     x-jsonld-type: '@id'
   ListResourcesRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ListResourcesRequest
@@ -3624,12 +3630,6 @@ x-jsonld-extra-terms:
   ToolListChangedNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ToolListChangedNotification
     x-jsonld-type: '@id'
-  isError:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#isError
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
-  structuredContent:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasStructuredContent
-    x-jsonld-type: '@json'
   Prompt:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#Prompt
     x-jsonld-type: '@id'
@@ -3702,12 +3702,19 @@ x-jsonld-extra-terms:
   RootsListChangedNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#RootsListChangedNotification
     x-jsonld-type: '@id'
+  roots:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#containsRoot
+    x-jsonld-type: http://modelcontextprotocol.io/ontology#Root
+    x-jsonld-container: '@list'
   ElicitRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ElicitRequest
     x-jsonld-type: '@id'
   ElicitResult:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ElicitResult
     x-jsonld-type: '@id'
+  action:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAction
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
   CompleteRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#CompleteRequest
     x-jsonld-type: '@id'
@@ -3717,19 +3724,6 @@ x-jsonld-extra-terms:
   ResourceTemplateReference:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ResourceTemplateReference
     x-jsonld-type: '@id'
-  completion:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCompletion
-    x-jsonld-type: '@json'
-  values:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasValues
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-    x-jsonld-container: '@list'
-  total:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTotal
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
-  hasMore:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMore
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
   LoggingLevel:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#LoggingLevel
     x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
@@ -3739,9 +3733,6 @@ x-jsonld-extra-terms:
   LoggingMessageNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#LoggingMessageNotification
     x-jsonld-type: '@id'
-  level:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLevel
-    x-jsonld-type: http://modelcontextprotocol.io/ontology#LoggingLevel
   logger:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLogger
     x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
@@ -3784,14 +3775,6 @@ x-jsonld-extra-terms:
   PrimitiveSchemaDefinition:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#PrimitiveSchemaDefinition
     x-jsonld-type: '@id'
-  enum:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasEnumValues
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-    x-jsonld-container: '@list'
-  enumNames:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasEnumNames
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-    x-jsonld-container: '@list'
 x-jsonld-prefixes:
   mcp: http://modelcontextprotocol.io/ontology#
   xsd: http://www.w3.org/2001/XMLSchema#
@@ -3828,10 +3811,6 @@ Links to the schema:
     },
     "capabilities": {
       "@context": {
-        "elicitation": {
-          "@id": "mcp:hasElicitationCapability",
-          "@type": "@json"
-        },
         "experimental": {
           "@id": "mcp:hasExperimentalCapabilities",
           "@type": "@json"
@@ -3846,10 +3825,6 @@ Links to the schema:
           "@id": "mcp:containsRoot",
           "@type": "mcp:Root",
           "@container": "@list"
-        },
-        "sampling": {
-          "@id": "mcp:hasSamplingCapability",
-          "@type": "@json"
         },
         "completions": {
           "@id": "mcp:hasCompletionsCapability",
@@ -4155,7 +4130,17 @@ Links to the schema:
               "@id": "mcp:hasMinimum",
               "@type": "xsd:integer"
             },
-            "default": "mcp:hasDefault"
+            "default": "mcp:hasDefault",
+            "enum": {
+              "@id": "mcp:hasEnumValues",
+              "@type": "xsd:string",
+              "@container": "@list"
+            },
+            "enumNames": {
+              "@id": "mcp:hasEnumNames",
+              "@type": "xsd:string",
+              "@container": "@list"
+            }
           },
           "@id": "mcp:hasProperties",
           "@type": "@json"
@@ -4389,6 +4374,21 @@ Links to the schema:
       "@type": "@json"
     },
     "completion": {
+      "@context": {
+        "hasMore": {
+          "@id": "mcp:hasMore",
+          "@type": "xsd:boolean"
+        },
+        "total": {
+          "@id": "mcp:hasTotal",
+          "@type": "xsd:integer"
+        },
+        "values": {
+          "@id": "mcp:hasValues",
+          "@type": "xsd:string",
+          "@container": "@list"
+        }
+      },
       "@id": "mcp:hasCompletion",
       "@type": "@json"
     },
@@ -4426,6 +4426,14 @@ Links to the schema:
       "@id": "mcp:hasRootsCapability",
       "@type": "@json"
     },
+    "sampling": {
+      "@id": "mcp:hasSamplingCapability",
+      "@type": "@json"
+    },
+    "elicitation": {
+      "@id": "mcp:hasElicitationCapability",
+      "@type": "@json"
+    },
     "Resource": {
       "@id": "mcp:Resource",
       "@type": "@id"
@@ -4452,10 +4460,6 @@ Links to the schema:
     },
     "EmbeddedResource": {
       "@id": "mcp:EmbeddedResource",
-      "@type": "@id"
-    },
-    "resource": {
-      "@id": "mcp:embedsResource",
       "@type": "@id"
     },
     "ListResourcesRequest": {
@@ -4646,19 +4650,6 @@ Links to the schema:
       "@id": "mcp:ResourceTemplateReference",
       "@type": "@id"
     },
-    "values": {
-      "@id": "mcp:hasValues",
-      "@type": "xsd:string",
-      "@container": "@list"
-    },
-    "total": {
-      "@id": "mcp:hasTotal",
-      "@type": "xsd:integer"
-    },
-    "hasMore": {
-      "@id": "mcp:hasMore",
-      "@type": "xsd:boolean"
-    },
     "LoggingLevel": {
       "@id": "mcp:LoggingLevel",
       "@type": "xsd:string"
@@ -4726,16 +4717,6 @@ Links to the schema:
     "PrimitiveSchemaDefinition": {
       "@id": "mcp:PrimitiveSchemaDefinition",
       "@type": "@id"
-    },
-    "enum": {
-      "@id": "mcp:hasEnumValues",
-      "@type": "xsd:string",
-      "@container": "@list"
-    },
-    "enumNames": {
-      "@id": "mcp:hasEnumNames",
-      "@type": "xsd:string",
-      "@container": "@list"
     },
     "Message": {
       "@id": "jrpc:Message",
@@ -4807,7 +4788,6 @@ Links to the schema:
     },
     "jrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "x@vocab": "http://json-rpc.org/ontology#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "mcp": "http://modelcontextprotocol.io/ontology#",
     "@version": 1.1

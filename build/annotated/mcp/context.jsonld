@@ -18,10 +18,6 @@
     },
     "capabilities": {
       "@context": {
-        "elicitation": {
-          "@id": "mcp:hasElicitationCapability",
-          "@type": "@json"
-        },
         "experimental": {
           "@id": "mcp:hasExperimentalCapabilities",
           "@type": "@json"
@@ -36,10 +32,6 @@
           "@id": "mcp:containsRoot",
           "@type": "mcp:Root",
           "@container": "@list"
-        },
-        "sampling": {
-          "@id": "mcp:hasSamplingCapability",
-          "@type": "@json"
         },
         "completions": {
           "@id": "mcp:hasCompletionsCapability",
@@ -345,7 +337,17 @@
               "@id": "mcp:hasMinimum",
               "@type": "xsd:integer"
             },
-            "default": "mcp:hasDefault"
+            "default": "mcp:hasDefault",
+            "enum": {
+              "@id": "mcp:hasEnumValues",
+              "@type": "xsd:string",
+              "@container": "@list"
+            },
+            "enumNames": {
+              "@id": "mcp:hasEnumNames",
+              "@type": "xsd:string",
+              "@container": "@list"
+            }
           },
           "@id": "mcp:hasProperties",
           "@type": "@json"
@@ -579,6 +581,21 @@
       "@type": "@json"
     },
     "completion": {
+      "@context": {
+        "hasMore": {
+          "@id": "mcp:hasMore",
+          "@type": "xsd:boolean"
+        },
+        "total": {
+          "@id": "mcp:hasTotal",
+          "@type": "xsd:integer"
+        },
+        "values": {
+          "@id": "mcp:hasValues",
+          "@type": "xsd:string",
+          "@container": "@list"
+        }
+      },
       "@id": "mcp:hasCompletion",
       "@type": "@json"
     },
@@ -616,6 +633,14 @@
       "@id": "mcp:hasRootsCapability",
       "@type": "@json"
     },
+    "sampling": {
+      "@id": "mcp:hasSamplingCapability",
+      "@type": "@json"
+    },
+    "elicitation": {
+      "@id": "mcp:hasElicitationCapability",
+      "@type": "@json"
+    },
     "Resource": {
       "@id": "mcp:Resource",
       "@type": "@id"
@@ -642,10 +667,6 @@
     },
     "EmbeddedResource": {
       "@id": "mcp:EmbeddedResource",
-      "@type": "@id"
-    },
-    "resource": {
-      "@id": "mcp:embedsResource",
       "@type": "@id"
     },
     "ListResourcesRequest": {
@@ -836,19 +857,6 @@
       "@id": "mcp:ResourceTemplateReference",
       "@type": "@id"
     },
-    "values": {
-      "@id": "mcp:hasValues",
-      "@type": "xsd:string",
-      "@container": "@list"
-    },
-    "total": {
-      "@id": "mcp:hasTotal",
-      "@type": "xsd:integer"
-    },
-    "hasMore": {
-      "@id": "mcp:hasMore",
-      "@type": "xsd:boolean"
-    },
     "LoggingLevel": {
       "@id": "mcp:LoggingLevel",
       "@type": "xsd:string"
@@ -916,16 +924,6 @@
     "PrimitiveSchemaDefinition": {
       "@id": "mcp:PrimitiveSchemaDefinition",
       "@type": "@id"
-    },
-    "enum": {
-      "@id": "mcp:hasEnumValues",
-      "@type": "xsd:string",
-      "@container": "@list"
-    },
-    "enumNames": {
-      "@id": "mcp:hasEnumNames",
-      "@type": "xsd:string",
-      "@container": "@list"
     },
     "Message": {
       "@id": "jrpc:Message",
@@ -997,7 +995,6 @@
     },
     "jrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "x@vocab": "http://json-rpc.org/ontology#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "mcp": "http://modelcontextprotocol.io/ontology#",
     "@version": 1.1

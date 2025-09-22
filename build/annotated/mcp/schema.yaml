@@ -2673,6 +2673,9 @@ x-jsonld-extra-terms:
   InitializedNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#InitializedNotification
     x-jsonld-type: '@id'
+  clientInfo:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasClientInfo
+    x-jsonld-type: http://modelcontextprotocol.io/ontology#Implementation
   ClientCapabilities:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ClientCapabilities
     x-jsonld-type: '@id'
@@ -2681,6 +2684,12 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   rootsX-duplicate-tofix:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#hasRootsCapability
+    x-jsonld-type: '@json'
+  sampling:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasSamplingCapability
+    x-jsonld-type: '@json'
+  elicitation:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasElicitationCapability
     x-jsonld-type: '@json'
   Resource:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#Resource
@@ -2702,9 +2711,6 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   EmbeddedResource:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#EmbeddedResource
-    x-jsonld-type: '@id'
-  resource:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#embedsResource
     x-jsonld-type: '@id'
   ListResourcesRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ListResourcesRequest
@@ -2760,12 +2766,6 @@ x-jsonld-extra-terms:
   ToolListChangedNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ToolListChangedNotification
     x-jsonld-type: '@id'
-  isError:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#isError
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
-  structuredContent:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasStructuredContent
-    x-jsonld-type: '@json'
   Prompt:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#Prompt
     x-jsonld-type: '@id'
@@ -2838,12 +2838,19 @@ x-jsonld-extra-terms:
   RootsListChangedNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#RootsListChangedNotification
     x-jsonld-type: '@id'
+  roots:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#containsRoot
+    x-jsonld-type: http://modelcontextprotocol.io/ontology#Root
+    x-jsonld-container: '@list'
   ElicitRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ElicitRequest
     x-jsonld-type: '@id'
   ElicitResult:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ElicitResult
     x-jsonld-type: '@id'
+  action:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAction
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
   CompleteRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#CompleteRequest
     x-jsonld-type: '@id'
@@ -2853,19 +2860,6 @@ x-jsonld-extra-terms:
   ResourceTemplateReference:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ResourceTemplateReference
     x-jsonld-type: '@id'
-  completion:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCompletion
-    x-jsonld-type: '@json'
-  values:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasValues
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-    x-jsonld-container: '@list'
-  total:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTotal
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
-  hasMore:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMore
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
   LoggingLevel:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#LoggingLevel
     x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
@@ -2875,9 +2869,6 @@ x-jsonld-extra-terms:
   LoggingMessageNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#LoggingMessageNotification
     x-jsonld-type: '@id'
-  level:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLevel
-    x-jsonld-type: http://modelcontextprotocol.io/ontology#LoggingLevel
   logger:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLogger
     x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
@@ -2920,14 +2911,6 @@ x-jsonld-extra-terms:
   PrimitiveSchemaDefinition:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#PrimitiveSchemaDefinition
     x-jsonld-type: '@id'
-  enum:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasEnumValues
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-    x-jsonld-container: '@list'
-  enumNames:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasEnumNames
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
-    x-jsonld-container: '@list'
 x-jsonld-prefixes:
   mcp: http://modelcontextprotocol.io/ontology#
   xsd: http://www.w3.org/2001/XMLSchema#

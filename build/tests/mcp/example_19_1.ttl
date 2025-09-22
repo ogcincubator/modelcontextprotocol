@@ -1,9 +1,9 @@
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <http://example.com/activities/12> ;
-    x@vocab:hasMethod "sampling/createMessage"^^xsd:string ;
-    x@vocab:hasParameters "{\"includeContext\":\"thisServer\",\"maxTokens\":1000,\"messages\":[{\"content\":{\"text\":\"What's the weather like today?\",\"type\":\"text\"},\"role\":\"user\"}],\"modelPreferences\":{\"costPriority\":0.5,\"hints\":[{\"name\":\"claude-3-sonnet\"}],\"intelligencePriority\":0.9,\"speedPriority\":0.8},\"systemPrompt\":\"You are a helpful weather assistant.\",\"temperature\":0.7}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <http://example.com/activities/12> ;
+    jrpc:hasMethod "sampling/createMessage"^^xsd:string ;
+    jrpc:hasParameters "{\"includeContext\":\"thisServer\",\"maxTokens\":1000,\"messages\":[{\"content\":{\"text\":\"What's the weather like today?\",\"type\":\"text\"},\"role\":\"user\"}],\"modelPreferences\":{\"costPriority\":0.5,\"hints\":[{\"name\":\"claude-3-sonnet\"}],\"intelligencePriority\":0.9,\"speedPriority\":0.8},\"systemPrompt\":\"You are a helpful weather assistant.\",\"temperature\":0.7}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 

@@ -70,14 +70,14 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <https://override-me-for-custom-content.eg/1> ;
-    x@vocab:hasMethod "subtract"^^xsd:string ;
-    x@vocab:hasParameters "{\"p1\":42,\"p2\":23}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <https://override-me-for-custom-content.eg/1> ;
+    jrpc:hasMethod "subtract"^^xsd:string ;
+    jrpc:hasParameters "{\"p1\":42,\"p2\":23}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -111,14 +111,14 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <https://override-me-for-custom-content.eg/1> ;
-    x@vocab:hasMethod "subtract"^^xsd:string ;
-    x@vocab:hasParameters "{\"minuend\":42,\"subtrahend\":23}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <https://override-me-for-custom-content.eg/1> ;
+    jrpc:hasMethod "subtract"^^xsd:string ;
+    jrpc:hasParameters "{\"minuend\":42,\"subtrahend\":23}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -149,13 +149,13 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasId <https://override-me-for-custom-content.eg/1> ;
-    x@vocab:hasResult "{\"value\":19}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasId <https://override-me-for-custom-content.eg/1> ;
+    jrpc:hasResult "{\"value\":19}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 
 
 ```
@@ -319,7 +319,6 @@ x-jsonld-base: https://override-me-for-custom-content.eg/
 x-jsonld-prefixes:
   jrpc: http://json-rpc.org/ontology#
   xsd: http://www.w3.org/2001/XMLSchema#
-  x@vocab: http://json-rpc.org/ontology#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 
 ```
@@ -448,7 +447,6 @@ Links to the schema:
     },
     "jrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "x@vocab": "http://json-rpc.org/ontology#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "@version": 1.1
   }

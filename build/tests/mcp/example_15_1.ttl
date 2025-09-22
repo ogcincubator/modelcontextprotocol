@@ -1,8 +1,8 @@
+@prefix jrpc: <http://json-rpc.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix x@vocab: <http://json-rpc.org/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] x@vocab:hasMethod "notifications/resources/updated"^^xsd:string ;
-    x@vocab:hasParameters "{\"uri\":\"file:///path/to/document.txt\"}"^^rdf:JSON ;
-    x@vocab:version "2.0"^^xsd:string .
+[] jrpc:hasMethod "notifications/resources/updated"^^xsd:string ;
+    jrpc:hasParameters "{\"uri\":\"file:///path/to/document.txt\"}"^^rdf:JSON ;
+    jrpc:version "2.0"^^xsd:string .
 

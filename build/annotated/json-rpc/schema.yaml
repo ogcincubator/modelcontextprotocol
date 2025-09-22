@@ -154,5 +154,4 @@ x-jsonld-base: https://override-me-for-custom-content.eg/
 x-jsonld-prefixes:
   jrpc: http://json-rpc.org/ontology#
   xsd: http://www.w3.org/2001/XMLSchema#
-  x@vocab: http://json-rpc.org/ontology#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
