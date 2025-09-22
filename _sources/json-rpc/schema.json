@@ -1,6 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "jsonrpc": {
+      "$anchor": "jsonrpc",
+      "description": "JSON-RPC version",
+      "const": "2.0",
+      "type": "string"
+    },
     "RequestId": {
       "$anchor": "RequestId",
       "description": "A uniquely identifying ID for a request in JSON-RPC.",
@@ -56,7 +62,6 @@
       },
       "type": "object"
     },
-
     "JSONRPCError": {
       "$anchor": "JSONRPCError",
       "description": "A response to a request that indicates an error occurred.",
@@ -84,10 +89,7 @@
         "id": {
           "$ref": "#/definitions/RequestId"
         },
-        "jsonrpc": {
-          "const": "2.0",
-          "type": "string"
-        }
+        "jsonrpc": { "$ref": "#/definitions/jsonrpc" }
       },
       "required": [
         "error",
@@ -118,10 +120,7 @@
       "$anchor": "JSONRPCNotification",
       "description": "A notification which does not expect a response.",
       "properties": {
-        "jsonrpc": {
-          "const": "2.0",
-          "type": "string"
-        },
+       "jsonrpc": { "$ref": "#/definitions/jsonrpc" },
         "method": {
           "type": "string"
         },
@@ -150,10 +149,7 @@
         "id": {
           "$ref": "#/definitions/RequestId"
         },
-        "jsonrpc": {
-          "const": "2.0",
-          "type": "string"
-        },
+        "jsonrpc": { "$ref": "#/definitions/jsonrpc" },
         "method": {
           "type": "string"
         },
@@ -189,10 +185,7 @@
         "id": {
           "$ref": "#/definitions/RequestId"
         },
-        "jsonrpc": {
-          "const": "2.0",
-          "type": "string"
-        },
+        "jsonrpc": { "$ref": "#/definitions/jsonrpc" },
         "result": {
           "$ref": "#/definitions/Result"
         }

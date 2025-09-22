@@ -935,10 +935,7 @@
                 "id": {
                     "$ref": "#/definitions/RequestId"
                 },
-                "jsonrpc": {
-                    "const": "2.0",
-                    "type": "string"
-                }
+                "jsonrpc": { "$ref": "bblocks://mcp.json-rpc#jsonrpc" }
             },
             "required": [
                 "error",
@@ -967,10 +964,7 @@
         "JSONRPCNotification": {
             "description": "A notification which does not expect a response.",
             "properties": {
-                "jsonrpc": {
-                    "const": "2.0",
-                    "type": "string"
-                },
+                "jsonrpc": { "$ref": "bblocks://mcp.json-rpc#jsonrpc" },
                 "method": {
                     "type": "string"
                 },
@@ -998,10 +992,7 @@
                 "id": {
                     "$ref": "#/definitions/RequestId"
                 },
-                "jsonrpc": {
-                    "const": "2.0",
-                    "type": "string"
-                },
+                "jsonrpc": { "$ref": "bblocks://mcp.json-rpc#jsonrpc" },
                 "method": {
                     "type": "string"
                 },
@@ -1036,10 +1027,7 @@
                 "id": {
                     "$ref": "#/definitions/RequestId"
                 },
-                "jsonrpc": {
-                    "const": "2.0",
-                    "type": "string"
-                },
+                "jsonrpc": { "$ref": "bblocks://mcp.json-rpc#jsonrpc" },
                 "result": {
                     "$ref": "#/definitions/Result"
                 }

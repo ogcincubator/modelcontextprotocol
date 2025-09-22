@@ -1,8 +1,8 @@
 {
   "@context": {
     "@version": 1.1,
-    "@vocab": "http://json-rpc.org/ontology#",
-    "@base": "https://schemas.json-rpc.org/2.0/",
+    "x@vocab": "http://json-rpc.org/ontology#",
+    "@base": "https://override-me-for-custom-content.eg/",
     "jrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
