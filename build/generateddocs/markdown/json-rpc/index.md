@@ -70,14 +70,6 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
-@prefix jrpc: <http://json-rpc.org/ontology#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-[] jrpc:id "1" ;
-    jrpc:jsonrpc "2.0" ;
-    jrpc:method "subtract" ;
-    jrpc:params [ jrpc:p1 42 ;
-            jrpc:p2 23 ] .
 
 
 ```
@@ -111,14 +103,6 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
-@prefix jrpc: <http://json-rpc.org/ontology#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-[] jrpc:id "1" ;
-    jrpc:jsonrpc "2.0" ;
-    jrpc:method "subtract" ;
-    jrpc:params [ jrpc:minuend 42 ;
-            jrpc:subtrahend 23 ] .
 
 
 ```
@@ -149,12 +133,6 @@ At this stage no additional semantic rules have been defined.
 
 #### ttl
 ```ttl
-@prefix jrpc: <http://json-rpc.org/ontology#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-[] jrpc:id "1" ;
-    jrpc:jsonrpc "2.0" ;
-    jrpc:result [ jrpc:value 19 ] .
 
 
 ```
@@ -164,6 +142,11 @@ At this stage no additional semantic rules have been defined.
 ```yaml
 $schema: http://json-schema.org/draft-07/schema#
 definitions:
+  jsonrpc:
+    $anchor: jsonrpc
+    description: JSON-RPC version
+    const: '2.0'
+    type: string
   RequestId:
     $anchor: RequestId
     description: A uniquely identifying ID for a request in JSON-RPC.
@@ -197,9 +180,7 @@ definitions:
                   The value of this parameter is an opaque token that will be attached
                   to any subsequent notifications. The receiver is not obligated to
                   provide these notifications.
-                x-jsonld-id: http://json-rpc.org/ontology#progressToken
             type: object
-            x-jsonld-id: http://json-rpc.org/ontology#_meta
         type: object
         x-jsonld-id: http://json-rpc.org/ontology#hasParameters
         x-jsonld-type: '@json'
@@ -215,7 +196,6 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://json-rpc.org/ontology#_meta
     type: object
   JSONRPCError:
     $anchor: JSONRPCError
@@ -251,8 +231,7 @@ definitions:
         x-jsonld-id: http://json-rpc.org/ontology#hasId
         x-jsonld-type: '@id'
       jsonrpc:
-        const: '2.0'
-        type: string
+        $ref: '#/definitions/jsonrpc'
         x-jsonld-id: http://json-rpc.org/ontology#version
         x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
@@ -274,8 +253,7 @@ definitions:
     description: A notification which does not expect a response.
     properties:
       jsonrpc:
-        const: '2.0'
-        type: string
+        $ref: '#/definitions/jsonrpc'
         x-jsonld-id: http://json-rpc.org/ontology#version
         x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       method:
@@ -290,7 +268,6 @@ definitions:
             description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
               for notes on `_meta` usage.'
             type: object
-            x-jsonld-id: http://json-rpc.org/ontology#_meta
         type: object
         x-jsonld-id: http://json-rpc.org/ontology#hasParameters
         x-jsonld-type: '@json'
@@ -307,8 +284,7 @@ definitions:
         x-jsonld-id: http://json-rpc.org/ontology#hasId
         x-jsonld-type: '@id'
       jsonrpc:
-        const: '2.0'
-        type: string
+        $ref: '#/definitions/jsonrpc'
         x-jsonld-id: http://json-rpc.org/ontology#version
         x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       method:
@@ -330,9 +306,7 @@ definitions:
                   The value of this parameter is an opaque token that will be attached
                   to any subsequent notifications. The receiver is not obligated to
                   provide these notifications.
-                x-jsonld-id: http://json-rpc.org/ontology#progressToken
             type: object
-            x-jsonld-id: http://json-rpc.org/ontology#_meta
         type: object
         x-jsonld-id: http://json-rpc.org/ontology#hasParameters
         x-jsonld-type: '@json'
@@ -350,8 +324,7 @@ definitions:
         x-jsonld-id: http://json-rpc.org/ontology#hasId
         x-jsonld-type: '@id'
       jsonrpc:
-        const: '2.0'
-        type: string
+        $ref: '#/definitions/jsonrpc'
         x-jsonld-id: http://json-rpc.org/ontology#version
         x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       result:
@@ -418,11 +391,11 @@ x-jsonld-extra-terms:
   ServerError:
     x-jsonld-id: http://json-rpc.org/ontology#ServerError
     x-jsonld-type: '@id'
-x-jsonld-base: https://schemas.json-rpc.org/2.0/
-x-jsonld-vocab: http://json-rpc.org/ontology#
+x-jsonld-base: https://override-me-for-custom-content.eg/
 x-jsonld-prefixes:
   jrpc: http://json-rpc.org/ontology#
   xsd: http://www.w3.org/2001/XMLSchema#
+  x@vocab: http://json-rpc.org/ontology#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 
 ```
@@ -438,8 +411,7 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "@base": "https://schemas.json-rpc.org/2.0/",
-    "@vocab": "http://json-rpc.org/ontology#",
+    "@base": "https://override-me-for-custom-content.eg/",
     "Message": {
       "@id": "jrpc:Message",
       "@type": "@id"
@@ -514,6 +486,7 @@ Links to the schema:
     },
     "jrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "x@vocab": "http://json-rpc.org/ontology#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "@version": 1.1
   }

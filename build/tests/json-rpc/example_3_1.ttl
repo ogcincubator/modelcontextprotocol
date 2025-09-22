@@ -1,7 +1,1 @@
-@prefix jrpc: <http://json-rpc.org/ontology#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-[] jrpc:id "1" ;
-    jrpc:jsonrpc "2.0" ;
-    jrpc:result [ jrpc:value 19 ] .
-
+# Empty Turtle file

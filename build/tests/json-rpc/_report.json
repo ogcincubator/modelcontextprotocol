@@ -2,8 +2,8 @@
   "title": "Validation report for mcp.json-rpc - JSON-RPC",
   "bblockName": "JSON-RPC",
   "bblockId": "mcp.json-rpc",
-  "generated": "2025-09-18T10:16:38.713249+00:00",
-  "result": true,
+  "generated": "2025-09-22T07:23:06.284461+00:00",
+  "result": false,
   "items": [
     {
       "source": {
@@ -15,7 +15,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -38,11 +38,11 @@
             },
             {
               "op": "ttl-create",
-              "empty": false,
+              "empty": true,
               "filename": "example_1_1.ttl",
-              "size": 6,
-              "isError": false,
-              "message": "Output Turtle example_1_1.ttl created"
+              "size": 0,
+              "isError": true,
+              "message": "**Empty** output Turtle example_1_1.ttl created"
             }
           ]
         },
@@ -75,7 +75,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -98,11 +98,11 @@
             },
             {
               "op": "ttl-create",
-              "empty": false,
+              "empty": true,
               "filename": "example_2_1.ttl",
-              "size": 6,
-              "isError": false,
-              "message": "Output Turtle example_2_1.ttl created"
+              "size": 0,
+              "isError": true,
+              "message": "**Empty** output Turtle example_2_1.ttl created"
             }
           ]
         },
@@ -135,7 +135,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -158,11 +158,11 @@
             },
             {
               "op": "ttl-create",
-              "empty": false,
+              "empty": true,
               "filename": "example_3_1.ttl",
-              "size": 4,
-              "isError": false,
-              "message": "Output Turtle example_3_1.ttl created"
+              "size": 0,
+              "isError": true,
+              "message": "**Empty** output Turtle example_3_1.ttl created"
             }
           ]
         },
@@ -189,7 +189,7 @@
   "globalErrors": {},
   "counts": {
     "total": 3,
-    "passed": 3,
-    "failed": 0
+    "passed": 0,
+    "failed": 3
   }
 }

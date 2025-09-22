@@ -1,9 +1,1 @@
-@prefix jrpc: <http://json-rpc.org/ontology#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-[] jrpc:id "1" ;
-    jrpc:jsonrpc "2.0" ;
-    jrpc:method "subtract" ;
-    jrpc:params [ jrpc:minuend 42 ;
-            jrpc:subtrahend 23 ] .
-
+# Empty Turtle file

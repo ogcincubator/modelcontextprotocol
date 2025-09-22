@@ -1,7 +1,6 @@
 {
   "@context": {
-    "@base": "https://schemas.json-rpc.org/2.0/",
-    "@vocab": "http://json-rpc.org/ontology#",
+    "@base": "https://override-me-for-custom-content.eg/",
     "Message": {
       "@id": "jrpc:Message",
       "@type": "@id"
@@ -76,6 +75,7 @@
     },
     "jrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "x@vocab": "http://json-rpc.org/ontology#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "@version": 1.1
   }

@@ -1,6 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "jsonrpc": {
+      "$anchor": "jsonrpc",
+      "description": "JSON-RPC version",
+      "const": "2.0",
+      "type": "string"
+    },
     "RequestId": {
       "$anchor": "RequestId",
       "description": "A uniquely identifying ID for a request in JSON-RPC.",
@@ -32,12 +38,10 @@
               "properties": {
                 "progressToken": {
                   "$ref": "#/definitions/ProgressToken",
-                  "description": "If specified, the caller is requesting out-of-band progress notifications for this request (as represented by notifications/progress). The value of this parameter is an opaque token that will be attached to any subsequent notifications. The receiver is not obligated to provide these notifications.",
-                  "x-jsonld-id": "http://json-rpc.org/ontology#progressToken"
+                  "description": "If specified, the caller is requesting out-of-band progress notifications for this request (as represented by notifications/progress). The value of this parameter is an opaque token that will be attached to any subsequent notifications. The receiver is not obligated to provide these notifications."
                 }
               },
-              "type": "object",
-              "x-jsonld-id": "http://json-rpc.org/ontology#_meta"
+              "type": "object"
             }
           },
           "type": "object",
@@ -57,8 +61,7 @@
         "_meta": {
           "additionalProperties": {},
           "description": "See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.",
-          "type": "object",
-          "x-jsonld-id": "http://json-rpc.org/ontology#_meta"
+          "type": "object"
         }
       },
       "type": "object"
@@ -101,8 +104,7 @@
           "x-jsonld-type": "@id"
         },
         "jsonrpc": {
-          "const": "2.0",
-          "type": "string",
+          "$ref": "#/definitions/jsonrpc",
           "x-jsonld-id": "http://json-rpc.org/ontology#version",
           "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#string"
         }
@@ -137,8 +139,7 @@
       "description": "A notification which does not expect a response.",
       "properties": {
         "jsonrpc": {
-          "const": "2.0",
-          "type": "string",
+          "$ref": "#/definitions/jsonrpc",
           "x-jsonld-id": "http://json-rpc.org/ontology#version",
           "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#string"
         },
@@ -153,8 +154,7 @@
             "_meta": {
               "additionalProperties": {},
               "description": "See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.",
-              "type": "object",
-              "x-jsonld-id": "http://json-rpc.org/ontology#_meta"
+              "type": "object"
             }
           },
           "type": "object",
@@ -178,8 +178,7 @@
           "x-jsonld-type": "@id"
         },
         "jsonrpc": {
-          "const": "2.0",
-          "type": "string",
+          "$ref": "#/definitions/jsonrpc",
           "x-jsonld-id": "http://json-rpc.org/ontology#version",
           "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#string"
         },
@@ -197,12 +196,10 @@
               "properties": {
                 "progressToken": {
                   "$ref": "#/definitions/ProgressToken",
-                  "description": "If specified, the caller is requesting out-of-band progress notifications for this request (as represented by notifications/progress). The value of this parameter is an opaque token that will be attached to any subsequent notifications. The receiver is not obligated to provide these notifications.",
-                  "x-jsonld-id": "http://json-rpc.org/ontology#progressToken"
+                  "description": "If specified, the caller is requesting out-of-band progress notifications for this request (as represented by notifications/progress). The value of this parameter is an opaque token that will be attached to any subsequent notifications. The receiver is not obligated to provide these notifications."
                 }
               },
-              "type": "object",
-              "x-jsonld-id": "http://json-rpc.org/ontology#_meta"
+              "type": "object"
             }
           },
           "type": "object",
@@ -227,8 +224,7 @@
           "x-jsonld-type": "@id"
         },
         "jsonrpc": {
-          "const": "2.0",
-          "type": "string",
+          "$ref": "#/definitions/jsonrpc",
           "x-jsonld-id": "http://json-rpc.org/ontology#version",
           "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#string"
         },
@@ -320,11 +316,11 @@
       "x-jsonld-type": "@id"
     }
   },
-  "x-jsonld-base": "https://schemas.json-rpc.org/2.0/",
-  "x-jsonld-vocab": "http://json-rpc.org/ontology#",
+  "x-jsonld-base": "https://override-me-for-custom-content.eg/",
   "x-jsonld-prefixes": {
     "jrpc": "http://json-rpc.org/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "x@vocab": "http://json-rpc.org/ontology#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   }
 }

@@ -871,7 +871,9 @@ definitions:
         items:
           $ref: '#/definitions/Role'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#audience
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAudience
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Role
+        x-jsonld-container: '@list'
       lastModified:
         description: 'The moment the resource was last modified, as an ISO 8601 formatted
           string.
@@ -884,7 +886,8 @@ definitions:
 
           was attached, etc.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#lastModified
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLastModified
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
       priority:
         description: 'Describes how important this data is for operating the server.
 
@@ -897,7 +900,8 @@ definitions:
         maximum: 1
         minimum: 0
         type: number
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#priority
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasPriority
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal
     type: object
   AudioContent:
     description: Audio provided to or from an LLM.
@@ -907,25 +911,30 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       annotations:
         $ref: '#/definitions/Annotations'
         description: Optional annotations for the client.
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#annotations
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAnnotations
+        x-jsonld-type: '@id'
       data:
         description: The base64-encoded audio data.
         format: byte
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#data
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasData
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#base64Binary
       mimeType:
         description: The MIME type of the audio. Different providers may support different
           audio types.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#mimeType
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMimeType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       type:
         const: audio
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - data
     - mimeType
@@ -939,7 +948,8 @@ definitions:
         description: Intended for programmatic or logical use, but used as a display
           name in past specs or fallback (if title isn't present).
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       title:
         description: "Intended for UI and end-user contexts \u2014 optimized to be
           human-readable and easily understood,\neven by those unfamiliar with domain-specific
@@ -947,7 +957,8 @@ definitions:
           for Tool,\nwhere `annotations.title` should be given precedence over using
           `name`,\nif present)."
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - name
     type: object
@@ -958,21 +969,25 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       blob:
         description: A base64-encoded string representing the binary data of the item.
         format: byte
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#blob
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasBlob
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#base64Binary
       mimeType:
         description: The MIME type of this resource, if known.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#mimeType
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMimeType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       uri:
         description: The URI of this resource.
         format: uri
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
     required:
     - blob
     - uri
@@ -981,17 +996,20 @@ definitions:
     properties:
       default:
         type: boolean
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#default
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDefault
       description:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       title:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       type:
         const: boolean
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - type
     type: object
@@ -1007,10 +1025,12 @@ definitions:
           arguments:
             additionalProperties: {}
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#arguments
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasArguments
+            x-jsonld-type: '@json'
           name:
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
         required:
         - name
         type: object
@@ -1027,14 +1047,17 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       content:
         description: A list of content objects that represent the unstructured result
           of the tool call.
         items:
           $ref: '#/definitions/ContentBlock'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#content
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContent
+        x-jsonld-type: '@id'
+        x-jsonld-container: '@list'
       isError:
         description: 'Whether the tool call ended in an error.
 
@@ -1058,12 +1081,14 @@ definitions:
           should be reported as an MCP error response.'
         type: boolean
         x-jsonld-id: http://modelcontextprotocol.io/ontology#isError
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
       structuredContent:
         additionalProperties: {}
         description: An optional JSON object that represents the structured result
           of the tool call.
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#structuredContent
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasStructuredContent
+        x-jsonld-type: '@json'
     required:
     - content
     type: object
@@ -1093,7 +1118,8 @@ definitions:
             description: An optional string describing the reason for the cancellation.
               This MAY be logged or presented to the user.
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#reason
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasReason
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
           requestId:
             $ref: '#/definitions/RequestId'
             description: 'The ID of the request to cancel.
@@ -1101,7 +1127,8 @@ definitions:
 
               This MUST correspond to the ID of a request previously issued in the
               same direction.'
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#requestId
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasRequestId
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#RequestId
         required:
         - requestId
         type: object
@@ -1120,7 +1147,8 @@ definitions:
         description: Present if the client supports elicitation from the server.
         properties: {}
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#elicitation
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasElicitationCapability
+        x-jsonld-type: '@json'
       experimental:
         additionalProperties:
           additionalProperties: true
@@ -1128,7 +1156,8 @@ definitions:
           type: object
         description: Experimental, non-standard capabilities that the client supports.
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#experimental
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasExperimentalCapabilities
+        x-jsonld-type: '@json'
       roots:
         description: Present if the client supports listing roots.
         properties:
@@ -1136,15 +1165,19 @@ definitions:
             description: Whether the client supports notifications for changes to
               the roots list.
             type: boolean
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#listChanged
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#supportsListChanged
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#roots
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#containsRoot
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Root
+        x-jsonld-container: '@list'
       sampling:
         additionalProperties: true
         description: Present if the client supports sampling from an LLM.
         properties: {}
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#sampling
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasSamplingCapability
+        x-jsonld-type: '@json'
     type: object
   ClientNotification:
     anyOf:
@@ -1188,7 +1221,8 @@ definitions:
               name:
                 description: The name of the argument
                 type: string
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+                x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+                x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
               value:
                 description: The value of the argument to use for completion matching.
                 type: string
@@ -1197,7 +1231,8 @@ definitions:
             - name
             - value
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#argument
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasArgument
+            x-jsonld-type: '@json'
           context:
             description: Additional, optional context for completions
             properties:
@@ -1206,14 +1241,17 @@ definitions:
                   type: string
                 description: Previously-resolved variables in a URI template or prompt.
                 type: object
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#arguments
+                x-jsonld-id: http://modelcontextprotocol.io/ontology#hasArguments
+                x-jsonld-type: '@json'
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#context
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContext
+            x-jsonld-type: '@json'
           ref:
             anyOf:
             - $ref: '#/definitions/PromptReference'
             - $ref: '#/definitions/ResourceTemplateReference'
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#ref
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasReference
+            x-jsonld-type: '@id'
         required:
         - argument
         - ref
@@ -1231,7 +1269,8 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       completion:
         properties:
           hasMore:
@@ -1240,21 +1279,26 @@ definitions:
               is unknown.
             type: boolean
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMore
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
           total:
             description: The total number of completion options available. This can
               exceed the number of values actually sent in the response.
             type: integer
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#total
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTotal
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
           values:
             description: An array of completion values. Must not exceed 100 items.
             items:
               type: string
             type: array
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#values
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasValues
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+            x-jsonld-container: '@list'
         required:
         - values
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#completion
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCompletion
+        x-jsonld-type: '@json'
     required:
     - completion
     type: object
@@ -1286,42 +1330,52 @@ definitions:
             - none
             - thisServer
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#includeContext
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasIncludeContext
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
           maxTokens:
             description: The maximum number of tokens to sample, as requested by the
               server. The client MAY choose to sample fewer tokens than requested.
             type: integer
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#maxTokens
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMaxTokens
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
           messages:
             items:
               $ref: '#/definitions/SamplingMessage'
             type: array
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#messages
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#containsMessage
+            x-jsonld-type: '@id'
+            x-jsonld-container: '@list'
           metadata:
             additionalProperties: true
             description: Optional metadata to pass through to the LLM provider. The
               format of this metadata is provider-specific.
             properties: {}
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#metadata
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
           modelPreferences:
             $ref: '#/definitions/ModelPreferences'
             description: The server's preferences for which model to select. The client
               MAY ignore these preferences.
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#modelPreferences
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasModelPreferences
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#ModelPreferences
           stopSequences:
             items:
               type: string
             type: array
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#stopSequences
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasStopSequences
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+            x-jsonld-container: '@list'
           systemPrompt:
             description: An optional system prompt the server wants to use for sampling.
               The client MAY modify or omit this prompt.
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#systemPrompt
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasSystemPrompt
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
           temperature:
             type: number
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#temperature
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTemperature
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal
         required:
         - maxTokens
         - messages
@@ -1342,24 +1396,30 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       content:
         anyOf:
         - $ref: '#/definitions/TextContent'
         - $ref: '#/definitions/ImageContent'
         - $ref: '#/definitions/AudioContent'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#content
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContent
+        x-jsonld-type: '@id'
+        x-jsonld-container: '@list'
       model:
         description: The name of the model that generated the message.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#model
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasModel
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       role:
         $ref: '#/definitions/Role'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#role
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasRole
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Role
       stopReason:
         description: The reason why sampling stopped, if known.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#stopReason
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasStopReason
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - content
     - model
@@ -1381,7 +1441,8 @@ definitions:
           message:
             description: The message to present to the user.
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#message
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMessage
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
           requestedSchema:
             description: 'A restricted subset of JSON Schema.
 
@@ -1391,21 +1452,25 @@ definitions:
                 additionalProperties:
                   $ref: '#/definitions/PrimitiveSchemaDefinition'
                 type: object
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#properties
+                x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProperties
+                x-jsonld-type: '@json'
               required:
                 items:
                   type: string
                 type: array
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#required
+                x-jsonld-id: http://modelcontextprotocol.io/ontology#isRequired
+                x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
               type:
                 const: object
                 type: string
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+                x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+                x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
             required:
             - properties
             - type
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#requestedSchema
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasRequestedSchema
+            x-jsonld-type: '@json'
         required:
         - message
         - requestedSchema
@@ -1423,7 +1488,8 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       action:
         description: 'The user action in response to the elicitation.
 
@@ -1437,7 +1503,8 @@ definitions:
         - cancel
         - decline
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#action
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAction
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       content:
         additionalProperties:
           type:
@@ -1448,7 +1515,9 @@ definitions:
 
           Contains values matching the requested schema.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#content
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContent
+        x-jsonld-type: '@id'
+        x-jsonld-container: '@list'
     required:
     - action
     type: object
@@ -1466,20 +1535,24 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       annotations:
         $ref: '#/definitions/Annotations'
         description: Optional annotations for the client.
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#annotations
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAnnotations
+        x-jsonld-type: '@id'
       resource:
         anyOf:
         - $ref: '#/definitions/TextResourceContents'
         - $ref: '#/definitions/BlobResourceContents'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#resource
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#embedsResource
+        x-jsonld-type: '@id'
       type:
         const: resource
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - resource
     - type
@@ -1490,24 +1563,31 @@ definitions:
     properties:
       description:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       enum:
         items:
           type: string
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#enum
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasEnumValues
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+        x-jsonld-container: '@list'
       enumNames:
         items:
           type: string
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#enumNames
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasEnumNames
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+        x-jsonld-container: '@list'
       title:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       type:
         const: string
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - enum
     - type
@@ -1526,11 +1606,13 @@ definitions:
               type: string
             description: Arguments to use for templating the prompt.
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#arguments
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasArguments
+            x-jsonld-type: '@json'
           name:
             description: The name of the prompt or prompt template.
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
         required:
         - name
         type: object
@@ -1547,16 +1629,20 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       description:
         description: An optional description for the prompt.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       messages:
         items:
           $ref: '#/definitions/PromptMessage'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#messages
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#containsMessage
+        x-jsonld-type: '@id'
+        x-jsonld-container: '@list'
     required:
     - messages
     type: object
@@ -1568,25 +1654,30 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       annotations:
         $ref: '#/definitions/Annotations'
         description: Optional annotations for the client.
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#annotations
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAnnotations
+        x-jsonld-type: '@id'
       data:
         description: The base64-encoded image data.
         format: byte
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#data
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasData
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#base64Binary
       mimeType:
         description: The MIME type of the image. Different providers may support different
           image types.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#mimeType
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMimeType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       type:
         const: image
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - data
     - mimeType
@@ -1600,7 +1691,8 @@ definitions:
         description: Intended for programmatic or logical use, but used as a display
           name in past specs or fallback (if title isn't present).
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       title:
         description: "Intended for UI and end-user contexts \u2014 optimized to be
           human-readable and easily understood,\neven by those unfamiliar with domain-specific
@@ -1608,10 +1700,12 @@ definitions:
           for Tool,\nwhere `annotations.title` should be given precedence over using
           `name`,\nif present)."
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       version:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#version
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasVersion
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - name
     - version
@@ -1628,16 +1722,19 @@ definitions:
         properties:
           capabilities:
             $ref: '#/definitions/ClientCapabilities'
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#capabilities
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCapabilities
+            x-jsonld-type: '@id'
           clientInfo:
             $ref: '#/definitions/Implementation'
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#clientInfo
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasClientInfo
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#Implementation
           protocolVersion:
             description: The latest version of the Model Context Protocol that the
               client supports. The client MAY decide to support older versions as
               well.
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#protocolVersion
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProtocolVersion
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
         required:
         - capabilities
         - clientInfo
@@ -1657,10 +1754,12 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       capabilities:
         $ref: '#/definitions/ServerCapabilities'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#capabilities
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCapabilities
+        x-jsonld-type: '@id'
       instructions:
         description: 'Instructions describing how to use the server and its features.
 
@@ -1669,16 +1768,19 @@ definitions:
           tools, resources, etc. It can be thought of like a "hint" to the model.
           For example, this information MAY be added to the system prompt.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#instructions
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasInstructions
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       protocolVersion:
         description: The version of the Model Context Protocol that the server wants
           to use. This may not match the version that the client requested. If the
           client cannot support this version, it MUST disconnect.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#protocolVersion
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProtocolVersion
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       serverInfo:
         $ref: '#/definitions/Implementation'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#serverInfo
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasServerInfo
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Implementation
     required:
     - capabilities
     - protocolVersion
@@ -1700,7 +1802,8 @@ definitions:
             description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
               for notes on `_meta` usage.'
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -1719,12 +1822,14 @@ definitions:
             description: Additional information about the error. The value of this
               member is defined by the sender (e.g. detailed error information, nested
               errors etc.).
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#data
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasData
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#base64Binary
           message:
             description: A short description of the error. The message SHOULD be limited
               to a concise single sentence.
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#message
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMessage
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
         required:
         - code
         - message
@@ -1734,8 +1839,7 @@ definitions:
         $ref: '#/definitions/RequestId'
         x-jsonld-id: http://modelcontextprotocol.io/ontology#id
       jsonrpc:
-        const: '2.0'
-        type: string
+        $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#jsonrpc
         x-jsonld-id: http://modelcontextprotocol.io/ontology#jsonrpc
     required:
     - error
@@ -1754,8 +1858,7 @@ definitions:
     description: A notification which does not expect a response.
     properties:
       jsonrpc:
-        const: '2.0'
-        type: string
+        $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#jsonrpc
         x-jsonld-id: http://modelcontextprotocol.io/ontology#jsonrpc
       method:
         type: string
@@ -1768,7 +1871,8 @@ definitions:
             description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
               for notes on `_meta` usage.'
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -1782,8 +1886,7 @@ definitions:
         $ref: '#/definitions/RequestId'
         x-jsonld-id: http://modelcontextprotocol.io/ontology#id
       jsonrpc:
-        const: '2.0'
-        type: string
+        $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#jsonrpc
         x-jsonld-id: http://modelcontextprotocol.io/ontology#jsonrpc
       method:
         type: string
@@ -1803,9 +1906,11 @@ definitions:
                   The value of this parameter is an opaque token that will be attached
                   to any subsequent notifications. The receiver is not obligated to
                   provide these notifications.
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#progressToken
+                x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProgressToken
+                x-jsonld-type: http://modelcontextprotocol.io/ontology#ProgressToken
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -1820,8 +1925,7 @@ definitions:
         $ref: '#/definitions/RequestId'
         x-jsonld-id: http://modelcontextprotocol.io/ontology#id
       jsonrpc:
-        const: '2.0'
-        type: string
+        $ref: https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/schema.yaml#jsonrpc
         x-jsonld-id: http://modelcontextprotocol.io/ontology#jsonrpc
       result:
         $ref: '#/definitions/Result'
@@ -1846,7 +1950,8 @@ definitions:
 
               If provided, the server should return results starting after this cursor.'
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#cursor
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -1860,19 +1965,22 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       nextCursor:
         description: 'An opaque token representing the pagination position after the
           last returned result.
 
           If present, there may be more results available.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#nextCursor
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasNextCursor
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
       prompts:
         items:
           $ref: '#/definitions/Prompt'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#prompts
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasPromptsCapability
+        x-jsonld-type: '@json'
     required:
     - prompts
     type: object
@@ -1891,7 +1999,8 @@ definitions:
 
               If provided, the server should return results starting after this cursor.'
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#cursor
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -1906,19 +2015,23 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       nextCursor:
         description: 'An opaque token representing the pagination position after the
           last returned result.
 
           If present, there may be more results available.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#nextCursor
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasNextCursor
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
       resourceTemplates:
         items:
           $ref: '#/definitions/ResourceTemplate'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#resourceTemplates
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#containsResourceTemplate
+        x-jsonld-type: '@id'
+        x-jsonld-container: '@list'
     required:
     - resourceTemplates
     type: object
@@ -1936,7 +2049,8 @@ definitions:
 
               If provided, the server should return results starting after this cursor.'
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#cursor
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -1950,19 +2064,22 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       nextCursor:
         description: 'An opaque token representing the pagination position after the
           last returned result.
 
           If present, there may be more results available.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#nextCursor
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasNextCursor
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
       resources:
         items:
           $ref: '#/definitions/Resource'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#resources
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasResourcesCapability
+        x-jsonld-type: '@json'
     required:
     - resources
     type: object
@@ -2003,9 +2120,11 @@ definitions:
                   The value of this parameter is an opaque token that will be attached
                   to any subsequent notifications. The receiver is not obligated to
                   provide these notifications.
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#progressToken
+                x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProgressToken
+                x-jsonld-type: http://modelcontextprotocol.io/ontology#ProgressToken
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -2023,12 +2142,15 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       roots:
         items:
           $ref: '#/definitions/Root'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#roots
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#containsRoot
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Root
+        x-jsonld-container: '@list'
     required:
     - roots
     type: object
@@ -2046,7 +2168,8 @@ definitions:
 
               If provided, the server should return results starting after this cursor.'
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#cursor
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -2060,19 +2183,22 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       nextCursor:
         description: 'An opaque token representing the pagination position after the
           last returned result.
 
           If present, there may be more results available.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#nextCursor
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasNextCursor
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
       tools:
         items:
           $ref: '#/definitions/Tool'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#tools
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasToolsCapability
+        x-jsonld-type: '@json'
     required:
     - tools
     type: object
@@ -2107,15 +2233,18 @@ definitions:
           data:
             description: The data to be logged, such as a string message or an object.
               Any JSON serializable type is allowed here.
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#data
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasData
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#base64Binary
           level:
             $ref: '#/definitions/LoggingLevel'
             description: The severity of this log message.
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#level
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLevel
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#LoggingLevel
           logger:
             description: An optional name of the logger issuing this message.
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#logger
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLogger
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
         required:
         - data
         - level
@@ -2142,7 +2271,8 @@ definitions:
           different model family, as long as it fills a similar niche; for example:\n
           - `gemini-1.5-flash` could match `claude-3-haiku-20240307`"
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     type: object
   ModelPreferences:
     description: "The server's preferences for model selection, requested of the client
@@ -2165,7 +2295,8 @@ definitions:
         maximum: 1
         minimum: 0
         type: number
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#costPriority
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCostPriority
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal
       hints:
         description: 'Optional hints to use for model selection.
 
@@ -2181,7 +2312,9 @@ definitions:
         items:
           $ref: '#/definitions/ModelHint'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#hints
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasHints
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#ModelHint
+        x-jsonld-container: '@list'
       intelligencePriority:
         description: 'How much to prioritize intelligence and capabilities when selecting
           a
@@ -2193,7 +2326,8 @@ definitions:
         maximum: 1
         minimum: 0
         type: number
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#intelligencePriority
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasIntelligencePriority
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal
       speedPriority:
         description: 'How much to prioritize sampling speed (latency) when selecting
           a model. A
@@ -2205,7 +2339,8 @@ definitions:
         maximum: 1
         minimum: 0
         type: number
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#speedPriority
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasSpeedPriority
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal
     type: object
   Notification:
     properties:
@@ -2220,7 +2355,8 @@ definitions:
             description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
               for notes on `_meta` usage.'
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -2230,22 +2366,27 @@ definitions:
     properties:
       description:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       maximum:
         type: integer
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#maximum
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMaximum
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
       minimum:
         type: integer
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#minimum
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMinimum
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
       title:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       type:
         enum:
         - integer
         - number
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - type
     type: object
@@ -2261,7 +2402,8 @@ definitions:
 
               If provided, the server should return results starting after this cursor.'
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#cursor
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -2274,14 +2416,16 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       nextCursor:
         description: 'An opaque token representing the pagination position after the
           last returned result.
 
           If present, there may be more results available.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#nextCursor
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasNextCursor
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
     type: object
   PingRequest:
     description: A ping, issued by either the server or the client, to check that
@@ -2307,9 +2451,11 @@ definitions:
                   The value of this parameter is an opaque token that will be attached
                   to any subsequent notifications. The receiver is not obligated to
                   provide these notifications.
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#progressToken
+                x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProgressToken
+                x-jsonld-type: http://modelcontextprotocol.io/ontology#ProgressToken
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -2337,22 +2483,26 @@ definitions:
           message:
             description: An optional message describing the current progress.
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#message
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMessage
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
           progress:
             description: The progress thus far. This should increase every time progress
               is made, even if the total is unknown.
             type: number
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#progress
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProgress
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal
           progressToken:
             $ref: '#/definitions/ProgressToken'
             description: The progress token which was given in the initial request,
               used to associate this notification with the request that is proceeding.
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#progressToken
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProgressToken
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#ProgressToken
           total:
             description: Total number of items to process (or total progress required),
               if known.
             type: number
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#total
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTotal
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
         required:
         - progress
         - progressToken
@@ -2370,22 +2520,26 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       arguments:
         description: A list of arguments to use for templating the prompt.
         items:
           $ref: '#/definitions/PromptArgument'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#arguments
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasArguments
+        x-jsonld-type: '@json'
       description:
         description: An optional description of what this prompt provides
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       name:
         description: Intended for programmatic or logical use, but used as a display
           name in past specs or fallback (if title isn't present).
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       title:
         description: "Intended for UI and end-user contexts \u2014 optimized to be
           human-readable and easily understood,\neven by those unfamiliar with domain-specific
@@ -2393,7 +2547,8 @@ definitions:
           for Tool,\nwhere `annotations.title` should be given precedence over using
           `name`,\nif present)."
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - name
     type: object
@@ -2403,16 +2558,19 @@ definitions:
       description:
         description: A human-readable description of the argument.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       name:
         description: Intended for programmatic or logical use, but used as a display
           name in past specs or fallback (if title isn't present).
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       required:
         description: Whether this argument must be provided.
         type: boolean
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#required
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#isRequired
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
       title:
         description: "Intended for UI and end-user contexts \u2014 optimized to be
           human-readable and easily understood,\neven by those unfamiliar with domain-specific
@@ -2420,7 +2578,8 @@ definitions:
           for Tool,\nwhere `annotations.title` should be given precedence over using
           `name`,\nif present)."
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - name
     type: object
@@ -2441,7 +2600,8 @@ definitions:
             description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
               for notes on `_meta` usage.'
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -2457,10 +2617,13 @@ definitions:
     properties:
       content:
         $ref: '#/definitions/ContentBlock'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#content
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContent
+        x-jsonld-type: '@id'
+        x-jsonld-container: '@list'
       role:
         $ref: '#/definitions/Role'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#role
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasRole
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Role
     required:
     - content
     - role
@@ -2472,7 +2635,8 @@ definitions:
         description: Intended for programmatic or logical use, but used as a display
           name in past specs or fallback (if title isn't present).
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       title:
         description: "Intended for UI and end-user contexts \u2014 optimized to be
           human-readable and easily understood,\neven by those unfamiliar with domain-specific
@@ -2480,11 +2644,13 @@ definitions:
           for Tool,\nwhere `annotations.title` should be given precedence over using
           `name`,\nif present)."
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       type:
         const: ref/prompt
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - name
     - type
@@ -2503,7 +2669,8 @@ definitions:
               it is up to the server how to interpret it.
             format: uri
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
         required:
         - uri
         type: object
@@ -2520,14 +2687,17 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       contents:
         items:
           anyOf:
           - $ref: '#/definitions/TextResourceContents'
           - $ref: '#/definitions/BlobResourceContents'
         type: array
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#contents
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContents
+        x-jsonld-type: '@id'
+        x-jsonld-container: '@list'
     required:
     - contents
     type: object
@@ -2551,9 +2721,11 @@ definitions:
                   The value of this parameter is an opaque token that will be attached
                   to any subsequent notifications. The receiver is not obligated to
                   provide these notifications.
-                x-jsonld-id: http://modelcontextprotocol.io/ontology#progressToken
+                x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProgressToken
+                x-jsonld-type: http://modelcontextprotocol.io/ontology#ProgressToken
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -2572,11 +2744,13 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       annotations:
         $ref: '#/definitions/Annotations'
         description: Optional annotations for the client.
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#annotations
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAnnotations
+        x-jsonld-type: '@id'
       description:
         description: 'A description of what this resource represents.
 
@@ -2584,16 +2758,19 @@ definitions:
           This can be used by clients to improve the LLM''s understanding of available
           resources. It can be thought of like a "hint" to the model.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       mimeType:
         description: The MIME type of this resource, if known.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#mimeType
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMimeType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       name:
         description: Intended for programmatic or logical use, but used as a display
           name in past specs or fallback (if title isn't present).
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       size:
         description: 'The size of the raw resource content, in bytes (i.e., before
           base64 encoding or any tokenization), if known.
@@ -2602,7 +2779,8 @@ definitions:
           This can be used by Hosts to display file sizes and estimate context window
           usage.'
         type: integer
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#size
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasSize
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
       title:
         description: "Intended for UI and end-user contexts \u2014 optimized to be
           human-readable and easily understood,\neven by those unfamiliar with domain-specific
@@ -2610,12 +2788,14 @@ definitions:
           for Tool,\nwhere `annotations.title` should be given precedence over using
           `name`,\nif present)."
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       uri:
         description: The URI of this resource.
         format: uri
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
     required:
     - name
     - uri
@@ -2628,16 +2808,19 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       mimeType:
         description: The MIME type of this resource, if known.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#mimeType
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMimeType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       uri:
         description: The URI of this resource.
         format: uri
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
     required:
     - uri
     type: object
@@ -2654,11 +2837,13 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       annotations:
         $ref: '#/definitions/Annotations'
         description: Optional annotations for the client.
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#annotations
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAnnotations
+        x-jsonld-type: '@id'
       description:
         description: 'A description of what this resource represents.
 
@@ -2666,16 +2851,19 @@ definitions:
           This can be used by clients to improve the LLM''s understanding of available
           resources. It can be thought of like a "hint" to the model.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       mimeType:
         description: The MIME type of this resource, if known.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#mimeType
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMimeType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       name:
         description: Intended for programmatic or logical use, but used as a display
           name in past specs or fallback (if title isn't present).
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       size:
         description: 'The size of the raw resource content, in bytes (i.e., before
           base64 encoding or any tokenization), if known.
@@ -2684,7 +2872,8 @@ definitions:
           This can be used by Hosts to display file sizes and estimate context window
           usage.'
         type: integer
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#size
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasSize
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
       title:
         description: "Intended for UI and end-user contexts \u2014 optimized to be
           human-readable and easily understood,\neven by those unfamiliar with domain-specific
@@ -2692,16 +2881,19 @@ definitions:
           for Tool,\nwhere `annotations.title` should be given precedence over using
           `name`,\nif present)."
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       type:
         const: resource_link
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       uri:
         description: The URI of this resource.
         format: uri
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
     required:
     - name
     - type
@@ -2724,7 +2916,8 @@ definitions:
             description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
               for notes on `_meta` usage.'
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -2738,11 +2931,13 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       annotations:
         $ref: '#/definitions/Annotations'
         description: Optional annotations for the client.
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#annotations
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAnnotations
+        x-jsonld-type: '@id'
       description:
         description: 'A description of what this template is for.
 
@@ -2750,18 +2945,21 @@ definitions:
           This can be used by clients to improve the LLM''s understanding of available
           resources. It can be thought of like a "hint" to the model.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       mimeType:
         description: The MIME type for all resources that match this template. This
           should only be included if all resources matching this template have the
           same type.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#mimeType
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMimeType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       name:
         description: Intended for programmatic or logical use, but used as a display
           name in past specs or fallback (if title isn't present).
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       title:
         description: "Intended for UI and end-user contexts \u2014 optimized to be
           human-readable and easily understood,\neven by those unfamiliar with domain-specific
@@ -2769,13 +2967,15 @@ definitions:
           for Tool,\nwhere `annotations.title` should be given precedence over using
           `name`,\nif present)."
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       uriTemplate:
         description: A URI template (according to RFC 6570) that can be used to construct
           resource URIs.
         format: uri-template
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#uriTemplate
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURITemplate
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - name
     - uriTemplate
@@ -2786,12 +2986,14 @@ definitions:
       type:
         const: ref/resource
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       uri:
         description: The URI or URI template of the resource.
         format: uri-template
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
     required:
     - type
     - uri
@@ -2812,7 +3014,8 @@ definitions:
               be a sub-resource of the one that the client actually subscribed to.
             format: uri
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
         required:
         - uri
         type: object
@@ -2829,7 +3032,8 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
     type: object
   Role:
     description: The sender or recipient of messages and data in a conversation.
@@ -2845,7 +3049,8 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       name:
         description: 'An optional name for the root. This can be used to provide a
           human-readable
@@ -2854,7 +3059,8 @@ definitions:
 
           referencing the root in other parts of the application.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       uri:
         description: 'The URI identifying the root. This *must* start with file://
           for now.
@@ -2864,7 +3070,8 @@ definitions:
           other URI schemes.'
         format: uri
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
     required:
     - uri
     type: object
@@ -2889,7 +3096,8 @@ definitions:
             description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
               for notes on `_meta` usage.'
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -2903,10 +3111,13 @@ definitions:
         - $ref: '#/definitions/TextContent'
         - $ref: '#/definitions/ImageContent'
         - $ref: '#/definitions/AudioContent'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#content
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContent
+        x-jsonld-type: '@id'
+        x-jsonld-container: '@list'
       role:
         $ref: '#/definitions/Role'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#role
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasRole
+        x-jsonld-type: http://modelcontextprotocol.io/ontology#Role
     required:
     - content
     - role
@@ -2921,7 +3132,8 @@ definitions:
         description: Present if the server supports argument autocompletion suggestions.
         properties: {}
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#completions
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCompletionsCapability
+        x-jsonld-type: '@json'
       experimental:
         additionalProperties:
           additionalProperties: true
@@ -2929,13 +3141,15 @@ definitions:
           type: object
         description: Experimental, non-standard capabilities that the server supports.
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#experimental
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasExperimentalCapabilities
+        x-jsonld-type: '@json'
       logging:
         additionalProperties: true
         description: Present if the server supports sending log messages to the client.
         properties: {}
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#logging
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLoggingCapability
+        x-jsonld-type: '@json'
       prompts:
         description: Present if the server offers any prompt templates.
         properties:
@@ -2943,9 +3157,11 @@ definitions:
             description: Whether this server supports notifications for changes to
               the prompt list.
             type: boolean
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#listChanged
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#supportsListChanged
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#prompts
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasPromptsCapability
+        x-jsonld-type: '@json'
       resources:
         description: Present if the server offers any resources to read.
         properties:
@@ -2953,13 +3169,16 @@ definitions:
             description: Whether this server supports notifications for changes to
               the resource list.
             type: boolean
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#listChanged
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#supportsListChanged
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
           subscribe:
             description: Whether this server supports subscribing to resource updates.
             type: boolean
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#subscribe
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#supportsSubscription
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#resources
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasResourcesCapability
+        x-jsonld-type: '@json'
       tools:
         description: Present if the server offers any tools to call.
         properties:
@@ -2967,9 +3186,11 @@ definitions:
             description: Whether this server supports notifications for changes to
               the tool list.
             type: boolean
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#listChanged
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#supportsListChanged
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#tools
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasToolsCapability
+        x-jsonld-type: '@json'
     type: object
   ServerNotification:
     anyOf:
@@ -3012,7 +3233,8 @@ definitions:
             description: The level of logging that the client wants to receive from
               the server. The server should send all logs at this level and higher
               (i.e., more severe) to the client as notifications/message.
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#level
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasLevel
+            x-jsonld-type: http://modelcontextprotocol.io/ontology#LoggingLevel
         required:
         - level
         type: object
@@ -3025,7 +3247,8 @@ definitions:
     properties:
       description:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       format:
         enum:
         - date
@@ -3033,20 +3256,25 @@ definitions:
         - email
         - uri
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#format
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasFormat
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       maxLength:
         type: integer
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#maxLength
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMaxLength
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
       minLength:
         type: integer
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#minLength
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMinLength
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
       title:
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       type:
         const: string
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - type
     type: object
@@ -3065,7 +3293,8 @@ definitions:
               any protocol; it is up to the server how to interpret it.
             format: uri
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
         required:
         - uri
         type: object
@@ -3082,19 +3311,23 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       annotations:
         $ref: '#/definitions/Annotations'
         description: Optional annotations for the client.
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#annotations
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAnnotations
+        x-jsonld-type: '@id'
       text:
         description: The text content of the message.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#text
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasText
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       type:
         const: text
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - text
     - type
@@ -3106,21 +3339,25 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       mimeType:
         description: The MIME type of this resource, if known.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#mimeType
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMimeType
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       text:
         description: The text of the item. This must only be set if the item can actually
           be represented as text (not binary data).
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#text
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasText
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       uri:
         description: The URI of this resource.
         format: uri
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
     required:
     - text
     - uri
@@ -3133,14 +3370,16 @@ definitions:
         description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
           for notes on `_meta` usage.'
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+        x-jsonld-type: '@json'
       annotations:
         $ref: '#/definitions/ToolAnnotations'
         description: 'Optional additional tool information.
 
 
           Display name precedence order is: title, annotations.title, then name.'
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#annotations
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAnnotations
+        x-jsonld-type: '@id'
       description:
         description: 'A human-readable description of the tool.
 
@@ -3148,7 +3387,8 @@ definitions:
           This can be used by clients to improve the LLM''s understanding of available
           tools. It can be thought of like a "hint" to the model.'
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#description
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasDescription
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       inputSchema:
         description: A JSON Schema object defining the expected parameters for the
           tool.
@@ -3159,25 +3399,30 @@ definitions:
               properties: {}
               type: object
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#properties
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProperties
+            x-jsonld-type: '@json'
           required:
             items:
               type: string
             type: array
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#required
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#isRequired
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
           type:
             const: object
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
         required:
         - type
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#inputSchema
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasInputSchema
+        x-jsonld-type: '@json'
       name:
         description: Intended for programmatic or logical use, but used as a display
           name in past specs or fallback (if title isn't present).
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#name
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasName
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
       outputSchema:
         description: 'An optional JSON Schema object defining the structure of the
           tool''s output returned in
@@ -3190,20 +3435,24 @@ definitions:
               properties: {}
               type: object
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#properties
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasProperties
+            x-jsonld-type: '@json'
           required:
             items:
               type: string
             type: array
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#required
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#isRequired
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
           type:
             const: object
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#type
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasContentType
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
         required:
         - type
         type: object
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#outputSchema
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasOutputSchema
+        x-jsonld-type: '@json'
       title:
         description: "Intended for UI and end-user contexts \u2014 optimized to be
           human-readable and easily understood,\neven by those unfamiliar with domain-specific
@@ -3211,7 +3460,8 @@ definitions:
           for Tool,\nwhere `annotations.title` should be given precedence over using
           `name`,\nif present)."
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     required:
     - inputSchema
     - name
@@ -3242,7 +3492,8 @@ definitions:
 
           Default: true'
         type: boolean
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#destructiveHint
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#isDestructiveHint
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
       idempotentHint:
         description: 'If true, calling the tool repeatedly with the same arguments
 
@@ -3254,7 +3505,8 @@ definitions:
 
           Default: false'
         type: boolean
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#idempotentHint
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#isIdempotentHint
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
       openWorldHint:
         description: 'If true, this tool may interact with an "open world" of external
 
@@ -3267,18 +3519,21 @@ definitions:
 
           Default: true'
         type: boolean
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#openWorldHint
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#isOpenWorldHint
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
       readOnlyHint:
         description: 'If true, the tool does not modify its environment.
 
 
           Default: false'
         type: boolean
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#readOnlyHint
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#isReadOnlyHint
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
       title:
         description: A human-readable title for the tool.
         type: string
-        x-jsonld-id: http://modelcontextprotocol.io/ontology#title
+        x-jsonld-id: http://modelcontextprotocol.io/ontology#hasTitle
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
     type: object
   ToolListChangedNotification:
     description: An optional notification from the server to the client, informing
@@ -3297,7 +3552,8 @@ definitions:
             description: 'See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta)
               for notes on `_meta` usage.'
             type: object
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#_meta
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
+            x-jsonld-type: '@json'
         type: object
         x-jsonld-id: http://modelcontextprotocol.io/ontology#params
     required:
@@ -3318,7 +3574,8 @@ definitions:
             description: The URI of the resource to unsubscribe from.
             format: uri
             type: string
-            x-jsonld-id: http://modelcontextprotocol.io/ontology#uri
+            x-jsonld-id: http://modelcontextprotocol.io/ontology#hasURI
+            x-jsonld-type: http://www.w3.org/2001/XMLSchema#anyURI
         required:
         - uri
         type: object
@@ -3327,6 +3584,234 @@ definitions:
     - method
     - params
     type: object
+x-jsonld-extra-terms:
+  RequestId: http://modelcontextprotocol.io/ontology#RequestId
+  Cursor:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#Cursor
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+  ProgressToken: http://modelcontextprotocol.io/ontology#ProgressToken
+  Implementation:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#Implementation
+    x-jsonld-type: '@id'
+  InitializeRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#InitializeRequest
+    x-jsonld-type: '@id'
+  InitializeResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#InitializeResult
+    x-jsonld-type: '@id'
+  InitializedNotification:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#InitializedNotification
+    x-jsonld-type: '@id'
+  ClientCapabilities:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ClientCapabilities
+    x-jsonld-type: '@id'
+  ServerCapabilities:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ServerCapabilities
+    x-jsonld-type: '@id'
+  rootsX-duplicate-tofix:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasRootsCapability
+    x-jsonld-type: '@json'
+  Resource:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#Resource
+    x-jsonld-type: '@id'
+  ResourceTemplate:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ResourceTemplate
+    x-jsonld-type: '@id'
+  ResourceContents:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ResourceContents
+    x-jsonld-type: '@id'
+  TextResourceContents:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#TextResourceContents
+    x-jsonld-type: '@id'
+  BlobResourceContents:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#BlobResourceContents
+    x-jsonld-type: '@id'
+  ResourceLink:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ResourceLink
+    x-jsonld-type: '@id'
+  EmbeddedResource:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#EmbeddedResource
+    x-jsonld-type: '@id'
+  ListResourcesRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ListResourcesRequest
+    x-jsonld-type: '@id'
+  ListResourcesResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ListResourcesResult
+    x-jsonld-type: '@id'
+  ListResourceTemplatesRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ListResourceTemplatesRequest
+    x-jsonld-type: '@id'
+  ListResourceTemplatesResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ListResourceTemplatesResult
+    x-jsonld-type: '@id'
+  ReadResourceRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ReadResourceRequest
+    x-jsonld-type: '@id'
+  ReadResourceResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ReadResourceResult
+    x-jsonld-type: '@id'
+  SubscribeRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#SubscribeRequest
+    x-jsonld-type: '@id'
+  UnsubscribeRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#UnsubscribeRequest
+    x-jsonld-type: '@id'
+  ResourceUpdatedNotification:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ResourceUpdatedNotification
+    x-jsonld-type: '@id'
+  ResourceListChangedNotification:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ResourceListChangedNotification
+    x-jsonld-type: '@id'
+  Tool:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#Tool
+    x-jsonld-type: '@id'
+  ToolResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#CallToolResult
+    x-jsonld-type: '@id'
+  ToolAnnotations:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ToolAnnotations
+    x-jsonld-type: '@id'
+  ListToolsRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ListToolsRequest
+    x-jsonld-type: '@id'
+  ListToolsResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ListToolsResult
+    x-jsonld-type: '@id'
+  CallToolRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#CallToolRequest
+    x-jsonld-type: '@id'
+  CallToolResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#CallToolResult
+    x-jsonld-type: '@id'
+  ToolListChangedNotification:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ToolListChangedNotification
+    x-jsonld-type: '@id'
+  Prompt:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#Prompt
+    x-jsonld-type: '@id'
+  PromptArgument:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#PromptArgument
+    x-jsonld-type: '@id'
+  PromptMessage:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#PromptMessage
+    x-jsonld-type: '@id'
+  PromptReference:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#PromptReference
+    x-jsonld-type: '@id'
+  ListPromptsRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ListPromptsRequest
+    x-jsonld-type: '@id'
+  ListPromptsResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ListPromptsResult
+    x-jsonld-type: '@id'
+  GetPromptRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#GetPromptRequest
+    x-jsonld-type: '@id'
+  GetPromptResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#GetPromptResult
+    x-jsonld-type: '@id'
+  PromptListChangedNotification:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#PromptListChangedNotification
+    x-jsonld-type: '@id'
+  ContentBlock:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ContentBlock
+    x-jsonld-type: '@id'
+  TextContent:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#TextContent
+    x-jsonld-type: '@id'
+  ImageContent:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ImageContent
+    x-jsonld-type: '@id'
+  AudioContent:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#AudioContent
+    x-jsonld-type: '@id'
+  Role:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#Role
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+  SamplingMessage:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#SamplingMessage
+    x-jsonld-type: '@id'
+  Annotations:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#Annotations
+    x-jsonld-type: '@id'
+  CreateMessageRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#CreateMessageRequest
+    x-jsonld-type: '@id'
+  CreateMessageResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#CreateMessageResult
+    x-jsonld-type: '@id'
+  ModelPreferences:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ModelPreferences
+    x-jsonld-type: '@id'
+  ModelHint:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ModelHint
+    x-jsonld-type: '@id'
+  Root:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#Root
+    x-jsonld-type: '@id'
+  ListRootsRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ListRootsRequest
+    x-jsonld-type: '@id'
+  ListRootsResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ListRootsResult
+    x-jsonld-type: '@id'
+  RootsListChangedNotification:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#RootsListChangedNotification
+    x-jsonld-type: '@id'
+  ElicitRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ElicitRequest
+    x-jsonld-type: '@id'
+  ElicitResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ElicitResult
+    x-jsonld-type: '@id'
+  CompleteRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#CompleteRequest
+    x-jsonld-type: '@id'
+  CompleteResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#CompleteResult
+    x-jsonld-type: '@id'
+  ResourceTemplateReference:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ResourceTemplateReference
+    x-jsonld-type: '@id'
+  LoggingLevel:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#LoggingLevel
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+  SetLevelRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#SetLevelRequest
+    x-jsonld-type: '@id'
+  LoggingMessageNotification:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#LoggingMessageNotification
+    x-jsonld-type: '@id'
+  ProgressNotification:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#ProgressNotification
+    x-jsonld-type: '@id'
+  CancelledNotification:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#CancelledNotification
+    x-jsonld-type: '@id'
+  PingRequest:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#PingRequest
+    x-jsonld-type: '@id'
+  Result:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#Result
+    x-jsonld-type: '@id'
+  EmptyResult:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#EmptyResult
+    x-jsonld-type: '@id'
+  StringSchema:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#StringSchema
+    x-jsonld-type: '@id'
+  NumberSchema:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#NumberSchema
+    x-jsonld-type: '@id'
+  BooleanSchema:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#BooleanSchema
+    x-jsonld-type: '@id'
+  EnumSchema:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#EnumSchema
+    x-jsonld-type: '@id'
+  PrimitiveSchemaDefinition:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#PrimitiveSchemaDefinition
+    x-jsonld-type: '@id'
 x-jsonld-vocab: http://modelcontextprotocol.io/ontology#
 x-jsonld-prefixes:
   mcp: http://modelcontextprotocol.io/ontology#
@@ -3347,6 +3832,308 @@ Links to the schema:
 {
   "@context": {
     "@vocab": "http://modelcontextprotocol.io/ontology#",
+    "RequestId": "mcp:RequestId",
+    "Cursor": {
+      "@id": "mcp:Cursor",
+      "@type": "xsd:string"
+    },
+    "ProgressToken": "mcp:ProgressToken",
+    "Implementation": {
+      "@id": "mcp:Implementation",
+      "@type": "@id"
+    },
+    "InitializeRequest": {
+      "@id": "mcp:InitializeRequest",
+      "@type": "@id"
+    },
+    "InitializeResult": {
+      "@id": "mcp:InitializeResult",
+      "@type": "@id"
+    },
+    "InitializedNotification": {
+      "@id": "mcp:InitializedNotification",
+      "@type": "@id"
+    },
+    "ClientCapabilities": {
+      "@id": "mcp:ClientCapabilities",
+      "@type": "@id"
+    },
+    "ServerCapabilities": {
+      "@id": "mcp:ServerCapabilities",
+      "@type": "@id"
+    },
+    "rootsX-duplicate-tofix": {
+      "@id": "mcp:hasRootsCapability",
+      "@type": "@json"
+    },
+    "Resource": {
+      "@id": "mcp:Resource",
+      "@type": "@id"
+    },
+    "ResourceTemplate": {
+      "@id": "mcp:ResourceTemplate",
+      "@type": "@id"
+    },
+    "ResourceContents": {
+      "@id": "mcp:ResourceContents",
+      "@type": "@id"
+    },
+    "TextResourceContents": {
+      "@id": "mcp:TextResourceContents",
+      "@type": "@id"
+    },
+    "BlobResourceContents": {
+      "@id": "mcp:BlobResourceContents",
+      "@type": "@id"
+    },
+    "ResourceLink": {
+      "@id": "mcp:ResourceLink",
+      "@type": "@id"
+    },
+    "EmbeddedResource": {
+      "@id": "mcp:EmbeddedResource",
+      "@type": "@id"
+    },
+    "ListResourcesRequest": {
+      "@id": "mcp:ListResourcesRequest",
+      "@type": "@id"
+    },
+    "ListResourcesResult": {
+      "@id": "mcp:ListResourcesResult",
+      "@type": "@id"
+    },
+    "ListResourceTemplatesRequest": {
+      "@id": "mcp:ListResourceTemplatesRequest",
+      "@type": "@id"
+    },
+    "ListResourceTemplatesResult": {
+      "@id": "mcp:ListResourceTemplatesResult",
+      "@type": "@id"
+    },
+    "ReadResourceRequest": {
+      "@id": "mcp:ReadResourceRequest",
+      "@type": "@id"
+    },
+    "ReadResourceResult": {
+      "@id": "mcp:ReadResourceResult",
+      "@type": "@id"
+    },
+    "SubscribeRequest": {
+      "@id": "mcp:SubscribeRequest",
+      "@type": "@id"
+    },
+    "UnsubscribeRequest": {
+      "@id": "mcp:UnsubscribeRequest",
+      "@type": "@id"
+    },
+    "ResourceUpdatedNotification": {
+      "@id": "mcp:ResourceUpdatedNotification",
+      "@type": "@id"
+    },
+    "ResourceListChangedNotification": {
+      "@id": "mcp:ResourceListChangedNotification",
+      "@type": "@id"
+    },
+    "Tool": {
+      "@id": "mcp:Tool",
+      "@type": "@id"
+    },
+    "ToolResult": {
+      "@id": "mcp:CallToolResult",
+      "@type": "@id"
+    },
+    "ToolAnnotations": {
+      "@id": "mcp:ToolAnnotations",
+      "@type": "@id"
+    },
+    "ListToolsRequest": {
+      "@id": "mcp:ListToolsRequest",
+      "@type": "@id"
+    },
+    "ListToolsResult": {
+      "@id": "mcp:ListToolsResult",
+      "@type": "@id"
+    },
+    "CallToolRequest": {
+      "@id": "mcp:CallToolRequest",
+      "@type": "@id"
+    },
+    "CallToolResult": {
+      "@id": "mcp:CallToolResult",
+      "@type": "@id"
+    },
+    "ToolListChangedNotification": {
+      "@id": "mcp:ToolListChangedNotification",
+      "@type": "@id"
+    },
+    "Prompt": {
+      "@id": "mcp:Prompt",
+      "@type": "@id"
+    },
+    "PromptArgument": {
+      "@id": "mcp:PromptArgument",
+      "@type": "@id"
+    },
+    "PromptMessage": {
+      "@id": "mcp:PromptMessage",
+      "@type": "@id"
+    },
+    "PromptReference": {
+      "@id": "mcp:PromptReference",
+      "@type": "@id"
+    },
+    "ListPromptsRequest": {
+      "@id": "mcp:ListPromptsRequest",
+      "@type": "@id"
+    },
+    "ListPromptsResult": {
+      "@id": "mcp:ListPromptsResult",
+      "@type": "@id"
+    },
+    "GetPromptRequest": {
+      "@id": "mcp:GetPromptRequest",
+      "@type": "@id"
+    },
+    "GetPromptResult": {
+      "@id": "mcp:GetPromptResult",
+      "@type": "@id"
+    },
+    "PromptListChangedNotification": {
+      "@id": "mcp:PromptListChangedNotification",
+      "@type": "@id"
+    },
+    "ContentBlock": {
+      "@id": "mcp:ContentBlock",
+      "@type": "@id"
+    },
+    "TextContent": {
+      "@id": "mcp:TextContent",
+      "@type": "@id"
+    },
+    "ImageContent": {
+      "@id": "mcp:ImageContent",
+      "@type": "@id"
+    },
+    "AudioContent": {
+      "@id": "mcp:AudioContent",
+      "@type": "@id"
+    },
+    "Role": {
+      "@id": "mcp:Role",
+      "@type": "xsd:string"
+    },
+    "SamplingMessage": {
+      "@id": "mcp:SamplingMessage",
+      "@type": "@id"
+    },
+    "Annotations": {
+      "@id": "mcp:Annotations",
+      "@type": "@id"
+    },
+    "CreateMessageRequest": {
+      "@id": "mcp:CreateMessageRequest",
+      "@type": "@id"
+    },
+    "CreateMessageResult": {
+      "@id": "mcp:CreateMessageResult",
+      "@type": "@id"
+    },
+    "ModelPreferences": {
+      "@id": "mcp:ModelPreferences",
+      "@type": "@id"
+    },
+    "ModelHint": {
+      "@id": "mcp:ModelHint",
+      "@type": "@id"
+    },
+    "Root": {
+      "@id": "mcp:Root",
+      "@type": "@id"
+    },
+    "ListRootsRequest": {
+      "@id": "mcp:ListRootsRequest",
+      "@type": "@id"
+    },
+    "ListRootsResult": {
+      "@id": "mcp:ListRootsResult",
+      "@type": "@id"
+    },
+    "RootsListChangedNotification": {
+      "@id": "mcp:RootsListChangedNotification",
+      "@type": "@id"
+    },
+    "ElicitRequest": {
+      "@id": "mcp:ElicitRequest",
+      "@type": "@id"
+    },
+    "ElicitResult": {
+      "@id": "mcp:ElicitResult",
+      "@type": "@id"
+    },
+    "CompleteRequest": {
+      "@id": "mcp:CompleteRequest",
+      "@type": "@id"
+    },
+    "CompleteResult": {
+      "@id": "mcp:CompleteResult",
+      "@type": "@id"
+    },
+    "ResourceTemplateReference": {
+      "@id": "mcp:ResourceTemplateReference",
+      "@type": "@id"
+    },
+    "LoggingLevel": {
+      "@id": "mcp:LoggingLevel",
+      "@type": "xsd:string"
+    },
+    "SetLevelRequest": {
+      "@id": "mcp:SetLevelRequest",
+      "@type": "@id"
+    },
+    "LoggingMessageNotification": {
+      "@id": "mcp:LoggingMessageNotification",
+      "@type": "@id"
+    },
+    "ProgressNotification": {
+      "@id": "mcp:ProgressNotification",
+      "@type": "@id"
+    },
+    "CancelledNotification": {
+      "@id": "mcp:CancelledNotification",
+      "@type": "@id"
+    },
+    "PingRequest": {
+      "@id": "mcp:PingRequest",
+      "@type": "@id"
+    },
+    "Result": {
+      "@id": "mcp:Result",
+      "@type": "@id"
+    },
+    "EmptyResult": {
+      "@id": "mcp:EmptyResult",
+      "@type": "@id"
+    },
+    "StringSchema": {
+      "@id": "mcp:StringSchema",
+      "@type": "@id"
+    },
+    "NumberSchema": {
+      "@id": "mcp:NumberSchema",
+      "@type": "@id"
+    },
+    "BooleanSchema": {
+      "@id": "mcp:BooleanSchema",
+      "@type": "@id"
+    },
+    "EnumSchema": {
+      "@id": "mcp:EnumSchema",
+      "@type": "@id"
+    },
+    "PrimitiveSchemaDefinition": {
+      "@id": "mcp:PrimitiveSchemaDefinition",
+      "@type": "@id"
+    },
     "mcp": "http://modelcontextprotocol.io/ontology#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
