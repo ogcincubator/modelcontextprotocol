@@ -111,7 +111,7 @@
   ],
   "name": "Building Blocks - Model Context Protocol (MCP) Building Blocks",
   "abstract": "BuildingBlock descriptions of the the elements of the\n[Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) \n",
-  "modified": "2025-09-22T13:39:59.282507",
+  "modified": "2025-09-29T08:39:59.283271",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"cbdf0741daa8bb5e8edcce157ff8f4bb6d0d71fa",
@@ -146,7 +146,7 @@
       "dependsOn": [],
       "rules": [],
       "dateTimeAddition": "2025-06-12T00:00:00Z",
-      "dateOfLastChange": "2025-09-22",
+      "dateOfLastChange": "2025-09-29",
       "shaclShapes": {},
       "ldContext": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld",
       "ontology": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/ontology.ttl",
@@ -204,7 +204,7 @@
       ],
       "rules": [],
       "dateTimeAddition": "2025-06-12T00:00:00Z",
-      "dateOfLastChange": "2025-09-22",
+      "dateOfLastChange": "2025-09-29",
       "shaclShapes": {},
       "ldContext": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/mcp/context.jsonld",
       "schema": {

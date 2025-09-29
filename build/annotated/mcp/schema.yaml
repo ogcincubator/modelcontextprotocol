@@ -183,6 +183,8 @@ definitions:
         required:
         - name
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -283,6 +285,8 @@ definitions:
         required:
         - requestId
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -412,6 +416,8 @@ definitions:
         - argument
         - ref
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -538,6 +544,8 @@ definitions:
         - maxTokens
         - messages
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -635,6 +643,8 @@ definitions:
         - message
         - requestedSchema
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -778,6 +788,8 @@ definitions:
         required:
         - name
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -904,6 +916,8 @@ definitions:
         - clientInfo
         - protocolVersion
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -971,6 +985,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1000,6 +1016,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1051,6 +1069,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1103,6 +1123,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1179,6 +1201,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1226,6 +1250,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1306,6 +1332,8 @@ definitions:
         - data
         - level
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -1415,6 +1443,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1462,6 +1492,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1516,6 +1548,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1566,6 +1600,8 @@ definitions:
         - progress
         - progressToken
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -1662,6 +1698,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1733,6 +1771,8 @@ definitions:
         required:
         - uri
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -1788,6 +1828,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1980,6 +2022,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2080,6 +2124,8 @@ definitions:
         required:
         - uri
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -2162,6 +2208,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2305,6 +2353,8 @@ definitions:
         required:
         - level
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -2365,6 +2415,8 @@ definitions:
         required:
         - uri
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -2622,6 +2674,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2646,6 +2700,8 @@ definitions:
         required:
         - uri
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -2751,6 +2807,24 @@ x-jsonld-extra-terms:
   ToolAnnotations:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ToolAnnotations
     x-jsonld-type: '@id'
+  inputSchema:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasInputSchema
+    x-jsonld-type: '@json'
+  outputSchema:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasOutputSchema
+    x-jsonld-type: '@json'
+  readOnlyHint:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#isReadOnlyHint
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
+  destructiveHint:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#isDestructiveHint
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
+  idempotentHint:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#isIdempotentHint
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
+  openWorldHint:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#isOpenWorldHint
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
   ListToolsRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ListToolsRequest
     x-jsonld-type: '@id'
@@ -2838,19 +2912,12 @@ x-jsonld-extra-terms:
   RootsListChangedNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#RootsListChangedNotification
     x-jsonld-type: '@id'
-  roots:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#containsRoot
-    x-jsonld-type: http://modelcontextprotocol.io/ontology#Root
-    x-jsonld-container: '@list'
   ElicitRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ElicitRequest
     x-jsonld-type: '@id'
   ElicitResult:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ElicitResult
     x-jsonld-type: '@id'
-  action:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAction
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
   CompleteRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#CompleteRequest
     x-jsonld-type: '@id'

@@ -12,7 +12,7 @@
   "dependsOn": [],
   "rules": [],
   "dateTimeAddition": "2025-06-12T00:00:00Z",
-  "dateOfLastChange": "2025-09-22",
+  "dateOfLastChange": "2025-09-29",
   "shaclShapes": {},
   "ldContext": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/context.jsonld",
   "ontology": "https://ogcincubator.github.io/modelcontextprotocol/build/annotated/json-rpc/ontology.ttl",

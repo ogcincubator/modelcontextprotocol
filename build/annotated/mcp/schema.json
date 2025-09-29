@@ -195,7 +195,9 @@
           "required": [
             "name"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -278,7 +280,9 @@
           "required": [
             "requestId"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -495,7 +499,9 @@
             "argument",
             "ref"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -655,7 +661,9 @@
             "maxTokens",
             "messages"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -783,7 +791,9 @@
             "message",
             "requestedSchema"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -958,7 +968,9 @@
           "required": [
             "name"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1109,7 +1121,9 @@
             "clientInfo",
             "protocolVersion"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1186,7 +1200,9 @@
               "x-jsonld-type": "@json"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1229,7 +1245,9 @@
               "x-jsonld-type": "http://modelcontextprotocol.io/ontology#Cursor"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1293,7 +1311,9 @@
               "x-jsonld-type": "http://modelcontextprotocol.io/ontology#Cursor"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1358,7 +1378,9 @@
               "x-jsonld-type": "http://modelcontextprotocol.io/ontology#Cursor"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1432,7 +1454,9 @@
               "x-jsonld-type": "@json"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1491,7 +1515,9 @@
               "x-jsonld-type": "http://modelcontextprotocol.io/ontology#Cursor"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1584,7 +1610,9 @@
             "data",
             "level"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1666,7 +1694,9 @@
               "x-jsonld-type": "@json"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1730,7 +1760,9 @@
               "x-jsonld-type": "http://modelcontextprotocol.io/ontology#Cursor"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1792,7 +1824,9 @@
               "x-jsonld-type": "@json"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1860,7 +1894,9 @@
             "progress",
             "progressToken"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -1968,7 +2004,9 @@
               "x-jsonld-type": "@json"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -2050,7 +2088,9 @@
           "required": [
             "uri"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -2125,7 +2165,9 @@
               "x-jsonld-type": "@json"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -2319,7 +2361,9 @@
               "x-jsonld-type": "@json"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -2429,7 +2473,9 @@
           "required": [
             "uri"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -2516,7 +2562,9 @@
               "x-jsonld-type": "@json"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -2745,7 +2793,9 @@
           "required": [
             "level"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -2824,7 +2874,9 @@
           "required": [
             "uri"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -3073,7 +3125,9 @@
               "x-jsonld-type": "@json"
             }
           },
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -3106,7 +3160,9 @@
           "required": [
             "uri"
           ],
-          "type": "object"
+          "type": "object",
+          "x-jsonld-id": "jrpc:hasParameters",
+          "x-jsonld-type": "urn:mcp:params"
         }
       },
       "required": [
@@ -3257,6 +3313,30 @@
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#ToolAnnotations",
       "x-jsonld-type": "@id"
     },
+    "inputSchema": {
+      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasInputSchema",
+      "x-jsonld-type": "@json"
+    },
+    "outputSchema": {
+      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasOutputSchema",
+      "x-jsonld-type": "@json"
+    },
+    "readOnlyHint": {
+      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#isReadOnlyHint",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "destructiveHint": {
+      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#isDestructiveHint",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "idempotentHint": {
+      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#isIdempotentHint",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "openWorldHint": {
+      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#isOpenWorldHint",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
     "ListToolsRequest": {
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#ListToolsRequest",
       "x-jsonld-type": "@id"
@@ -3373,11 +3453,6 @@
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#RootsListChangedNotification",
       "x-jsonld-type": "@id"
     },
-    "roots": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#containsRoot",
-      "x-jsonld-type": "http://modelcontextprotocol.io/ontology#Root",
-      "x-jsonld-container": "@list"
-    },
     "ElicitRequest": {
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#ElicitRequest",
       "x-jsonld-type": "@id"
@@ -3385,10 +3460,6 @@
     "ElicitResult": {
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#ElicitResult",
       "x-jsonld-type": "@id"
-    },
-    "action": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasAction",
-      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "CompleteRequest": {
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#CompleteRequest",

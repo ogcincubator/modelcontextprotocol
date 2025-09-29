@@ -1047,6 +1047,8 @@ definitions:
         required:
         - name
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -1147,6 +1149,8 @@ definitions:
         required:
         - requestId
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -1276,6 +1280,8 @@ definitions:
         - argument
         - ref
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -1402,6 +1408,8 @@ definitions:
         - maxTokens
         - messages
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -1499,6 +1507,8 @@ definitions:
         - message
         - requestedSchema
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -1642,6 +1652,8 @@ definitions:
         required:
         - name
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -1768,6 +1780,8 @@ definitions:
         - clientInfo
         - protocolVersion
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -1835,6 +1849,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1864,6 +1880,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1915,6 +1933,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -1967,6 +1987,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2043,6 +2065,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2090,6 +2114,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2170,6 +2196,8 @@ definitions:
         - data
         - level
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -2279,6 +2307,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2326,6 +2356,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasCursor
             x-jsonld-type: http://modelcontextprotocol.io/ontology#Cursor
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2380,6 +2412,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2430,6 +2464,8 @@ definitions:
         - progress
         - progressToken
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -2526,6 +2562,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2597,6 +2635,8 @@ definitions:
         required:
         - uri
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -2652,6 +2692,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2844,6 +2886,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -2944,6 +2988,8 @@ definitions:
         required:
         - uri
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -3026,6 +3072,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -3169,6 +3217,8 @@ definitions:
         required:
         - level
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -3229,6 +3279,8 @@ definitions:
         required:
         - uri
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -3486,6 +3538,8 @@ definitions:
             x-jsonld-id: http://modelcontextprotocol.io/ontology#hasMetadata
             x-jsonld-type: '@json'
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     type: object
@@ -3510,6 +3564,8 @@ definitions:
         required:
         - uri
         type: object
+        x-jsonld-id: jrpc:hasParameters
+        x-jsonld-type: urn:mcp:params
     required:
     - method
     - params
@@ -3615,6 +3671,24 @@ x-jsonld-extra-terms:
   ToolAnnotations:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ToolAnnotations
     x-jsonld-type: '@id'
+  inputSchema:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasInputSchema
+    x-jsonld-type: '@json'
+  outputSchema:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasOutputSchema
+    x-jsonld-type: '@json'
+  readOnlyHint:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#isReadOnlyHint
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
+  destructiveHint:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#isDestructiveHint
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
+  idempotentHint:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#isIdempotentHint
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
+  openWorldHint:
+    x-jsonld-id: http://modelcontextprotocol.io/ontology#isOpenWorldHint
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#boolean
   ListToolsRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ListToolsRequest
     x-jsonld-type: '@id'
@@ -3702,19 +3776,12 @@ x-jsonld-extra-terms:
   RootsListChangedNotification:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#RootsListChangedNotification
     x-jsonld-type: '@id'
-  roots:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#containsRoot
-    x-jsonld-type: http://modelcontextprotocol.io/ontology#Root
-    x-jsonld-container: '@list'
   ElicitRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ElicitRequest
     x-jsonld-type: '@id'
   ElicitResult:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#ElicitResult
     x-jsonld-type: '@id'
-  action:
-    x-jsonld-id: http://modelcontextprotocol.io/ontology#hasAction
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
   CompleteRequest:
     x-jsonld-id: http://modelcontextprotocol.io/ontology#CompleteRequest
     x-jsonld-type: '@id'
@@ -3806,28 +3873,338 @@ Links to the schema:
       "@type": "xsd:string"
     },
     "params": {
+      "@context": {
+        "capabilities": {
+          "@context": {
+            "experimental": {
+              "@id": "mcp:hasExperimentalCapabilities",
+              "@type": "@json"
+            },
+            "roots": {
+              "@context": {
+                "listChanged": {
+                  "@id": "mcp:supportsListChanged",
+                  "@type": "xsd:boolean"
+                }
+              },
+              "@id": "mcp:containsRoot",
+              "@type": "mcp:Root",
+              "@container": "@list"
+            }
+          },
+          "@id": "mcp:hasCapabilities",
+          "@type": "@id"
+        },
+        "clientInfo": {
+          "@context": {
+            "title": {
+              "@id": "mcp:hasTitle",
+              "@type": "xsd:string"
+            },
+            "version": {
+              "@id": "mcp:hasVersion",
+              "@type": "xsd:string"
+            }
+          },
+          "@id": "mcp:hasClientInfo",
+          "@type": "mcp:Implementation"
+        },
+        "_meta": {
+          "@context": {
+            "progressToken": {
+              "@id": "mcp:hasProgressToken",
+              "@type": "mcp:ProgressToken"
+            }
+          },
+          "@id": "mcp:hasMetadata",
+          "@type": "@json"
+        },
+        "cursor": {
+          "@id": "mcp:hasCursor",
+          "@type": "mcp:Cursor"
+        },
+        "uri": {
+          "@id": "mcp:hasURI",
+          "@type": "xsd:anyURI"
+        },
+        "arguments": {
+          "@id": "mcp:hasArguments",
+          "@type": "@json"
+        },
+        "name": {
+          "@id": "mcp:hasName",
+          "@type": "xsd:string"
+        },
+        "level": {
+          "@id": "mcp:hasLevel",
+          "@type": "mcp:LoggingLevel"
+        },
+        "argument": {
+          "@id": "mcp:hasArgument",
+          "@type": "@json"
+        },
+        "context": {
+          "@id": "mcp:hasContext",
+          "@type": "@json"
+        },
+        "ref": {
+          "@context": {
+            "title": {
+              "@id": "mcp:hasTitle",
+              "@type": "xsd:string"
+            },
+            "type": {
+              "@id": "mcp:hasContentType",
+              "@type": "xsd:string"
+            }
+          },
+          "@id": "mcp:hasReference",
+          "@type": "@id"
+        },
+        "includeContext": {
+          "@id": "mcp:hasIncludeContext",
+          "@type": "xsd:string"
+        },
+        "maxTokens": {
+          "@id": "mcp:hasMaxTokens",
+          "@type": "xsd:integer"
+        },
+        "metadata": {
+          "@id": "mcp:hasMetadata",
+          "@type": "@json"
+        },
+        "modelPreferences": {
+          "@context": {
+            "costPriority": {
+              "@id": "mcp:hasCostPriority",
+              "@type": "xsd:decimal"
+            },
+            "hints": {
+              "@id": "mcp:hasHints",
+              "@type": "mcp:ModelHint",
+              "@container": "@list"
+            },
+            "intelligencePriority": {
+              "@id": "mcp:hasIntelligencePriority",
+              "@type": "xsd:decimal"
+            },
+            "speedPriority": {
+              "@id": "mcp:hasSpeedPriority",
+              "@type": "xsd:decimal"
+            }
+          },
+          "@id": "mcp:hasModelPreferences",
+          "@type": "mcp:ModelPreferences"
+        },
+        "stopSequences": {
+          "@id": "mcp:hasStopSequences",
+          "@type": "xsd:string",
+          "@container": "@list"
+        },
+        "systemPrompt": {
+          "@id": "mcp:hasSystemPrompt",
+          "@type": "xsd:string"
+        },
+        "temperature": {
+          "@id": "mcp:hasTemperature",
+          "@type": "xsd:decimal"
+        },
+        "message": {
+          "@id": "mcp:hasMessage",
+          "@type": "xsd:string"
+        },
+        "requestedSchema": {
+          "@context": {
+            "properties": {
+              "@context": {
+                "format": {
+                  "@id": "mcp:hasFormat",
+                  "@type": "xsd:string"
+                },
+                "maxLength": {
+                  "@id": "mcp:hasMaxLength",
+                  "@type": "xsd:integer"
+                },
+                "minLength": {
+                  "@id": "mcp:hasMinLength",
+                  "@type": "xsd:integer"
+                },
+                "title": {
+                  "@id": "mcp:hasTitle",
+                  "@type": "xsd:string"
+                },
+                "maximum": {
+                  "@id": "mcp:hasMaximum",
+                  "@type": "xsd:integer"
+                },
+                "minimum": {
+                  "@id": "mcp:hasMinimum",
+                  "@type": "xsd:integer"
+                },
+                "default": "mcp:hasDefault",
+                "enum": {
+                  "@id": "mcp:hasEnumValues",
+                  "@type": "xsd:string",
+                  "@container": "@list"
+                },
+                "enumNames": {
+                  "@id": "mcp:hasEnumNames",
+                  "@type": "xsd:string",
+                  "@container": "@list"
+                }
+              },
+              "@id": "mcp:hasProperties",
+              "@type": "@json"
+            },
+            "required": {
+              "@id": "mcp:isRequired",
+              "@type": "xsd:boolean"
+            },
+            "type": {
+              "@id": "mcp:hasContentType",
+              "@type": "xsd:string"
+            }
+          },
+          "@id": "mcp:hasRequestedSchema",
+          "@type": "@json"
+        }
+      },
       "@id": "jrpc:hasParameters",
       "@type": "@json"
     },
-    "capabilities": {
+    "result": {
+      "@id": "jrpc:hasResult",
+      "@type": "@json"
+    },
+    "error": {
       "@context": {
-        "experimental": {
-          "@id": "mcp:hasExperimentalCapabilities",
-          "@type": "@json"
+        "code": {
+          "@id": "jrpc:hasErrorCode",
+          "@type": "xsd:integer"
         },
-        "roots": {
+        "message": {
+          "@id": "jrpc:hasErrorMessage",
+          "@type": "xsd:string"
+        },
+        "data": {
+          "@id": "jrpc:hasErrorData",
+          "@type": "@json"
+        }
+      },
+      "@id": "jrpc:hasError",
+      "@type": "@id"
+    },
+    "_meta": {
+      "@id": "mcp:hasMetadata",
+      "@type": "@json"
+    },
+    "content": {
+      "@context": {
+        "annotations": {
           "@context": {
-            "listChanged": {
-              "@id": "mcp:supportsListChanged",
-              "@type": "xsd:boolean"
+            "audience": {
+              "@id": "mcp:hasAudience",
+              "@type": "mcp:Role",
+              "@container": "@list"
+            },
+            "lastModified": {
+              "@id": "mcp:hasLastModified",
+              "@type": "xsd:dateTime"
+            },
+            "priority": {
+              "@id": "mcp:hasPriority",
+              "@type": "xsd:decimal"
             }
           },
-          "@id": "mcp:containsRoot",
-          "@type": "mcp:Root",
-          "@container": "@list"
+          "@id": "mcp:hasAnnotations",
+          "@type": "@id"
         },
+        "text": {
+          "@id": "mcp:hasText",
+          "@type": "xsd:string"
+        },
+        "type": {
+          "@id": "mcp:hasContentType",
+          "@type": "xsd:string"
+        },
+        "data": {
+          "@id": "mcp:hasData",
+          "@type": "xsd:base64Binary"
+        },
+        "mimeType": {
+          "@id": "mcp:hasMimeType",
+          "@type": "xsd:string"
+        },
+        "name": {
+          "@id": "mcp:hasName",
+          "@type": "xsd:string"
+        },
+        "size": {
+          "@id": "mcp:hasSize",
+          "@type": "xsd:integer"
+        },
+        "title": {
+          "@id": "mcp:hasTitle",
+          "@type": "xsd:string"
+        },
+        "uri": {
+          "@id": "mcp:hasURI",
+          "@type": "xsd:anyURI"
+        },
+        "resource": {
+          "@context": {
+            "blob": {
+              "@id": "mcp:hasBlob",
+              "@type": "xsd:base64Binary"
+            }
+          },
+          "@id": "mcp:embedsResource",
+          "@type": "@id"
+        }
+      },
+      "@id": "mcp:hasContent",
+      "@type": "@id",
+      "@container": "@list"
+    },
+    "model": {
+      "@id": "mcp:hasModel",
+      "@type": "xsd:string"
+    },
+    "role": {
+      "@id": "mcp:hasRole",
+      "@type": "mcp:Role"
+    },
+    "stopReason": {
+      "@id": "mcp:hasStopReason",
+      "@type": "xsd:string"
+    },
+    "roots": {
+      "@context": {
+        "name": {
+          "@id": "mcp:hasName",
+          "@type": "xsd:string"
+        },
+        "uri": {
+          "@id": "mcp:hasURI",
+          "@type": "xsd:anyURI"
+        }
+      },
+      "@id": "mcp:containsRoot",
+      "@type": "mcp:Root",
+      "@container": "@list"
+    },
+    "action": {
+      "@id": "mcp:hasAction",
+      "@type": "xsd:string"
+    },
+    "capabilities": {
+      "@context": {
         "completions": {
           "@id": "mcp:hasCompletionsCapability",
+          "@type": "@json"
+        },
+        "experimental": {
+          "@id": "mcp:hasExperimentalCapabilities",
           "@type": "@json"
         },
         "logging": {
@@ -3872,297 +4249,20 @@ Links to the schema:
       "@id": "mcp:hasCapabilities",
       "@type": "@id"
     },
-    "clientInfo": {
-      "@context": {
-        "title": {
-          "@id": "mcp:hasTitle",
-          "@type": "xsd:string"
-        },
-        "version": {
-          "@id": "mcp:hasVersion",
-          "@type": "xsd:string"
-        }
-      },
-      "@id": "mcp:hasClientInfo",
-      "@type": "mcp:Implementation"
+    "instructions": {
+      "@id": "mcp:hasInstructions",
+      "@type": "xsd:string"
     },
     "protocolVersion": {
       "@id": "mcp:hasProtocolVersion",
       "@type": "xsd:string"
     },
-    "_meta": {
-      "@context": {
-        "progressToken": {
-          "@id": "mcp:hasProgressToken",
-          "@type": "mcp:ProgressToken"
-        }
-      },
-      "@id": "mcp:hasMetadata",
-      "@type": "@json"
-    },
-    "cursor": {
-      "@id": "mcp:hasCursor",
-      "@type": "mcp:Cursor"
-    },
-    "uri": {
-      "@id": "mcp:hasURI",
-      "@type": "xsd:anyURI"
-    },
-    "arguments": {
-      "@id": "mcp:hasArguments",
-      "@type": "@json"
-    },
-    "name": {
-      "@id": "mcp:hasName",
-      "@type": "xsd:string"
-    },
-    "level": {
-      "@id": "mcp:hasLevel",
-      "@type": "mcp:LoggingLevel"
-    },
-    "argument": {
-      "@id": "mcp:hasArgument",
-      "@type": "@json"
-    },
-    "context": {
-      "@id": "mcp:hasContext",
-      "@type": "@json"
-    },
-    "ref": {
-      "@context": {
-        "title": {
-          "@id": "mcp:hasTitle",
-          "@type": "xsd:string"
-        },
-        "type": {
-          "@id": "mcp:hasContentType",
-          "@type": "xsd:string"
-        }
-      },
-      "@id": "mcp:hasReference",
-      "@type": "@id"
-    },
-    "result": {
-      "@id": "jrpc:hasResult",
-      "@type": "@json"
-    },
-    "error": {
-      "@context": {
-        "code": {
-          "@id": "jrpc:hasErrorCode",
-          "@type": "xsd:integer"
-        },
-        "message": {
-          "@id": "jrpc:hasErrorMessage",
-          "@type": "xsd:string"
-        },
-        "data": {
-          "@id": "jrpc:hasErrorData",
-          "@type": "@json"
-        }
-      },
-      "@id": "jrpc:hasError",
-      "@type": "@id"
-    },
-    "content": {
-      "@context": {
-        "annotations": {
-          "@context": {
-            "audience": {
-              "@id": "mcp:hasAudience",
-              "@type": "mcp:Role",
-              "@container": "@list"
-            },
-            "lastModified": {
-              "@id": "mcp:hasLastModified",
-              "@type": "xsd:dateTime"
-            },
-            "priority": {
-              "@id": "mcp:hasPriority",
-              "@type": "xsd:decimal"
-            }
-          },
-          "@id": "mcp:hasAnnotations",
-          "@type": "@id"
-        },
-        "text": {
-          "@id": "mcp:hasText",
-          "@type": "xsd:string"
-        },
-        "type": {
-          "@id": "mcp:hasContentType",
-          "@type": "xsd:string"
-        },
-        "data": {
-          "@id": "mcp:hasData",
-          "@type": "xsd:base64Binary"
-        },
-        "mimeType": {
-          "@id": "mcp:hasMimeType",
-          "@type": "xsd:string"
-        },
-        "size": {
-          "@id": "mcp:hasSize",
-          "@type": "xsd:integer"
-        },
-        "title": {
-          "@id": "mcp:hasTitle",
-          "@type": "xsd:string"
-        },
-        "resource": {
-          "@context": {
-            "blob": {
-              "@id": "mcp:hasBlob",
-              "@type": "xsd:base64Binary"
-            }
-          },
-          "@id": "mcp:embedsResource",
-          "@type": "@id"
-        }
-      },
-      "@id": "mcp:hasContent",
-      "@type": "@id",
-      "@container": "@list"
-    },
-    "model": {
-      "@id": "mcp:hasModel",
-      "@type": "xsd:string"
-    },
-    "role": {
-      "@id": "mcp:hasRole",
-      "@type": "mcp:Role"
-    },
-    "stopReason": {
-      "@id": "mcp:hasStopReason",
-      "@type": "xsd:string"
-    },
-    "roots": {
-      "@id": "mcp:containsRoot",
-      "@type": "mcp:Root",
-      "@container": "@list"
-    },
-    "action": {
-      "@id": "mcp:hasAction",
-      "@type": "xsd:string"
-    },
-    "includeContext": {
-      "@id": "mcp:hasIncludeContext",
-      "@type": "xsd:string"
-    },
-    "maxTokens": {
-      "@id": "mcp:hasMaxTokens",
-      "@type": "xsd:integer"
-    },
-    "messages": {
-      "@id": "mcp:containsMessage",
-      "@type": "@id",
-      "@container": "@list"
-    },
-    "metadata": {
-      "@id": "mcp:hasMetadata",
-      "@type": "@json"
-    },
-    "modelPreferences": {
-      "@context": {
-        "costPriority": {
-          "@id": "mcp:hasCostPriority",
-          "@type": "xsd:decimal"
-        },
-        "hints": {
-          "@id": "mcp:hasHints",
-          "@type": "mcp:ModelHint",
-          "@container": "@list"
-        },
-        "intelligencePriority": {
-          "@id": "mcp:hasIntelligencePriority",
-          "@type": "xsd:decimal"
-        },
-        "speedPriority": {
-          "@id": "mcp:hasSpeedPriority",
-          "@type": "xsd:decimal"
-        }
-      },
-      "@id": "mcp:hasModelPreferences",
-      "@type": "mcp:ModelPreferences"
-    },
-    "stopSequences": {
-      "@id": "mcp:hasStopSequences",
-      "@type": "xsd:string",
-      "@container": "@list"
-    },
-    "systemPrompt": {
-      "@id": "mcp:hasSystemPrompt",
-      "@type": "xsd:string"
-    },
-    "temperature": {
-      "@id": "mcp:hasTemperature",
-      "@type": "xsd:decimal"
-    },
-    "message": {
-      "@id": "mcp:hasMessage",
-      "@type": "xsd:string"
-    },
-    "requestedSchema": {
-      "@context": {
-        "properties": {
-          "@context": {
-            "format": {
-              "@id": "mcp:hasFormat",
-              "@type": "xsd:string"
-            },
-            "maxLength": {
-              "@id": "mcp:hasMaxLength",
-              "@type": "xsd:integer"
-            },
-            "minLength": {
-              "@id": "mcp:hasMinLength",
-              "@type": "xsd:integer"
-            },
-            "title": {
-              "@id": "mcp:hasTitle",
-              "@type": "xsd:string"
-            },
-            "maximum": {
-              "@id": "mcp:hasMaximum",
-              "@type": "xsd:integer"
-            },
-            "minimum": {
-              "@id": "mcp:hasMinimum",
-              "@type": "xsd:integer"
-            },
-            "default": "mcp:hasDefault",
-            "enum": {
-              "@id": "mcp:hasEnumValues",
-              "@type": "xsd:string",
-              "@container": "@list"
-            },
-            "enumNames": {
-              "@id": "mcp:hasEnumNames",
-              "@type": "xsd:string",
-              "@container": "@list"
-            }
-          },
-          "@id": "mcp:hasProperties",
-          "@type": "@json"
-        },
-        "required": {
-          "@id": "mcp:isRequired",
-          "@type": "xsd:boolean"
-        },
-        "type": {
-          "@id": "mcp:hasContentType",
-          "@type": "xsd:string"
-        }
-      },
-      "@id": "mcp:hasRequestedSchema",
-      "@type": "@json"
-    },
-    "instructions": {
-      "@id": "mcp:hasInstructions",
-      "@type": "xsd:string"
-    },
     "serverInfo": {
       "@context": {
+        "name": {
+          "@id": "mcp:hasName",
+          "@type": "xsd:string"
+        },
         "title": {
           "@id": "mcp:hasTitle",
           "@type": "xsd:string"
@@ -4204,6 +4304,10 @@ Links to the schema:
           "@id": "mcp:hasMimeType",
           "@type": "xsd:string"
         },
+        "name": {
+          "@id": "mcp:hasName",
+          "@type": "xsd:string"
+        },
         "size": {
           "@id": "mcp:hasSize",
           "@type": "xsd:integer"
@@ -4211,6 +4315,10 @@ Links to the schema:
         "title": {
           "@id": "mcp:hasTitle",
           "@type": "xsd:string"
+        },
+        "uri": {
+          "@id": "mcp:hasURI",
+          "@type": "xsd:anyURI"
         }
       },
       "@id": "mcp:hasResourcesCapability",
@@ -4241,6 +4349,10 @@ Links to the schema:
           "@id": "mcp:hasMimeType",
           "@type": "xsd:string"
         },
+        "name": {
+          "@id": "mcp:hasName",
+          "@type": "xsd:string"
+        },
         "title": {
           "@id": "mcp:hasTitle",
           "@type": "xsd:string"
@@ -4264,6 +4376,10 @@ Links to the schema:
           "@id": "mcp:hasText",
           "@type": "xsd:string"
         },
+        "uri": {
+          "@id": "mcp:hasURI",
+          "@type": "xsd:anyURI"
+        },
         "blob": {
           "@id": "mcp:hasBlob",
           "@type": "xsd:base64Binary"
@@ -4285,6 +4401,10 @@ Links to the schema:
           "@id": "mcp:hasArguments",
           "@type": "@json"
         },
+        "name": {
+          "@id": "mcp:hasName",
+          "@type": "xsd:string"
+        },
         "title": {
           "@id": "mcp:hasTitle",
           "@type": "xsd:string"
@@ -4297,27 +4417,14 @@ Links to the schema:
       "@id": "mcp:hasDescription",
       "@type": "xsd:string"
     },
+    "messages": {
+      "@id": "mcp:containsMessage",
+      "@type": "@id",
+      "@container": "@list"
+    },
     "tools": {
       "@context": {
         "annotations": {
-          "@context": {
-            "destructiveHint": {
-              "@id": "mcp:isDestructiveHint",
-              "@type": "xsd:boolean"
-            },
-            "idempotentHint": {
-              "@id": "mcp:isIdempotentHint",
-              "@type": "xsd:boolean"
-            },
-            "openWorldHint": {
-              "@id": "mcp:isOpenWorldHint",
-              "@type": "xsd:boolean"
-            },
-            "readOnlyHint": {
-              "@id": "mcp:isReadOnlyHint",
-              "@type": "xsd:boolean"
-            }
-          },
           "@id": "mcp:hasAnnotations",
           "@type": "@id"
         },
@@ -4338,6 +4445,10 @@ Links to the schema:
           },
           "@id": "mcp:hasInputSchema",
           "@type": "@json"
+        },
+        "name": {
+          "@id": "mcp:hasName",
+          "@type": "xsd:string"
         },
         "outputSchema": {
           "@context": {
@@ -4413,6 +4524,10 @@ Links to the schema:
     "InitializedNotification": {
       "@id": "mcp:InitializedNotification",
       "@type": "@id"
+    },
+    "clientInfo": {
+      "@id": "mcp:hasClientInfo",
+      "@type": "mcp:Implementation"
     },
     "ClientCapabilities": {
       "@id": "mcp:ClientCapabilities",
@@ -4513,6 +4628,30 @@ Links to the schema:
     "ToolAnnotations": {
       "@id": "mcp:ToolAnnotations",
       "@type": "@id"
+    },
+    "inputSchema": {
+      "@id": "mcp:hasInputSchema",
+      "@type": "@json"
+    },
+    "outputSchema": {
+      "@id": "mcp:hasOutputSchema",
+      "@type": "@json"
+    },
+    "readOnlyHint": {
+      "@id": "mcp:isReadOnlyHint",
+      "@type": "xsd:boolean"
+    },
+    "destructiveHint": {
+      "@id": "mcp:isDestructiveHint",
+      "@type": "xsd:boolean"
+    },
+    "idempotentHint": {
+      "@id": "mcp:isIdempotentHint",
+      "@type": "xsd:boolean"
+    },
+    "openWorldHint": {
+      "@id": "mcp:isOpenWorldHint",
+      "@type": "xsd:boolean"
     },
     "ListToolsRequest": {
       "@id": "mcp:ListToolsRequest",

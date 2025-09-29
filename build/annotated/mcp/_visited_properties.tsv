@@ -2,7 +2,7 @@ path	@id
 /jsonrpc	http://json-rpc.org/ontology#version
 /id	http://json-rpc.org/ontology#hasId
 /method	http://json-rpc.org/ontology#hasMethod
-/params	http://json-rpc.org/ontology#hasParameters
+/params	jrpc:hasParameters
 /params/capabilities	http://modelcontextprotocol.io/ontology#hasCapabilities
 /params/capabilities/elicitation	http://modelcontextprotocol.io/ontology#hasElicitationCapability
 /params/capabilities/experimental	http://modelcontextprotocol.io/ontology#hasExperimentalCapabilities
