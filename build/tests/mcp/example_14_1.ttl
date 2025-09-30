@@ -1,8 +1,8 @@
 @prefix jrpc: <http://json-rpc.org/ontology#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] jrpc:hasMethod "notifications/progress"^^xsd:string ;
-    jrpc:hasParameters "{\"progress\":75,\"progressToken\":\"upload_123\",\"total\":100}"^^rdf:JSON ;
+    jrpc:hasParameters [ mcp:hasProgress 75.0 ] ;
     jrpc:version "2.0"^^xsd:string .
 

@@ -111,12 +111,12 @@
   ],
   "name": "Building Blocks - Model Context Protocol (MCP) Building Blocks",
   "abstract": "BuildingBlock descriptions of the the elements of the\n[Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) \n",
-  "modified": "2025-09-29T08:39:59.283271",
+  "modified": "2025-09-30T10:27:15.227224",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"cbdf0741daa8bb5e8edcce157ff8f4bb6d0d71fa",
       "shortCommitId": "\"cbdf07",
-      "date": "2025-09-22T08:13:53+00:00\""
+      "date": "2025-09-30T10:25:21+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/modelcontextprotocol",

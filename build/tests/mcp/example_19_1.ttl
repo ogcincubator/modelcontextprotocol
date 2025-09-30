@@ -1,9 +1,20 @@
 @prefix jrpc: <http://json-rpc.org/ontology#> .
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] jrpc:hasId <http://example.com/activities/12> ;
     jrpc:hasMethod "sampling/createMessage"^^xsd:string ;
-    jrpc:hasParameters "{\"includeContext\":\"thisServer\",\"maxTokens\":1000,\"messages\":[{\"content\":{\"text\":\"What's the weather like today?\",\"type\":\"text\"},\"role\":\"user\"}],\"modelPreferences\":{\"costPriority\":0.5,\"hints\":[{\"name\":\"claude-3-sonnet\"}],\"intelligencePriority\":0.9,\"speedPriority\":0.8},\"systemPrompt\":\"You are a helpful weather assistant.\",\"temperature\":0.7}"^^rdf:JSON ;
+    jrpc:hasParameters [ mcp:containsMessage ( [ mcp:hasContent ( [ mcp:hasContentType "text"^^xsd:string ;
+                                    mcp:hasText "What's the weather like today?"^^xsd:string ] ) ;
+                        mcp:hasRole "user"^^mcp:Role ] ) ;
+            mcp:hasIncludeContext "thisServer"^^xsd:string ;
+            mcp:hasMaxTokens 1000 ;
+            mcp:hasModelPreferences [ mcp:hasCostPriority 0.5 ;
+                    mcp:hasHints ( [ mcp:hasName "claude-3-sonnet"^^xsd:string ] ) ;
+                    mcp:hasIntelligencePriority 0.9 ;
+                    mcp:hasSpeedPriority 0.8 ] ;
+            mcp:hasSystemPrompt "You are a helpful weather assistant."^^xsd:string ;
+            mcp:hasTemperature 0.7 ] ;
     jrpc:version "2.0"^^xsd:string .
 

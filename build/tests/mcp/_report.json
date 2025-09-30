@@ -2,7 +2,7 @@
   "title": "Validation report for mcp.mcp - MCP",
   "bblockName": "MCP",
   "bblockId": "mcp.mcp",
-  "generated": "2025-09-29T08:40:04.412134+00:00",
+  "generated": "2025-09-30T10:27:20.373384+00:00",
   "result": true,
   "items": [
     {
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 4,
+              "size": 12,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }
@@ -220,7 +220,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_4_1.ttl",
-              "size": 4,
+              "size": 6,
               "isError": false,
               "message": "Output Turtle example_4_1.ttl created"
             }
@@ -340,7 +340,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_6_1.ttl",
-              "size": 4,
+              "size": 5,
               "isError": false,
               "message": "Output Turtle example_6_1.ttl created"
             }
@@ -400,7 +400,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_7_1.ttl",
-              "size": 4,
+              "size": 5,
               "isError": false,
               "message": "Output Turtle example_7_1.ttl created"
             }
@@ -460,7 +460,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_8_1.ttl",
-              "size": 4,
+              "size": 5,
               "isError": false,
               "message": "Output Turtle example_8_1.ttl created"
             }
@@ -580,7 +580,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_10_1.ttl",
-              "size": 4,
+              "size": 6,
               "isError": false,
               "message": "Output Turtle example_10_1.ttl created"
             }
@@ -640,7 +640,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_11_1.ttl",
-              "size": 4,
+              "size": 5,
               "isError": false,
               "message": "Output Turtle example_11_1.ttl created"
             }
@@ -700,7 +700,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_12_1.ttl",
-              "size": 4,
+              "size": 8,
               "isError": false,
               "message": "Output Turtle example_12_1.ttl created"
             }
@@ -760,7 +760,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_13_1.ttl",
-              "size": 3,
+              "size": 5,
               "isError": false,
               "message": "Output Turtle example_13_1.ttl created"
             }
@@ -820,7 +820,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_14_1.ttl",
-              "size": 3,
+              "size": 4,
               "isError": false,
               "message": "Output Turtle example_14_1.ttl created"
             }
@@ -880,7 +880,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_15_1.ttl",
-              "size": 3,
+              "size": 4,
               "isError": false,
               "message": "Output Turtle example_15_1.ttl created"
             }
@@ -1120,7 +1120,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_19_1.ttl",
-              "size": 4,
+              "size": 25,
               "isError": false,
               "message": "Output Turtle example_19_1.ttl created"
             }

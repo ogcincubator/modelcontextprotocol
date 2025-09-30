@@ -1,9 +1,15 @@
 @prefix jrpc: <http://json-rpc.org/ontology#> .
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] jrpc:hasId <http://example.com/activities/1> ;
     jrpc:hasMethod "initialize"^^xsd:string ;
-    jrpc:hasParameters "{\"capabilities\":{\"logging\":{},\"prompts\":{},\"resources\":{},\"tools\":{}},\"clientInfo\":{\"name\":\"example-client\",\"version\":\"1.0.0\"},\"protocolVersion\":\"2024-11-05\"}"^^rdf:JSON ;
+    jrpc:hasParameters [ mcp:hasCapabilities [ mcp:hasPromptsCapability "{}"^^rdf:JSON ;
+                    mcp:hasResourcesCapability "{}"^^rdf:JSON ;
+                    mcp:hasToolsCapability "{}"^^rdf:JSON ] ;
+            mcp:hasClientInfo [ mcp:hasName "example-client"^^xsd:string ;
+                    mcp:hasVersion "1.0.0"^^xsd:string ] ;
+            mcp:hasProtocolVersion "2024-11-05"^^xsd:string ] ;
     jrpc:version "2.0"^^xsd:string .
 

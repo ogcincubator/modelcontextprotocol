@@ -3209,10 +3209,6 @@
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#InitializedNotification",
       "x-jsonld-type": "@id"
     },
-    "clientInfo": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasClientInfo",
-      "x-jsonld-type": "http://modelcontextprotocol.io/ontology#Implementation"
-    },
     "ClientCapabilities": {
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#ClientCapabilities",
       "x-jsonld-type": "@id"
@@ -3223,14 +3219,6 @@
     },
     "rootsX-duplicate-tofix": {
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasRootsCapability",
-      "x-jsonld-type": "@json"
-    },
-    "sampling": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasSamplingCapability",
-      "x-jsonld-type": "@json"
-    },
-    "elicitation": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasElicitationCapability",
       "x-jsonld-type": "@json"
     },
     "Resource": {
@@ -3312,30 +3300,6 @@
     "ToolAnnotations": {
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#ToolAnnotations",
       "x-jsonld-type": "@id"
-    },
-    "inputSchema": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasInputSchema",
-      "x-jsonld-type": "@json"
-    },
-    "outputSchema": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasOutputSchema",
-      "x-jsonld-type": "@json"
-    },
-    "readOnlyHint": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#isReadOnlyHint",
-      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#boolean"
-    },
-    "destructiveHint": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#isDestructiveHint",
-      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#boolean"
-    },
-    "idempotentHint": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#isIdempotentHint",
-      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#boolean"
-    },
-    "openWorldHint": {
-      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#isOpenWorldHint",
-      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#boolean"
     },
     "ListToolsRequest": {
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#ListToolsRequest",
@@ -3540,6 +3504,14 @@
     "PrimitiveSchemaDefinition": {
       "x-jsonld-id": "http://modelcontextprotocol.io/ontology#PrimitiveSchemaDefinition",
       "x-jsonld-type": "@id"
+    },
+    "minimum": {
+      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasMinimum",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "maximum": {
+      "x-jsonld-id": "http://modelcontextprotocol.io/ontology#hasMaximum",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#integer"
     }
   },
   "x-jsonld-prefixes": {

@@ -1,9 +1,9 @@
 @prefix jrpc: <http://json-rpc.org/ontology#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] jrpc:hasId <http://example.com/activities/6> ;
     jrpc:hasMethod "resources/subscribe"^^xsd:string ;
-    jrpc:hasParameters "{\"uri\":\"file:///path/to/watched/directory\"}"^^rdf:JSON ;
+    jrpc:hasParameters [ mcp:hasURI "file:///path/to/watched/directory"^^xsd:anyURI ] ;
     jrpc:version "2.0"^^xsd:string .
 

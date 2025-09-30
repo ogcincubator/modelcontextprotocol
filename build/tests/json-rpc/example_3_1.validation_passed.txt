@@ -1,5 +1,5 @@
 Validation report for mcp.json-rpc - JSON-RPC
-Generated 2025-09-29T08:40:03.435971+00:00
+Generated 2025-09-30T10:27:19.353346+00:00
 === Files ===
 Using example_3_1.json from examples
 JSON-LD context is present - uplifting

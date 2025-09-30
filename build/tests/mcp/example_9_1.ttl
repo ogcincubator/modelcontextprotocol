@@ -1,9 +1,8 @@
 @prefix jrpc: <http://json-rpc.org/ontology#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] jrpc:hasId <http://example.com/activities/8> ;
     jrpc:hasMethod "prompts/list"^^xsd:string ;
-    jrpc:hasParameters "{}"^^rdf:JSON ;
+    jrpc:hasParameters [ ] ;
     jrpc:version "2.0"^^xsd:string .
 

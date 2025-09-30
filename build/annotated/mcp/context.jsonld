@@ -16,6 +16,10 @@
       "@context": {
         "capabilities": {
           "@context": {
+            "elicitation": {
+              "@id": "mcp:hasElicitationCapability",
+              "@type": "@json"
+            },
             "experimental": {
               "@id": "mcp:hasExperimentalCapabilities",
               "@type": "@json"
@@ -30,6 +34,10 @@
               "@id": "mcp:containsRoot",
               "@type": "mcp:Root",
               "@container": "@list"
+            },
+            "sampling": {
+              "@id": "mcp:hasSamplingCapability",
+              "@type": "@json"
             }
           },
           "@id": "mcp:hasCapabilities",
@@ -173,14 +181,6 @@
                   "@id": "mcp:hasTitle",
                   "@type": "xsd:string"
                 },
-                "maximum": {
-                  "@id": "mcp:hasMaximum",
-                  "@type": "xsd:integer"
-                },
-                "minimum": {
-                  "@id": "mcp:hasMinimum",
-                  "@type": "xsd:integer"
-                },
                 "default": "mcp:hasDefault",
                 "enum": {
                   "@id": "mcp:hasEnumValues",
@@ -210,7 +210,7 @@
         }
       },
       "@id": "jrpc:hasParameters",
-      "@type": "@json"
+      "@type": "urn:mcp:params"
     },
     "result": {
       "@id": "jrpc:hasResult",
@@ -565,6 +565,24 @@
     "tools": {
       "@context": {
         "annotations": {
+          "@context": {
+            "destructiveHint": {
+              "@id": "mcp:isDestructiveHint",
+              "@type": "xsd:boolean"
+            },
+            "idempotentHint": {
+              "@id": "mcp:isIdempotentHint",
+              "@type": "xsd:boolean"
+            },
+            "openWorldHint": {
+              "@id": "mcp:isOpenWorldHint",
+              "@type": "xsd:boolean"
+            },
+            "readOnlyHint": {
+              "@id": "mcp:isReadOnlyHint",
+              "@type": "xsd:boolean"
+            }
+          },
           "@id": "mcp:hasAnnotations",
           "@type": "@id"
         },
@@ -665,10 +683,6 @@
       "@id": "mcp:InitializedNotification",
       "@type": "@id"
     },
-    "clientInfo": {
-      "@id": "mcp:hasClientInfo",
-      "@type": "mcp:Implementation"
-    },
     "ClientCapabilities": {
       "@id": "mcp:ClientCapabilities",
       "@type": "@id"
@@ -679,14 +693,6 @@
     },
     "rootsX-duplicate-tofix": {
       "@id": "mcp:hasRootsCapability",
-      "@type": "@json"
-    },
-    "sampling": {
-      "@id": "mcp:hasSamplingCapability",
-      "@type": "@json"
-    },
-    "elicitation": {
-      "@id": "mcp:hasElicitationCapability",
       "@type": "@json"
     },
     "Resource": {
@@ -768,30 +774,6 @@
     "ToolAnnotations": {
       "@id": "mcp:ToolAnnotations",
       "@type": "@id"
-    },
-    "inputSchema": {
-      "@id": "mcp:hasInputSchema",
-      "@type": "@json"
-    },
-    "outputSchema": {
-      "@id": "mcp:hasOutputSchema",
-      "@type": "@json"
-    },
-    "readOnlyHint": {
-      "@id": "mcp:isReadOnlyHint",
-      "@type": "xsd:boolean"
-    },
-    "destructiveHint": {
-      "@id": "mcp:isDestructiveHint",
-      "@type": "xsd:boolean"
-    },
-    "idempotentHint": {
-      "@id": "mcp:isIdempotentHint",
-      "@type": "xsd:boolean"
-    },
-    "openWorldHint": {
-      "@id": "mcp:isOpenWorldHint",
-      "@type": "xsd:boolean"
     },
     "ListToolsRequest": {
       "@id": "mcp:ListToolsRequest",
@@ -996,6 +978,14 @@
     "PrimitiveSchemaDefinition": {
       "@id": "mcp:PrimitiveSchemaDefinition",
       "@type": "@id"
+    },
+    "minimum": {
+      "@id": "mcp:hasMinimum",
+      "@type": "xsd:integer"
+    },
+    "maximum": {
+      "@id": "mcp:hasMaximum",
+      "@type": "xsd:integer"
     },
     "Message": {
       "@id": "jrpc:Message",

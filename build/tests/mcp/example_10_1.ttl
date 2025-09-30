@@ -1,9 +1,11 @@
 @prefix jrpc: <http://json-rpc.org/ontology#> .
+@prefix mcp: <http://modelcontextprotocol.io/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] jrpc:hasId <http://example.com/activities/9> ;
     jrpc:hasMethod "prompts/get"^^xsd:string ;
-    jrpc:hasParameters "{\"arguments\":{\"complexity\":\"high\",\"language\":\"python\"},\"name\":\"code_review\"}"^^rdf:JSON ;
+    jrpc:hasParameters [ mcp:hasArguments "{\"complexity\":\"high\",\"language\":\"python\"}"^^rdf:JSON ;
+            mcp:hasName "code_review"^^xsd:string ] ;
     jrpc:version "2.0"^^xsd:string .
 
